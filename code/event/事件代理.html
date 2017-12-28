@@ -1,0 +1,88 @@
+<!doctype>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      .container{
+        margin: 30px auto;
+        width: 900px;
+      }
+      ul{
+        background: pink;
+      }
+
+      ul,li{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .container li{
+        border: 1px solid #ccc;
+        line-height: 1.5;
+        margin-right: 30px
+      }
+      #show{
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        <li>aa</li>
+        <li>bb</li>
+        <li>cc</li>
+        <li>dd</li>
+      </ul>
+      <input id="add-ipt" type="text"><button id="btn">添加</button>
+      <div id="show"></div>
+      
+      <script>
+        
+      var liNodes = document.querySelectorAll('.container li')
+      var showNode = document.querySelector('#show')
+      var addNode = document.querySelector('#btn')
+      var addIpt = document.querySelector('#add-ipt')
+      var container = document.querySelector('.container ul')
+
+      /*
+      liNodes.forEach(function(node){
+        console.log(node)
+        node.addEventListener('click', function(){
+          showNode.innerText = this.innerText
+        })
+      })
+
+      addNode.addEventListener('click', function(){
+        var node = document.createElement('li')
+        node.innerText = addIpt.value
+        node.addEventListener('click', function(){
+          showNode.innerText = this.innerText
+        })
+        container.appendChild(node)
+      })
+      */
+
+      container.addEventListener('click', function(e){
+        var target = e.target
+        if(target.tagName.toLowerCase() === 'li'){
+          showNode.innerText = target.innerText
+        }
+      })
+      addNode.addEventListener('click', function(){
+        var node = document.createElement('li')
+        node.innerText = addIpt.value
+        container.appendChild(node)
+      })
+
+
+
+
+
+
+      </script>
+
+    </div>
+  </body>
+</html>

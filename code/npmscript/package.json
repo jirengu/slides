@@ -1,0 +1,19 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:less": "./node_modules/less/bin/lessc ./src/less/a.less ./dist/css/a.css",
+    "build:js": "./node_modules/uglify-js/bin/uglifyjs ./src/js/a.js -o ./dist/js/a.min.js",
+    "start": "npm run build:less; npm run build:js; webpack; gulp build",
+    "watch": "onchange 'app/**/*.js' 'test/**/*.js' -- npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "uglify-js": "^2.8.12"
+  }
+}

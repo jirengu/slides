@@ -1,0 +1,200 @@
+<script>
+var a 
+var b 
+var c
+  
+var a = 1
+var b = 2
+var c = {name: 'ruoyu'}
+
+
+
+//  --100-- --200-- --0x0033--    
+
+//  0x0033 {name: 'jirengu' }  
+
+var aa = a
+var bb = b
+var cc = c
+
+// --1--  --2-- --0x0033--
+//  aa     bb     cc
+
+
+a = 100
+b = 200
+c.name = 'jirengu'
+
+console.log(aa)
+console.log(bb)
+console.log(cc)
+
+c = {name: '饥人谷'}
+
+//0x0044 {name: '饥人谷'}
+
+
+console.log('--------')
+
+function inc(n){
+    //var n = a
+    n++;
+}
+var a = 10;
+inc(a);
+console.log(a);
+
+function incObj(obj){
+    //var obj = o
+    obj.n++;
+}
+
+var o = {n: 10}; 
+incObj(o);
+console.log(o);
+
+
+var arr = [3, {age: 4}, 5]; // 0x0088
+
+function squireArr(arr){
+  var arr = 0x0088 //
+  for(var i = 0; i < arr.length; i++){
+    arr[i] = arr[i] * arr[i]
+  }
+}
+squireArr(arr)
+console.log(arr)
+
+
+
+function changeArr(n){
+  var n = 0x0033
+  n.age = 100
+}
+// 0x0033
+var num = arr[1]
+changeArr(num)
+console.log(arr)
+
+
+/*
+
+globalContext = {
+  AO: {
+    inc: function,
+    a: 10
+  }
+}
+inc.[scope] = globalContext.AO
+
+incContext = {
+  AO: {
+    n: 10
+  }
+}
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+var a = 1
+var b = a
+
+a = 2
+b == 1
+
+var obj = {
+  age: 100, 
+  friend: {
+    name: 'ruoyu',
+    sex: 'male',
+    child: {
+      name: 'abc'
+    }
+  }
+}
+var obj2 = obj
+obj.age = 200
+obj2.age == 200
+
+console.log('----------')
+
+
+function copy(obj){
+
+  var newObj = {}
+  for(var key in obj){
+    // if(obj.hasOwnProperty(key)){
+      console.log(key)
+      if(typeof obj[key] === 'number' || typeof obj[key] === 'boolean' 
+        || typeof obj[key] === 'string' || obj[key] === undefined || obj[key] === null ){
+        newObj[key] = obj[key]
+      }else{
+        c
+        newObj[key] = copy(obj[key])
+      }      
+    // }
+
+  }
+  return newObj
+}
+
+var obj3 = copy(obj)
+//obj.age = 400
+//console.log(obj3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,13 @@
+/*@import 'b.css';*/
+/*
+/Users/wingo/workspace/git/kejian-zuoye-xiangmu/frontend-knowledge-ppt/code/CSS/css/a.css
+*/
+
+h2,
+h1{
+  color:red;
+}
+
+h1 {
+  background: url(../imgs/1.png) 0 0 no-repeat;
+}

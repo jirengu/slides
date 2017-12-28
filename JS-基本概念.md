@@ -1,0 +1,128 @@
+# 基础概念
+
+## 标识符
+
+所谓标识符是指变量、函数、属性的名字，或者函数的参数。标识符的书写有几个特征
+
+1. 区分大小写
+2. 第一个字符必须是字母、下划线（_）、或者是$
+3. 后面的可以是字母、数字、下划线、$
+
+### 命名规约
+
+1. 使用是实际意义的单词
+2. 变量使用驼峰规则，第一个单词首字母小写，后面单词首字母大写
+3. 变量使用名词，方法函数使用动词开头，常量全部用大写字母，函数创建对象首字母大写
+&nbsp;
+
+```
+		var firstName;
+		var isSmall;
+		var hasClass;
+		var PI;
+		var MAX_COUNT;
+		function getName(){}
+		function Person(){}
+
+```
+## 变量
+
+在JavaScript中变量是用来保存值的占位符，定义变量的时候要使用`var`运算符， 后面跟一个作为名称的标识符即可
+```
+	var message;
+```
+## 弱类型
+
+在一些编译语言（C、Java、C#）等变量的类型是固定的，在声明变量的时候就要标识其类型，在程序执行前编译阶段变量的类型就确定了，而且不能改变，我们称之为强类型
+
+```
+	int a = 2;
+	string b = "hello";
+```
+
+一些常见的解释型语言（PHP、JavaScript）等变量的类型是松散的，一个变量可以用来保存任何类型的数据，变量的类型不是由声明时决定（声明的时候只是用了var运算符），而是在程序执行阶段由其值的类型决定，随着程序运行其值类型改变，变量类型也会发生改变
+
+```
+	var message = 1; //message 类型就是数字
+	message = "hello world!"; //message 类型变为字符串
+```
+
+## 语句
+
+语句（statement）是为了完成某种任务而进行的操作，比如下面就是一行赋值语句
+```
+	var a = 1 + 2;
+```
+这条语句先用`var`运算符，声明了变量a，然后将 `1+2` 的运算结果赋值给变量a。
+
+JavaScript中语句以`;`结束，一行可以包含多条语句，如果省略分号不会产生语法错误，解释器会自动判断语句结束
+```
+	var sum = 1 + 2
+	var diff = 3 - 4;
+```
+
+## 变量提升
+
+JavaScript引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升
+
+我们写了一个赋值语句
+```
+	var a = 2;
+```
+实际上执行过程是解释器在未执行的时候先解析出变量声明，然后给他初始值`undefined`，然后才逐句执行程序
+```
+	var a;
+	a = 2;
+```
+
+
+## 注释
+
+并不是所有的语句都会执行，我们可以通过**注释**功能让js引擎忽略部分语句，这个功能经常用来解释我们的部分语句，和读书做标注一样
+
+Javascript提供两种注释：一种是单行注释，用//起头；另一种是多行注释，放在/* 和 */之间。
+```
+	//为变量赋值
+	var a = 1; //赋值成功
+
+	/*
+		下面定义个函数
+		至于什么是函数
+		且听下回分解
+	*/
+
+	function getName(id){
+		return 'Byron';
+	}
+```
+## 关键字和保留字
+
+关键字是JavaScript引擎会用到的一些字，我们标识符不能再使用，比如定义变量的关键字`var`，关键字有
+
+|   	|   	|   	|   	|
+|---	|---	|---	|---	|
+| break  	| else  	| new  	|  var 	|
+| case  	| finally  	| return  	| void  	|
+| catch  	| for  	|  switch 	| while  	|
+| continue  	| function  	|  this 	|  with 	|
+| default  	|if   	|  throw 	|   	|
+| delete  	| in  	|  try 	|   	|
+| do  	|  instanceof 	|  typeof 	|   	|
+
+### 保留字
+除了这些不能用作标识符的**关键字**，js还规定了一些不能用作标识符的**保留字**，这些字符没有什么意义，但是未来会用到
+
+|   	|   	|   	|   	|
+|---	|---	|---	|---	|
+| abstract  	| enum  	| int  	|  short 	|
+| boolean  	| export  	| interface  	| static  	|
+|  bye 	|   extends	| long  	|   super	|
+|  char 	| final  	| native  	| synchronized  	|
+|  class 	|  float 	|  package 	| throws  	|
+| const  	| goto  	| private  	|  transient 	|
+| debugger  	|  implements 	| protected  	| volatile  	|
+|  doubler 	|  import 	| public  	|   	|
+
+实际上一些保留字在新的ECMAscript已经得到使用
+
+

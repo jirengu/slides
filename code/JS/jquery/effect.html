@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="tab切换 原生js" />
+  <meta charset="utf-8">
+  <title>效果 切换</title>
+  <style>
+  li{
+    list-style: none;
+  } 
+  .ct >ul >li{
+    border: 1px solid #ccc;
+  }
+  .ct>ul>li>p{
+    display: none;
+  } 
+  .box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    display: inline-block;
+  }
+
+
+  </style>
+  <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+</head>
+<body>
+
+  <div class="box">
+    hello
+  </div>
+  <button id="btn-box1">show</button>
+  <button id="btn-box2">hide</button>
+  <script>
+    $('#btn-box1').on('click', function(){
+      $('.box').show(5000)
+      //$('.box').fadeIn()
+      //$('.box').slideDown('slow')
+    })
+    $('#btn-box2').on('click', function(){
+      $('.box').hide(5000)
+      //$('.box').fadeOut()
+      //$('.box').slideUp('slow')
+    })
+  </script>
+
+
+
+  <div class="ct">
+    <ul>
+      <li class="item">
+        <h3>标题1</h3>
+        <p>内容1</p>
+      </li>
+      <li class="item">
+        <h3>标题2</h3>
+        <p>内容2</p>
+      </li>
+      <li class="item">
+        <h3>标3</h3>
+        <p>内容3</p>
+      </li>
+      <li class="item">
+        <h3>标题4</h3>
+        <p>内容4</p>
+      </li>
+    </ul>
+  </div>
+
+<script>
+
+$('.ct .item').on('click', function(){
+   $(this).find('p').slideDown();
+   $(this).siblings().find('p').slideUp()
+});
+// $('.ct .item').on('mouseleave', function(){
+//    $(this).find('p').slideUp(100);
+// });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    <button id="btn14">变宽</button>
+    <button id="btn15">复原</button>
+    <button id="btn16">变宽变大移动</button>
+    <button id="btn17">多个动画</button>
+    <button id="btn18">finish</button>
+    <button id="btn19">stop</button>
+
+    <div class="div3" style="width:80px;height:80px;background-color:red;position: relative;"></div>
+
+  <script type="text/javascript">
+    $(function(){
+        var $div3 = $(".div3");
+        $("#btn14").on('click', function(e){
+            $div3.animate({width: '200px'});
+        });
+        $("#btn15").on('click', function(){
+            $div3.animate({
+                width:'80px',
+                height: '80px',
+                left: '0px',
+                top: '0px',
+                opacity: 1
+            }, 500);
+        });
+        $("#btn16").on('click', function(){
+            $div3.animate({
+                width:'150px',
+                height: '150px',
+                left: '100px',
+                top: '100px',
+                opacity: 0.5
+            }, 500, function(){
+
+            });
+        });
+
+        var clickable = true;
+        $("#btn17").on('click', function(){
+          // $div3.animate({}, function(){
+          //   $div3.animate({}, function(){
+          //     $div3.animate({}, function(){
+
+          //     })
+          //   })
+          // })
+
+
+          
+
+            var actions = [
+              {width: 80, height: 80, left: 0, top: 0},
+              {left:'200px'},
+              {top:'200px'},
+              {left:'0px'},
+              {top:'0px'},
+              {width:'80px',height:'80px'}
+            ]
+
+            actions.forEach(function(action, idx){
+              console.log(action)
+              $div3.animate(action, 2000)
+            })
+            
+            /*
+            
+            
+            // if(!clickable){
+            //   return;
+            // }
+            //clickable = false;
+            //$div3.finish()
+            //$div3.stop(true, true);
+            $div3.animate({width: 80, height: 80, left: 0, top: 0});
+            //$div3.stop(true, true);
+            $div3.animate({width:'150',height:'150px'})
+                .animate({left:'200px'})
+                .animate({top:'200px'});
+
+            $div3.animate({left:'0px'});
+            $div3.animate({top:'0px'});
+            $div3.animate({width:'80px',height:'80px'}, function(){
+              //clickable = true;
+            });
+            */
+
+        });
+
+        $('#btn18').click(function(){
+          console.log('finish')
+          $div3.finish()
+        }) 
+        $('#btn19').click(function(){
+          console.log('stop')
+          $div3.stop(true, true)
+        })
+
+    });
+    </script>
+
+
+
+
+
+
+
+<h2>Greetings</h2>
+<div class="container">
+  <div class="inner">Hello</div>
+  <div class="inner">Goodbye</div>
+  <!--<div class="inner">jirengu</div>-->
+</div>
+<button id="add-to-last">添加最后</button>
+<button id="add-to-first">添加前面</button>
+<button id="switch">switch</button>
+
+
+<script>
+  
+$('#add-to-last').on('click', function(){
+  $('.container').append('<div >jirengu</div>');
+})
+$('#add-to-first').on('click', function(){
+  $('.container').prepend('<div>jirengu</div>');
+})
+$('#switch').on('click', function(){
+  $('.inner').eq(1).after($('.inner').eq(0));
+})
+</script>
+
+
+</body>
+</html>

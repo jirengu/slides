@@ -1,0 +1,26 @@
+<script>
+  
+var arr = [-4, 1, 3, 18, 22, 9]
+arr.sort(function(a, b){
+  return b - a 
+})
+console.log(arr)
+
+var students = [
+  {name: 'c', age: 10},
+  {name: 'b', age: 20},
+  {name: 'a', age: 18},
+  {name: 'f', age: 3},
+]
+
+students.sort(function(s1, s2){
+  //return s1.age - s2.age
+  if(s1.name > s2.name){
+    return 1
+  }else{
+    return -1
+  }
+})
+
+console.log(students)
+</script>

@@ -1,0 +1,20 @@
+{
+  "name": "hunger-demo0",
+  "version": "1.0.0",
+  "description": "这是10班的课堂测试版本",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jirengu"
+  ],
+  "author": "ruoyu",
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^0.3.6"
+  },
+  "devDependencies": {
+    "easytpl": "^1.0.4"
+  }
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>前端入门-linux命令行基础--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/jirengu.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>Linux &#x547D;&#x4EE4;&#x884C;&#x57FA;&#x7840;</h1>
+<p>by &#x82E5;&#x611A;@<a href="http://jirengu.com">&#x9965;&#x4EBA;&#x8C37;</a></p>
+</section><section data-tag="h2"><h2>&#x4E00;&#x4E9B;&#x540D;&#x8BCD;</h2>
+<ul>
+<li>&#x300C;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x300D;</li>
+<li>&#x300C;&#x547D;&#x4EE4;&#x884C;&#x300D;</li>
+<li>&#x300C;&#x7EC8;&#x7AEF;&#x300D;</li>
+<li>&#x300C;shell&#x300D;</li>
+<li>&#x300C;bash&#x300D;</li>
+</ul>
+</section><section data-tag="h2"><h2>&#x5B89;&#x88C5;&#x4F7F;&#x7528;</h2>
+<ul>
+<li>Windws: &#x5B89;&#x88C5;git, &#x6253;&#x5F00; gitbash</li>
+<li>Linux &#x6253;&#x5F00;&#x7EC8;&#x7AEF;</li>
+<li>Mac &#x6253;&#x5F00;&#x7EC8;&#x7AEF;</li>
+</ul>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x57FA;&#x672C;&#x547D;&#x4EE4;</h2>
+</section><section data-tag="h3"><h3>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;</h3>
+<pre><code>pwd
+</code></pre>
+</section><section data-tag="h3"><h3>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6587;&#x4EF6;</h3>
+<pre><code># &#x4E0D;&#x5305;&#x62EC;&#x9690;&#x85CF;&#x6587;&#x4EF6;
+ls
+
+# &#x67E5;&#x770B;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;(&#x5305;&#x62EC;&#x9690;&#x85CF;&#x6587;&#x4EF6;)
+ls -a
+
+# &#x67E5;&#x770B;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;(&#x5305;&#x62EC;&#x9690;&#x85CF;&#x6587;&#x4EF6;)&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;
+ls -al
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5207;&#x6362;&#x76EE;&#x5F55;</h3>
+<pre><code>cd /c/project
+cd code
+cd ../css
+cd ~/Desktop
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x521B;&#x5EFA;&#x6587;&#x4EF6;</h3>
+<pre><code>touch readme.md
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5220;&#x9664;&#x6587;&#x4EF6;</h3>
+<pre><code>#&#x521B;&#x5EFA;readme.md
+rm readme.md 
+
+#&#x5220;&#x9664;node_modules&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x4E0D;&#x63D0;&#x793A;
+rm -rf node_modules
+</code></pre>
+</section><section data-tag="h3"><h3>&#x91CD;&#x547D;&#x540D;&#x6587;&#x4EF6;</h3>
+<pre><code>mv readme.md README.md
+</code></pre>
+</section><section data-tag="h3"><h3>&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;</h3>
+<pre><code>mkdir projects
+</code></pre>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</h2>
+</section><section data-tag="h3"><h3>&#x6839;&#x76EE;&#x5F55;</h3>
+<pre><code>cd /
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5BB6;&#x76EE;&#x5F55;</h3>
+<pre><code>cd ~
+pwd
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5F53;&#x524D;&#x76EE;&#x5F55;</h3>
+<pre><code>cd books
+cd ./books
+</code></pre>
+</section><section data-tag="h3"><h3>&#x4E0A;&#x7EA7;&#x76EE;&#x5F55;</h3>
+<pre><code>cd ..
+cd ../css
+</code></pre>
+</section></section><section data-tag="h2"><h2>&#x7F16;&#x8F91;&#x5668;vim</h2>
+<blockquote>
+<p>&#x7F16;&#x8F91;&#x6A21;&#x5F0F;
+&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</p>
+</blockquote>
+<ol>
+<li><code>vim a.md</code> &#x521D;&#x59CB;&#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x5668;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</li>
+<li><code>i</code> &#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;</li>
+<li>&#x952E;&#x76D8;&#x5DE6;&#x4E0A;&#x89D2;<code>esc</code> &#x8FDB;&#x5165;&#x547D;&#x4EE4;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</li>
+<li><code>:wq</code> &#x4FDD;&#x5B58;&#x9000;&#x51FA;</li>
+<li><code>:q!</code> &#x4E0D;&#x4FDD;&#x5B58;&#x5F3A;&#x5236;&#x9000;&#x51FA;</li>
+</ol>
+</section><section data-tag="h2"><h2>&#x5B89;&#x88C5;&#x670D;&#x52A1;&#x5668;</h2>
+<pre><code>npm install -g http-server
+http-server
+</code></pre>
+</section><section data-tag="h2"><h2>&#x767B;&#x5F55;&#x5F00;&#x53D1;&#x673A;</h2>
+<pre><code>ssh vip14@47.91.156.35
+</code></pre>
+</section><section data-tag="h2"><h2>&#x6587;&#x4EF6;&#x6743;&#x9650;</h2>
+<pre><code>chmod 777 index.html
+chown -R git:git ruoyu
+
+</code></pre>
+</section><section data-tag="h2"><h2>&#x65B0;&#x624B;&#x6700;&#x5927;&#x7684;&#x95EE;&#x9898;</h2>
+<blockquote>
+<ol>
+<li>&#x5927;&#x5C0F;&#x5199;&#x770B;&#x9519;</li>
+<li>&#x7A7A;&#x683C;&#x5199;&#x6F0F;</li>
+<li>&#x628A;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x5F53;&#x6210;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;</li>
+</ol>
+</blockquote>
+</section><section data-tag="h2"><h2>&#x63A8;&#x8350;&#x8D44;&#x6599;</h2>
+<p>http://www.cnblogs.com/peida/tag/linux%E5%91%BD%E4%BB%A4/default.html?page=4</p>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

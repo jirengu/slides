@@ -1,0 +1,74 @@
+.modal-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal-dialog .bt {
+  display: inline-block;
+  padding: 3px 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.modal-dialog a {
+  text-decoration: none;
+  color: #333;
+}
+.modal-dialog .cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.4;
+  z-index: 99;
+}
+.modal-dialog .modal-ct {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  width: 400px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background: #fff;
+  z-index: 100;
+}
+.modal-dialog .modal-ct .header {
+  position: relative;
+  height: 36px;
+  line-height: 36px;
+  border-bottom: 1px solid #ccc;
+}
+.modal-dialog .modal-ct .header h3 {
+  margin: 0;
+  padding-left: 10px;
+  font-size: 16px;
+}
+.modal-dialog .modal-ct .header .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  line-height: 1;
+}
+.modal-dialog .modal-ct .content {
+  padding: 10px;
+}
+.modal-dialog .modal-ct .footer {
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+.modal-dialog .modal-ct .footer:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.modal-dialog .modal-ct .footer .btn {
+  float: right;
+  margin-left: 10px;
+}

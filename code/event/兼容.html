@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+  
+  <a id="btn" href="http://www.baidu.com">百度</a>
+
+
+    <script>
+
+// $('#btn').on('click', function(e){
+//   e.preventDefault()
+//   e.stopPropagation()
+// })
+
+
+addEvent($('#btn'), 'click', function(e){
+  var evt = getEvent(e),
+    target = getTarget(e);
+
+  preventDefault(e);
+  //stopPropagation(e);
+  console.log(target);
+});
+
+addEvent($('body'), 'click', function(e){
+  console.log(e);
+});
+
+
+
+function $(node) {
+  return document.querySelector(node)
+}
+function $$(nodes) {
+  return document.querySelectorAll(nodes)
+}
+
+
+// function $$(el){
+//   if(el.length < 1){
+//     return;
+//   }
+//   var sub = el.substring(1);
+//   if( el[0] === '#'){
+//     return document.getElementById(sub);
+//   }else if(el[0] === '.'){
+//     return document.getElementsByClassName(sub);
+//   }else{
+//     return document.getElementsByTagName(el);
+//   }
+// }
+
+
+function addEvent(node, type, handler) {
+    if (!node) return false;
+    if (node.addEventListener) {
+        node.addEventListener(type, handler, false);
+        return true;
+    }
+    else if (node.attachEvent) {
+        node['e' + type + handler] = handler;
+        node[type + handler] = function() {
+            node['e' + type + handler](window.event);
+        };
+        node.attachEvent('on' + type, node[type + handler]);
+        return true;
+    }
+    return false;
+}
+
+function removeEvent(node, type, handler) {
+    if (!node) return false;
+    if (node.removeEventListener) {
+        node.removeEventListener(type, handler, false);
+        return true;
+    }
+    else if (node.detachEvent) {
+        node.detachEvent('on' + type, node[type + handler]);
+        node[type + handler] = null;
+    }
+    return false;
+}
+
+function getEvent(e) {
+    return e || window.event;
+}
+
+function getTarget(e) {
+    return e.target || e.scrElement;
+}
+
+function preventDefault(e) {
+    if (e.preventDefault)
+        e.preventDefault();
+    else
+        e.returnValue = false;
+}
+
+function stopPropagation(e) {
+    if (e.stopPropagation)
+        e.stopPropagation();
+    else
+        e.cancelBubble = true;
+}
+
+
+    </script>
+</body>
+</html>

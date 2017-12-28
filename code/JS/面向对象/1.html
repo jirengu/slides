@@ -1,0 +1,57 @@
+<body>
+
+<h2>对象</h2>  
+
+<h2>封装</h2>
+
+<h2>构造函数</h2>
+
+<script>
+  
+var obj = {
+  a: 1,
+  b: "ruoyu",
+  sayName: function(){
+    console.log(this.a)
+    console.log('hello')
+  }
+}
+
+obj.sayName()
+
+
+
+
+function People(name){
+  this.name = name
+  this.sayName = function(){
+    console.log(this.name)
+  }
+
+}
+
+People.prototype.age = 100
+
+//People('hunger')
+
+
+
+var p1 = new People('hunger')
+// p1 = {}
+// p1.name = 'hunger'
+// p1.sayName = function(){}
+// return p1
+
+
+
+
+var p2 = new People('valley')
+
+var p3 = new People('hello')
+
+
+
+
+</script> 
+</body>
+

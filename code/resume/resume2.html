@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>我的简历</title>
+    <style>
+      html,body,h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+    
+
+
+      body {
+        font: 14px/1.8 Arial;
+        background-color: #ccc;
+        color: #333;
+      }
+
+      #page {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 60px 45px;
+        height: 1000px;
+        background-color: #fff;
+      }
+    
+      section {
+        margin-top: 30px;
+      }
+
+      section:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      section h2 {
+        font-size: 18px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        width: 40%;
+      }
+
+      section>ul>li{
+        position: relative;
+        padding-left: 70px;
+        padding-bottom: 15px;
+        border-left: 2px solid #333;
+      }
+
+      section>ul>li:before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 0;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #333;
+      }
+
+
+      section h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        font-weight: normal;
+        line-height: 1;
+      }
+
+      section h3 span {
+        color: #ccc;
+      }
+
+      .personal .name {
+        float: left;
+        width: 40%;
+      }
+
+      .personal .contact {
+        float: left;
+        width: 60%;
+      }
+
+      .personal .circle {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #000;
+        font-size: 30px;
+        color: #fff;
+        float: left;
+      }
+      .personal .circle span:nth-child(1) {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+      }
+      .personal .circle span:nth-child(2) {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+      }
+      .personal .circle:before {
+        content: '';
+        position: absolute;
+        top: 72px;
+        left: 27px;
+        display: inline-block;
+        width: 100px;
+        border-top: 2px solid #fff;
+        transform: rotateZ(128deg);
+      }
+      .personal .name h1 {
+        font-size: 40px;
+        margin-left: 170px;
+      }
+      .personal .name p {
+        font-size: 20px;
+        margin-left: 170px;
+      }
+      .personal .contact h2 {
+        border-bottom: 4px solid #333;
+        width: auto;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <section class="personal">
+        <div class="name">
+          <div class="circle">
+            <span>R</span>
+            <span>Y</span>
+          </div>
+          <h1>若愚</h1>
+          <p>应聘前端工程师</p>
+        </div>
+        <div class="contact">
+          <h2>联系方式</h2>
+          <ul>
+            <li><strong>地址</strong> 杭州市滨江区</li>
+            <li><strong>地址</strong> 杭州市滨江区</li>
+            <li><strong>地址</strong> 杭州市滨江区</li>
+            <li><strong>地址</strong> 杭州市滨江区</li>
+          </ul>
+        </div>
+      </section>
+      <section class="experience">
+        <h2>工作经历</h2>
+        <ul>
+          <li>
+            <h3>百度 / <span>20xx-20xx</span></h3>
+            <p>前端的工作经历大段描述，位置靠前，非前端工作经历位置靠后，一句话精简带过，承担角色， 做了哪些东西， 用了哪些技术， 解决了什么问题。 要出现「技术名词」，细节、量化</p>
+          </li>
+          <li>
+            <h3>百度 / <span>20xx-20xx</span></h3>
+            <p>前端的工作经历大段描述，位置靠前，非前端工作经历位置靠后，一句话精简带过，承担角色， 做了哪些东西， 用了哪些技术， 解决了什么问题。 要出现「技术名词」，细节、量化</p>
+          </li>
+        </ul>
+      </section>
+      <section class="education">
+        <h2>教育经历</h2>
+        <ul>
+          <li>
+            <h3>xx 大学 / <span>20xx-20xx</span></h3>
+            <p class="lighter"></p>
+            <p>前端的工作经历大段描述，位置靠前，非前端工作经历位置靠后，一句话精简带过，承担角色， 做了哪些东西， 用了哪些技术， 解决了什么问题。 要出现「技术名词」，细节、量化</p>
+          </li>
+          <li>
+            <h3>xx 大学 / <span>20xx-20xx</span></h3>
+            <p class="lighter"></p>
+            <p>前端的工作经历大段描述，位置靠前，非前端工作经历位置靠后，一句话精简带过，承担角色， 做了哪些东西， 用了哪些技术， 解决了什么问题。 要出现「技术名词」，细节、量化</p>
+          </li>
+        </ul>   
+      </section>
+      <section class="activity"></section>
+      <section class="skills"></section>
+    </div>
+  </body>
+</html>

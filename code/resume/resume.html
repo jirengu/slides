@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+
+      html,body,ul,li, dl, dt, dd, h1,h2,h3,h4,h5,h6,p { 
+        margin: 0; 
+        padding: 0; 
+      }
+      li { 
+        list-style: none; 
+      }
+      body {
+        font: 14px/1.8 Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+        background-color: #dedede;
+        color: #333;
+      }
+
+      #wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 65px 45px;
+      }
+
+      .lighter {
+        color: #ccc;
+      }
+
+      section:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      section h2 {
+        font-size: 18px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 8px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 40%;
+      }
+      section h3 {
+        font-size: 18px;
+        font-weight: normal;
+      }
+      section .intro {
+        color: #ccc;
+      }      
+      section .detail {
+        padding-bottom: 10px;
+      }
+
+      .personal .name {
+        float: left;
+        width: 50%;
+      }
+      .personal .contacts {
+        float: left;
+        width: 50%;
+      }
+
+      .personal .circle {
+        position: relative;
+        float: left;
+        width: 160px;
+        height: 160px;
+        background-color: #000;
+        color: #fff;
+        border-radius: 50%;
+      }
+      .personal .circle span {
+        position: absolute;
+        font-size: 28px;
+      }
+      .personal .circle span:nth-child(1) {
+        left: 50px;
+        top: 33px;
+      }
+      .personal .circle span:nth-child(2) {
+        right: 50px;
+        bottom: 33px;
+      }
+      .personal .circle:before {
+        content: '';
+        position: absolute;
+        top: 80px;
+        left: 40px;
+        display: inline-block;
+        width: 80px;
+        border-top: 2px solid #fff;
+        transform: rotateZ(140deg);
+      }  
+      .personal .name h1 {
+        font-size: 44px;
+        font-weight: normal;
+        margin-left: 190px;
+      }
+      .personal .name p {
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 190px;
+      }
+      .personal .contacts dt {
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 4px solid #333;
+        margin-bottom: 10px;
+      }
+      .personal .contacts strong {
+        margin-right: 10px;
+      }
+
+      .experience li,
+      .education li {
+          border-left: 2px solid #333;
+          padding-left: 76px;
+          position: relative;
+      }
+
+      .experience li:before,
+      .education li:before {
+          content: '';
+          position: absolute;
+          left: -5px;
+          display: inline-block;
+          top: 10px;
+          width: 8px;
+          border-radius: 50%;
+          height: 8px;
+          background-color: #333;
+      }
+
+
+      .other:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      .activites,
+      .skills {
+        width: 50%;
+        float: left;
+      }
+      .activites {
+        padding-right: 30px;
+      }
+      .activites li{
+          padding-left: 76px;
+          position: relative;
+      }
+      .activites li:before,
+      .skills li:before {
+          content: '';
+          position: absolute;
+          left: -5px;
+          top: 6px;
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          border: 1px solid #333;
+          border-radius: 50%;
+      }
+      .activites li:after,
+      .skills li:after {
+          content: '+';
+          position: absolute;
+          left: 1px;
+          top: 4px;
+      }
+      .skills li {
+        position: relative;
+        float: left;
+        width: 50%;
+        padding-left: 50px;
+        margin-bottom: 30px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <!--
+    步骤：
+    1. 分析页面(单栏? 双栏? 自适应?)，分块
+    2. 找共同点和特征
+    3. 完善细节
+
+    原则：
+    1. 标签能省则省
+    2. class能省则省
+    3. 选择最简单的实现方式
+    4. 考虑扩展性
+     -->
+    <div id="wrap">
+      <section class="personal">
+        <div class="name">
+          <div class="circle">
+            <span>R</span>
+            <span>Y</span>
+          </div>
+          <h1>若愚</h1>
+          <p>应聘前端工程师</p>
+        </div>
+        <dl class="contacts">
+          <dt>联系方式</dt>
+          <dd><strong>地址</strong>杭州市滨江区</dd>
+          <dd><strong>手机</strong>13011111111</dd>
+          <dd><strong>邮箱</strong>hunger@jirengu.com</dd>
+          <dd><strong>网站</strong>jirengu.com</dd>
+        </dl>
+      </section>
+      <section class="experience">
+        <h2>工作经历</h2>
+        <ul>
+          <li>
+            <h3>百度 / <span class="lighter">20xx-20xx</span></h3>
+            <p class="detail">前端的工作经历大段描述，位置靠前，非前端工作经历位置靠后，一句话精简带过，承担角色， 做了哪些东西， 用了哪些技术， 解决了什么问题。 要出现「技术名词」，细节、量化</p>
+          </li>
+          <li>
+            <h3>阿里 / <span class="lighter">20xx-20xx</span></h3>
+            <p class="detail">前端的工作经历大段描述，位置靠前，非前端工作经历位置靠后，一句话精简带过，承担角色， 做了哪些东西， 用了哪些技术， 解决了什么问题。 要出现「技术名词」，细节、量化</p>
+          </li>
+          <li>
+            <h3>饥人谷 / <span class="lighter">20xx-20xx</span></h3>
+            <p class="detail">前端的工作经历大段描述，位置靠前，非前端工作经历位置靠后，一句话精简带过，承担角色， 做了哪些东西， 用了哪些技术， 解决了什么问题。 要出现「技术名词」，细节、量化</p>
+          </li>
+        </ul>
+      </section>
+      <section class="education">
+        <h2>教育经历</h2>
+        <ul>
+          <li>
+            <h3>xx大学 / <span class="lighter">20xx-20xx</span></h3>
+            <p class="intro">本科,电子信息科学与技术</p>
+            <p class="detail">对于学校本科211、985以上写，其他只写学历；课程 (计算机相关的应届生可写)，成绩或者奖励(有就写)</p>
+          </li>
+          <li>
+            <h3>xx大学 / <span class="lighter">20xx-20xx</span></h3>
+            <p class="intro">硕士,计算机专业</p>
+            <p class="detail">对于学校本科211、985以上写，其他只写学历；课程 (计算机相关的应届生可写)，成绩或者奖励(有就写)</p>
+          </li>
+        </ul>
+      </section>
+      <!-- <div class="other"> -->
+        <section class="activites">
+          <h2>社团活动</h2>
+          <ul>
+            <li>
+              <h3>志愿者</h3>
+              <p class="detail">在某某山区当了半年志愿者，做了xx 有意思的事情，觉得很有收获</dd>
+            </li>
+            <li>
+              <h3>社团主席</h3>
+              <p class="detail">在校期间加入 xx 社团，担任 xx，举办了 xx 活动</p>   
+            </li>
+          </ul>
+        </section>
+        <section class="skills">
+          <h2>专业技能</h2>
+          <ul>
+            <li>HTML&CSS</li>
+            <li>jQuery</li>
+            <li>JavaScript</li>
+            <li>Gulp</li>
+            <li>Node</li>
+            <li>Vue.js</li>
+          </ul>
+        </section>        
+     <!--  </div> -->
+
+    </div>
+  </body>
+</html>

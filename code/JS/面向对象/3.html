@@ -1,0 +1,128 @@
+<html>
+  <body>
+    <h2>this</h2>
+
+
+
+  <script>
+  var a = 1
+  var b = 100
+
+  console.log(this)
+  function fn1(){
+    console.log(a)
+    var b = 2
+    console.log(this.b);
+  }
+  fn1()
+
+  // document.addEventListener('click', function(e){
+  //     console.log(this);
+  //     var _this = this;
+  //     setTimeout(function(){
+  //         console.log(_this);
+  //     }, 200);
+  // }, false);
+
+  var obj1 = {
+    name: 'Byron',
+    fn : function(){
+        console.log(this);
+    }
+  }
+  obj1.fn()
+
+
+  var obj2 = {
+    name: 'Byron',
+    obj3: {
+      fn : function(){
+          console.log(this);
+      }   
+    }
+
+  }
+  obj2.obj3.fn()
+
+  var fn2 = obj1.fn
+  fn2()
+
+  var obj3 = {a: 3}
+
+  var fn3 = obj1.fn.bind(obj3)
+  fn3()
+
+  document.addEventListener('click', function(e){
+      console.log(this);
+      setTimeout(function(){
+          console.log(this);
+      }.bind(this), 200);
+  }, false);
+
+
+  var value = 100
+  var obj4 = {
+    value: 200
+  }
+
+  function fn4(a, b){
+    console.log(this.value + a + b)
+  }
+  console.log('-----')
+  fn4.bind(obj4)(3,4)
+  fn4.call(obj4, 3, 4)
+  fn4.apply(obj4, [3, 4])
+
+
+
+  var arr = [1,2,7,4]
+  //Math.max(1,2,7,4)
+  console.log( Math.max.apply(null, arr)    )
+
+  Math.max(1,2,7,4)
+
+  function joinStr(){
+    Array.prototype.join.call(arguments, '-')
+
+    //console.log( Array.prototype.join.call(arguments, '-') ) 
+    var join = Array.prototype.join.bind(arguments)
+    console.log(join('-'))
+
+  }
+  joinStr('a','b','c')
+
+
+  Array.prototype.copy  = function(num){
+    //this = this.concat(this)
+    var arr = []
+    for(var i = 0; i < this.length; i++){
+      arr[i] = this[i]
+    }
+    for(var j = 0; j < num; j++){
+      for(var i = 0; i < this.length; i++){
+        arr.push(this[i])
+      }     
+    }
+
+    return arr;
+  }
+
+  var arr = [3, 4, 5] 
+  arr.copy()
+
+
+  function copyStr(){
+    //var copy = Array.prototype.copy.bind(arguments)
+    //console.log(copy())
+
+    console.log(   Array.prototype.copy.call(arguments, 3)   )
+  }
+
+  copyStr('a','b','c')
+
+
+
+
+  </script>
+  </body>
+</html>

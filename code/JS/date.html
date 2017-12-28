@@ -1,0 +1,45 @@
+<script>
+  
+/*
+1、 写一个函数getChIntv，获取从当前时间到指定日期的间隔时间
+
+var str = getChIntv("2017-02-08");
+console.log(str);  // 距除夕还有 20 天 15 小时 20 分 10 秒
+2、把hh-mm-dd格式数字日期改成中文日期
+
+3、写一个函数，参数为时间对象毫秒数的字符串格式，返回值为字符串。假设参数为时间对象毫秒数t，根据t的时间分别返回如下字符串:
+
+刚刚（ t 距当前时间不到1分钟时间间隔）
+3分钟前 (t距当前时间大于等于1分钟，小于1小时)
+8小时前 (t 距离当前时间大于等于1小时，小于24小时)
+3天前 (t 距离当前时间大于等于24小时，小于30天)
+2个月前 (t 距离当前时间大于等于30天小于12个月)
+8年前 (t 距离当前时间大于等于12个月)
+function friendlyDate(time){
+}
+var str = friendlyDate( '1484286699422' ) //  1分钟前
+var str2 = friendlyDate('1483941245793') //4天前
+
+*/
+
+function getChIntv(dateStr){
+  var targetDate = new Date(dateStr)
+  var curDate = new Date()
+  var offset = Math.abs(targetDate - curDate)
+  var totalSeconds = Math.floor(offset/1000)
+
+  var second = totalSeconds%60
+  var totalMinutes = Math.floor((totalSeconds)/60)
+  var minutes = totalMinutes%60
+  var totalHours = Math.floor(totalMinutes/60)
+  var hours = totalHours%24
+  var totalDays = Math.floor(totalHours/24)
+
+  return totalDays + '天' + hours + '小时' + minutes + '分钟' + second + '秒'
+
+}
+
+
+var d = new Date()
+
+</script>

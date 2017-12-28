@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div class="box">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+
+    </div>
+    <input id="ipt" type="text">
+    <button id="btn">添加</button>
+    <div id="wrap"></div>
+    
+    <script>
+    // $('.box>ul>li').on('click', function(){
+    //   var str = $(this).text()
+     //     // var str = this.innerText
+    //   $('#wrap').text(str)
+    // })
+    // $('.box>ul>li').click(function(){
+    //   var str = $(this).text()
+    //   $('#wrap').text(str)
+    // })
+
+    $('.box>ul').on('click', 'li', {name: 'ruoyu'},function(e){
+      console.log(e.data)
+      console.log('haha')
+    })
+
+    $('.box>ul').on('click.hello', 'li', function(){
+      console.log(this)
+      var str = $(this).text()
+      $('#wrap').text(str)
+    })
+    $('#btn').on('click', function(){
+      var value = $('#ipt').val()
+      $('.box>ul').append('<li>'+value+'</li>')
+    })
+
+    $('.box>ul').off('click.hello')
+
+
+    $(document).on('keydown', function(e){
+      if(e.key == 's' &&e.ctrlKey){
+        alert('ctrl + s')
+      }
+      window.hello = e
+    })
+    </script>
+  </body>
+</html>

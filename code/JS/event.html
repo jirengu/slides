@@ -1,0 +1,96 @@
+<!doctype>
+<html>
+  <body>
+    <div class="box">
+      <button>click me</button>
+    </div>
+    
+
+
+    <script>
+      
+      var button = document.querySelector('button')
+      var box = document.querySelector('.box')
+
+      // button.addEventListener('click', function(e){
+      //   console.log(this)
+      //   console.log(this.innerText)
+      //   console.log(e.target)
+      // })
+
+      box.addEventListener('click', function(e){
+        console.log(this)
+        console.log(this.innerText)
+        console.log(e.target)
+      })
+
+      box.attachEvent('onclick', function(evt){
+        console.log(this)
+      })
+
+
+
+      function addEvent(node, type, handler){
+
+      }
+
+      var node = document.getElementsByClassName('.box')[0]
+
+      addEvent(node, 'click', function(e){
+        console.log(e)
+        console.log(this)
+      })
+
+      node['eclickfunction(){xxx}'] = function(e){
+        console.log(e)
+        console.log(this)
+      }
+      node['clickfunction(){xxx}'] = function(){
+        node['eclickfunction(){xxx}'] (window.event)
+      }
+
+
+
+
+
+
+      sum(1, 2, function(e){
+        console.log(e)
+      })
+
+      function sum(a,b, handler){
+        handler(window.event)
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

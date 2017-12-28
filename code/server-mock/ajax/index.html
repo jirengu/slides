@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+  <div class="query-area">
+    <input type="text" name="username">
+    <button>查询</button>  
+  </div>
+  <div class="detail-area">
+    <ul>     
+    </ul>
+
+  </div>
+
+  <script>
+    var btn = document.querySelector('.query-area button')
+    var input = document.querySelector('.query-area input')
+    var detailCt = document.querySelector('.detail-area ul')
+
+    // btn.addEventListener('click', function(){
+    //    var xhr = new XMLHttpRequest()
+    //    xhr.onreadystatechange = function(){
+    //      if(xhr.readyState == 4 && (xhr.status == '200' || xhr.status == '304')){
+    //       var friends = JSON.parse(xhr.responseText)
+    //       var html = render(friends)
+    //       detailCt.innerHTML = html
+    //      }
+    //    }
+
+    //   xhr.open('get', '/friends?username=' + input.value, true)
+    //   xhr.send()
+    // })
+
+
+    btn.addEventListener('click', function(){
+      var xhr = new XMLHttpRequest()
+
+      xhr.open('get', '/a/b/c/d/friends?username=' + input.value, false)
+      xhr.send()
+      var friends = JSON.parse(xhr.responseText)
+      var html = render(friends)
+      detailCt.innerHTML = html     
+    })
+
+
+    function render(friends){
+      var html = ''
+      for(var i = 0; i < friends.length; i++){
+        html += '<li>' + friends[i] + '</li>'
+      }
+      return html
+    }
+  </script>
+  
+</body>
+</html>

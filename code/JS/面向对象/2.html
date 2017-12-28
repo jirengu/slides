@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+      ul,li{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      
+      .tab-ct .header:after{
+        content: '';
+        display: block;
+        clear: both;
+      }
+      .tab-ct .header>li{
+        width: 60px;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #ccc;
+        border-right: none;
+        float: left;
+        text-align: center;
+      }
+      .tab-ct .header>li.active{
+        background: #ccc;
+      }
+      .tab-ct .header>li:last-child{
+        border-right: 1px solid #ccc
+      }
+      .tab-ct .content>li {
+        width: 180px;
+        height: 100px;
+        border: 1px solid #ccc;
+        border-top: none;
+        padding: 10px;
+        display: none;
+      }
+      .tab-ct .content>li.active{
+        display: block; 
+      }
+    </style>
+
+
+  </head>
+  <body>
+    <div class="tab-ct">
+      <ul class="header">
+        <li class="active">tab1</li>
+        <li >tab2</li>
+        <li>tab3</li>
+      </ul>
+      <ul class="content">
+        <li class="active">
+          <ul><li>dddd</li></ul>
+        </li>
+        <li >ct2</li>
+        <li>ct3</li>
+      </ul>
+    </div>
+  
+    <div class="tab-ct">
+      <ul class="header">
+        <li class="active">tab1</li>
+        <li >tab2</li>
+        <li>tab3</li>
+      </ul>
+      <ul class="content">
+        <li class="active">
+          <ul><li>dddd</li></ul>
+        </li>
+        <li >ct2</li>
+        <li>ct3</li>
+      </ul>
+    </div>
+ 
+
+  
+    <div class="tab-ct">
+      <ul class="header">
+        <li class="active">tab1</li>
+        <li >tab2</li>
+        <li>tab3</li>
+      </ul>
+      <ul class="content">
+        <li class="active">
+          <ul><li>dddd</li></ul>
+        </li>
+        <li >ct2</li>
+        <li>ct3</li>
+      </ul>
+    </div>
+ 
+
+    <script>
+    /*
+    var Tab = {
+      init: function(){
+        this.tabs = document.querySelectorAll('.tab-ct .header>li')
+        this.panels = document.querySelectorAll('.tab-ct .content>li')
+        this.tabHeader = document.querySelector('.tab-ct .header')
+
+        this.bind()
+      },
+
+      bind: function(){
+        var self = this
+        this.tabHeader.onclick = function(e){
+          if(e.target.tagName.toLowerCase() === 'li') {
+            self.tabs.forEach(function(node){
+              node.classList.remove('active')
+            })
+            var index = [].indexOf.call(self.tabs, e.target)
+            self.panels.forEach(function(node){
+              node.classList.remove('active')
+            })
+            self.panels[index].classList.add('active')
+          }
+        }
+      }
+
+
+    }
+
+    Tab.init()
+    */
+
+
+    /*
+
+    function Tab(tabNode){
+
+        this.init = function(tabNode){
+          this.tabs = tabNode.querySelectorAll('.tab-ct .header>li')
+          this.panels = tabNode.querySelectorAll('.tab-ct .content>li')
+          this.tabHeader = tabNode.querySelector('.tab-ct .header')     
+        }
+
+        this.render = function(){
+
+        }
+
+        this.bind = function(){
+          var self = this
+          self.tabHeader.onclick = function(e){
+            console.log(this)
+
+            if(e.target.tagName.toLowerCase() === 'li') {
+              self.tabs.forEach(function(node){
+                node.classList.remove('active')
+              })
+              var index = [].indexOf.call(self.tabs, e.target)
+              self.panels.forEach(function(node){
+                node.classList.remove('active')
+              })
+              self.panels[index].classList.add('active')
+            }
+          }
+        }
+
+        this.init(tabNode)
+        this.bind()
+    }
+
+    */
+
+
+    function Tab(tabNode){
+        this.init(tabNode)
+        this.bind()
+    }
+
+    Tab.prototype.init = function(tabNode){
+      this.tabs = tabNode.querySelectorAll('.tab-ct .header>li')
+      this.panels = tabNode.querySelectorAll('.tab-ct .content>li')
+      this.tabHeader = tabNode.querySelector('.tab-ct .header')     
+    }
+
+    Tab.prototype.bind = function(){
+      var self = this
+      this.tabHeader.onclick = function(e){
+        console.log(this)
+
+        if(e.target.tagName.toLowerCase() === 'li') {
+          this.tabs.forEach(function(node){
+            node.classList.remove('active')
+          })
+          var index = [].indexOf.call(this.tabs, e.target)
+          this.panels.forEach(function(node){
+            node.classList.remove('active')
+          })
+          this.panels[index].classList.add('active')
+        }
+      }.bind(this)
+    }
+
+
+
+    var tabNode1 = document.querySelectorAll('.tab-ct')[0]
+    var tabNode2 = document.querySelectorAll('.tab-ct')[1]
+    var tabNode3 = document.querySelectorAll('.tab-ct')[2]
+
+    var tab1 = new Tab(tabNode1)
+    var tab2 = new Tab(tabNode2)
+    var tab3 = new Tab(tabNode3)
+
+
+
+
+
+
+
+
+  
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,227 @@
+/*css reset*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+ol,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* common css*/
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.layout {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* page css */
+
+body {
+    font: 12px/1.3 Arial;
+    background-color: #000;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#header {
+    height: 100%;
+    /*background: url(http://wow.nos.netease.com/1/landing/wow/landing_20160831.jpg) center center no-repeat;
+    background-size: cover;*/
+    overflow: hidden;
+}
+
+.big-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.navbar {
+    margin-top: 40px;
+}
+
+.navbar>li {
+    float: left;
+    height: 70px;
+    width: 160px;
+    border: 1px solid #3f2a22;
+    border-left: none;
+    background-color: #261712;
+}
+
+.navbar>li:first-child {
+    border-left: 1px solid #3f2a22;
+}
+
+.navbar a {
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #f8b408;
+}
+
+.navbar .logo {
+    width: 240px;
+}
+
+.navbar .logo img {
+    position: relative;
+    top: -40px;
+}
+
+#content {
+    background-color: #120d0a;
+    border-top: 2px solid #030500;
+    padding-top: 40px;
+    padding-bottom: 70px;
+}
+
+#content .container {
+    margin-left: -16px;
+}
+
+#content .item {
+    position: relative;
+    float: left;
+    width: 288px;
+    margin-left: 16px;
+}
+
+#content .item a {
+    display: block;
+    transition: all .3s;
+}
+
+#content .item:hover a {
+    transform: translateY(-30px);
+}
+
+#content .item:hover h3 {
+    color: #fff;
+}
+
+#content .item h3 {
+    background-color: #251812;
+    color: #f8b700;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.business {
+    width: 900px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.business .logos {
+    width: 330px;
+    float: left;
+    font-size: 14px;
+}
+
+.business .info {
+    margin-left: 350px;
+}
+
+.business .contact a {
+    color: #fff;
+    margin-right: 20px;
+}
+
+.business .contact .icon {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-image: url(./imgs/icons.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.icon-kefu {
+    background-position: -5px -6px;
+}
+
+.icon-fankui {
+    background-position: -34px -6px;
+}
+
+.icon-join {
+    background-position: -5px -32px;
+}
+
+.business .partners {
+    margin-top: 70px;
+}
+
+.business .partners a {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.business .logo-wangyi {
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.info .info-partner {
+    text-align: right;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.info-partner a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.suggestion {
+    border-top: 1px solid #ccc;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    text-align: center;
+    color: #ccc;
+}

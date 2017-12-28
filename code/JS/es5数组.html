@@ -1,0 +1,49 @@
+<script>
+  
+  var arr = [3,4,5, -2, 5]
+  arr.forEach(function(value, index){
+    console.log(value, index)
+  })
+
+  var isPositive = arr.every(function(value){
+    return value > 0
+  })
+  console.log(isPositive)
+
+  var hasPositive = arr.some(function(value){
+    return value > 0
+  })
+
+  var newArr = arr.map(function(value){
+    return value * value
+  })
+  console.log(newArr)
+
+  var students = [
+    {username: 'ad', age: 20},
+    {username: 'bab', age: 10},
+    {username: 'ccb', age: 23},
+    {username: 'dda', age: 26},
+  ]
+
+  var newStudents = students.filter(function(student){
+    return student.username.indexOf('a') > -1
+  })
+  console.log(newStudents)
+
+  var a = [1,2,3,4,5,6]
+
+  var aa = a.reduce(function(v1, v2){
+    console.log(v1, v2)
+    return v1 + v2
+  })
+
+
+  function sum(a, b, fn){
+    fn(a+b)
+  }
+  sum(1,2, function(value){
+    console.log(value)
+  })
+
+</script>

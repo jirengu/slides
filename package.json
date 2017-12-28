@@ -1,0 +1,22 @@
+{
+  "name": "frontend-knowledge-ppt",
+  "version": "1.0.0",
+  "description": "- [走进前端](www/前端入门-走进前端.html) - [工具安装](www/前端入门-工具安装.html) - [命令行基础](www/前端入门-linux命令行基础.html) - [markdown语法](www/前端入门-markdown语法.html) - [Git的使用](www/前端入门-Git的使用.html) - [从URL输入到页面展现](www/前端入门-从 URL输入到页面展现.html)",
+  "main": "index.js",
+  "dependencies": {
+    "ppt-cli": "^1.2.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "./node_modules/.bin/ppt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrg-team/frontend-knowledge-ppt.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/jrg-team/frontend-knowledge-ppt/issues"
+  },
+  "homepage": "https://github.com/jrg-team/frontend-knowledge-ppt#readme"
+}

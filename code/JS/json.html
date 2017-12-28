@@ -1,0 +1,117 @@
+<script>
+  
+
+
+var o = new Object
+
+var arr = [1,2,3]
+new Array(1,2,3)
+
+
+var obj2 = { name: 'ruoyu', age: 30 , sayName: function (argument) {
+  // body...
+}}
+
+
+var str = '{"name": "ruoyu", "age": 30}'
+var obj = JSON.parse(str)
+console.log(obj.name)
+console.log(JSON.stringify(obj))
+
+
+var obj = {
+  name: "jirengu",
+  "age": 30,
+  "2345": 'hello'
+}
+
+obj.name = 'ruoyu'
+obj.age = 20
+obj['2345']  = 'world'
+
+var people = {
+     "firstName": "John",
+     "lastName": "Smith",
+     "sex": "third",
+     "age": 25,
+     "address": 
+     {
+         "streetAddress": "21 2nd Street",
+         "city": "New York",
+         "state": "NY",
+         "postalCode": "10021"
+     },
+     "phoneNumber": 
+     [
+         {
+           "type": "home",
+           "number": "212 555-1234"
+         },
+         {
+           "type": "fax",
+           "number": "646 555-4567"
+         }
+     ]
+ }
+
+
+for(var key in people){
+  console.log(key, ":", people[key])
+}
+
+
+// 1. 得到一个字符串里出现频率最高的一个字符
+var str = 'hello world , jirengu haha hoho hoho lol'
+var dict = {}
+for(var i = 0; i< str.length; i++){
+  if(dict[str[i]]){
+    ++dict[str[i]]
+  }else{
+    dict[str[i]] = 1
+  }
+}
+console.log(dict)
+var count = 0
+var maxValue
+for(key in dict){
+  if(dict[key] > count){
+    maxValue = key
+    count = dict[key]
+  }
+}
+console.log(count, maxValue)
+
+
+var str = '2017-01-31'
+
+function getChDate(str){
+  var dict = '零,一,二,三,四,五,六,七,八,九,十,十一,十二,十三,十四,十五,十六,十七,十八,十九,二十,二十一,二十二,二十三,二十四,二十五,二十六,二十七,二十八,二十九,三十,三十一'
+  dict = dict.split(',')
+
+  var arr = str.split('-')
+  var yearStr = arr[0]
+  var month = parseInt(arr[1])
+  var date = parseInt(arr[2])
+
+  var chStr = ''
+  for(var i = 0; i < yearStr.length; i++){
+    chStr += dict[yearStr[i]]
+  }
+  chStr += '年' +  dict[month] + '月' + dict[date] + '日'
+
+  return chStr
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

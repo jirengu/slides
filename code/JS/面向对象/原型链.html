@@ -1,0 +1,34 @@
+<script>
+ 
+  function Person(nick, age) {
+    this.nick = nick
+    this.age = age
+  } 
+
+  Person.prototype.sayName = function(){
+    console.log(this.nick)
+  }
+
+  var p1 = new Person('ruoyu', 100)
+
+  var p2 = new Person('hunger', 2)
+
+  p1.sayName()
+  p2.sayName()
+
+
+  p1.__proto__ === Person.prototype
+  p1.__proto__.__proto__ === Person.prototype
+
+
+  Function instanceof  Object
+  Function.__proto__ === Object.prototype
+
+  Function.__proto__ === Function.prototype
+
+  Function.__proto__.__proto__ === Object.prototype
+
+  Function.prototype.__proto__ === Object.prototype
+
+
+</script>

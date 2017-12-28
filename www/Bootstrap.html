@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bootstrap--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/league.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>Bootstrap&#x8BE6;&#x89E3;</h1>
+<p>by &#x82E5;&#x611A;@&#x9965;&#x4EBA;&#x8C37;</p>
+</section><section data-tag="h2"><h2>Bootstrap&#x662F;&#x4EC0;&#x4E48;</h2>
+<blockquote>
+<p>&#x5B83;&#x662F;&#x4E00;&#x4E2A;CSS&#x6846;&#x67B6;&#xFF0C;&#x9002;&#x5408;&#x5F00;&#x53D1;&#x652F;&#x6301;&#x54CD;&#x5E94;&#x5F0F;&#x3001;&#x79FB;&#x52A8;&#x4F18;&#x5148;&#x7684;&#x9879;&#x76EE;</p>
+</blockquote>
+<ol>
+<li><a href="http://getbootstrap.com/">getbootstrap.com</a></li>
+<li><a href="https://www.w3schools.com/bootstrap/">www.w3schools.com/bootstrap</a></li>
+<li><a href="http://www.bootcss.com/">www.bootcss.com</a></li>
+</ol>
+</section><section data-tag="h2"><h2>Bootstrap&#x5305;&#x542B;&#x54EA;&#x4E9B;&#x5185;&#x5BB9;</h2>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/9bb58946-778b-4158-9d0b-49fe31f6a6a6.png" alt=""></p>
+</section><section data-tag="h2"><h2>&#x5982;&#x4F55;&#x4F7F;&#x7528;</h2>
+<ol>
+<li>&#x5F15;&#x5165; bootstrap.css&#x548C;bootstrap.js(&#x5982;&#x679C;&#x9700;&#x8981; bs &#x63D2;&#x4EF6;&#x7684;&#x8BDD;)</li>
+<li>&#x6839;&#x636E;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x6548;&#x679C;&#x5728;&#x6587;&#x6863;&#x91CC;&#x627E;&#x5230;&#x5BF9;&#x5E94; HTML&#xFF0C;&#x62F7;&#x8D1D;&#x3001;&#x7C98;&#x8D34;&#x3001;&#x4FEE;&#x6539;</li>
+<li>&#x52A0;&#x5165;&#x989D;&#x5916;&#x7684;&#x6837;&#x5F0F;</li>
+</ol>
+</section><section data-tag="h2"><h2>&#x505A;&#x4E00;&#x4E2A;&#x4E2A;&#x4EBA;&#x9875;&#x9762;</h2>
+<p><a href="http://js.jirengu.com/teko">&#x5730;&#x5740;</a></p>
+</section><section data-tag="h2"><h2>&#x6E90;&#x7801;&#x89E3;&#x6790;</h2>
+<p><a href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css">&#x6E90;&#x7801;&#x8303;&#x4F8B;</a></p>
+</section><section data-tag="h2"><h2>&#x6805;&#x683C;&#x7CFB;&#x7EDF;&#x7684;&#x5B9E;&#x73B0;</h2>
+<p><a href="http://js.jirengu.com/don/2/edit?html,output">&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</a></p>
+</section><section data-tag="h2"><h2>&#x4F5C;&#x4E1A;</h2>
+<p>&#x5B9E;&#x73B0;<a href="http://js.jirengu.com/miha/1">&#x4F01;&#x4E1A;&#x7AD9;</a></p>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

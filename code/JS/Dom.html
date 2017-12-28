@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <title>饥人谷</title>
+  </head>
+  <body>
+  <div id="ct">
+     <a href="">my link</a>    
+    <h1 class="title">my title</h1> 
+    <p class="title"></p>  
+  </div>
+  <a href="">jirengu</a>
+  <div id="target">
+    
+  </div>
+
+
+
+
+    <script>
+      
+    var ct = document.getElementById('ct')
+    console.log(ct.innerHTML)
+    console.log(ct.innerText)
+
+    var title = document.getElementsByClassName('title')
+    console.log(title)
+
+    document.getElementsByTagName('a')
+
+    document.querySelector('.title')
+
+
+
+    var node  = document.createElement('img')
+    ct.appendChild(node)
+
+    var arr = [1,2,3,4,5,6,7,8,9]
+    var tempCt = document.createDocumentFragment()
+    for(var i = 0; i < arr.length; i++){
+      var node = document.createElement('div')
+      node.innerText = arr[i]
+      tempCt.appendChild(node)
+    }
+    target.appendChild(tempCt)
+
+    var ct = document.querySelector('#ct')
+    document.querySelectorAll('#ct .title')
+    var node = document.createElement('img')
+    node.setAttribute('src', 'http://www.w3school.com.cn/i/ct_htmltree.gif')
+    ct.appendChild(node)
+    node.getAttribute('src')
+    node.removeAtribute('src')
+
+    ct.innerHTML = '<img src="http://www.w3school.com.cn/i/ct_htmltree.gif">'
+    ct.innerText = 'hello'
+
+    node.classList.add('active')
+    node.classList.remove('active')
+    node.classList.contains('active')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+题目1： dom对象的innerText和innerHTML有什么区别？
+题目2： elem.children和elem.childNodes的区别？
+题目3：查询元素有几种常见的方法？ES5的元素选择方法是什么?
+题目4：如何创建一个元素？如何给元素设置属性？如何删除属性
+题目5：如何给页面元素添加子元素？如何删除页面元素下的子元素?
+题目6： element.classList有哪些方法？如何判断一个元素的 class 列表中是包含某个 class？如何添加一个class？如何删除一个class?
+题目7： 如何选中如下代码所有的li元素？ 如何选中btn元素？
+
+<div class="mod-tabs">
+   <ul>
+       <li>list1<li>
+       <li>list2<li>
+       <li>list3<li>
+   </ul>
+   <button class="btn">点我</btn>
+</div>
+*/
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,377 @@
+<script>
+/*
+    var fnArr = [];
+    for (var i = 0; i < 2; i ++) {
+        fnArr[i] =  function(){
+            return i;
+        }
+    }
+    console.log( fnArr[0]() );
+*/
+
+
+/*
+
+
+fnArr[0] = function fn1(){
+  return i
+}
+fnArr[1] = function fn2(){
+  return i
+}
+
+
+
+globalContext = {
+  AO: {
+    i: 2,
+    fnArr: [fn1, fn2]
+  },
+  scope: null
+}
+fn1.[[scope]] == globalContext.AO
+fn2.[[scope]] == globalContext.AO
+
+
+
+fn2Context = {
+  AO: {
+  
+  },
+  scope: fn2.[[scope]] // globalContext.AO
+}
+
+
+*/
+
+
+
+
+//法1
+
+/*
+  var fnArr = [];
+  for (var i = 0; i < 2; i ++) {
+    (function(i){
+      fnArr[i] = function(){
+          return i;
+      }
+    })(i)
+  }
+  console.log( fnArr[1]() ); 
+
+
+
+
+  //改写1
+  var fnArr = [];
+
+  (function(i){
+    fnArr[i] = function(){
+        return i;
+    }
+  })(0)
+  (function(i){
+    fnArr[i] = function(){
+        return i;
+    }
+  })(1)
+  console.log( fnArr[0]() ); 
+
+  //改写2
+*/
+  var fnArr = [];
+  
+  function fn1(i){
+    fnArr[i] = function fn11(){
+        return i;
+    }  
+  }
+
+  function fn2(i){
+    fnArr[i] = function fn22(){
+        return i;
+    }
+  }
+  fn1(0)
+  fn2(1)
+
+  console.log( fnArr[0]() ); 
+
+
+
+  //
+
+  globalContext = {
+    AO: {
+      fnArr: [fn11, fn22],
+      fn1: function
+      fn2: function
+    }
+
+  }
+  fn1.[[scope]] = globalContext.AO
+  fn2.[[scope]] = globalContext.AO
+
+  fn1Context = {
+    AO: {
+      i: 0
+      fn11: function
+    }
+    scope: fn1.[[scope]]
+  }
+  fn11.[[scope]] = fn1Context.AO
+
+  fn2Context = {
+    AO: {
+      i: 1
+      fn22: function
+    }
+    scope: fn2.[[scope]]
+  }
+  fn22.[[scope]] = fn2Context.AO
+
+  fn11Context = {
+    AO: {},
+    scope: fn11.[[scope]]
+  }
+
+
+/*
+
+
+//法3
+
+var fnArr = [];
+for (var i = 0; i < 2; i ++) {
+  fnArr[i] =  (function(i){ 
+    return function(){
+      return i;
+    }
+  })(i);
+}
+console.log( fnArr[0]() ); 
+
+
+
+
+//改进1
+var fnArr = [];
+fnArr[0] =  (function(i){ 
+  return function(){
+    return i;
+  }
+})(0);
+
+fnArr[1] =  (function(i){ 
+  return function(){
+    return i;
+  }
+})(1);
+
+console.log( fnArr[0]() ); 
+
+//改进2
+var fnArr = [];
+
+function fn1(i){
+  return function(){
+    return i;
+  } 
+}
+function fn2(i){
+  return function(){
+    return i;
+  } 
+}
+
+
+fnArr[0] =  fn1(0);
+fnArr[1] =  fn2(1);
+
+console.log( fnArr[0]() ); 
+
+
+//改进3
+var fnArr = [];
+
+function fn1(i){
+  function fn11(){
+    return i
+  }
+  return fn11;
+}
+
+function fn2(i){
+  function fn22(){
+    return i;
+  }
+  return fn22 
+}
+
+
+fnArr[0] =  fn1(0);
+fnArr[1] =  fn2(1);
+console.log( fnArr[0]() ); 
+
+//分析
+
+golbalContext = {
+  AO: {
+    fnArr: [fn11, fn22]
+    i: 2
+    fn1: function
+    fn2: function
+  }
+}
+fn1.[[scope]] = globalContext
+fn2.[[scope]] = globalContext
+
+fn1Context = {
+  AO: {
+    i: 0
+    fn11: function
+  },
+  scope: fn1.[[scope]] // globalContext
+}
+fn11.[[scope]] = fn1Context.AO
+
+fn2Context = {
+  AO: {
+    i: 1
+    fn22: function
+  },
+  scope: fn2.[[scope]] // globalContext
+}
+fn22.[[scope]] = fn2Context.AO
+
+fn11Context = {
+  AO: {
+
+  },
+  scope: fn11.[[scope]] //fn1Context.AO
+}
+
+
+*/
+
+
+function fn(){
+  var s = 1
+  function sum(){
+    ++s
+    console.log(s)
+  }
+   
+  return sum
+}
+
+var mySum = fn()
+mySum()
+mySum()
+mySum()
+
+var mySum2 = fn()
+mySum2()
+mySum2()
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+globalContext = {
+  AO: {
+    fn: function
+    mySum: sum
+    mySum2: undefined
+  }
+}
+fn.[[scope]] = globalContext.AO
+
+//mySum = fn()
+fnContext = {
+  AO: {
+    s: 4,
+    sum: function
+  }
+  scope: fn.[[scope]]
+}
+sum.[[scope]] = fnContext.AO
+
+//mySum()
+sumContext = {
+  AO: {}
+  scope: sum.[[scope]]
+}
+
+//mySum()
+sum_Context = {
+  AO: {}
+  scope: sum.[[scope]]
+}
+//mySum()
+sumContext = {
+  AO: {}
+  scope: sum.[[scope]]
+}
+
+
+//mySum2 = fn()
+fn_Context = {
+  AO: {
+    s: 1,
+    sum: function
+  }
+  scope: fn.[[scope]]
+}
+sum.[[scope]] = fnContext.AO
+
+//mySum2()
+sumContext = {
+  AO: {}
+  scope: sum.[[scope]]
+}
+
+//mySum2()
+sumContext = {
+  AO: {}
+  scope: sum.[[scope]]
+}
+//mySum2()
+sumContext = {
+  AO: {}
+  scope: sum.[[scope]]
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

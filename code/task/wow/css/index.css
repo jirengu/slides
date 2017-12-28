@@ -1,0 +1,134 @@
+/* css reset */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+ol,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* 基本样式 */
+
+.layout {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+body {
+    font: 12px/1.25 "Microsoft YaHei", Helvetica, Tahoma, StSun, "宋体", SimSun, sans-serif;
+    background-color: #000;
+    min-width: 900px;
+}
+
+html,
+body,
+#header,
+.big-video {
+    height: 100%;
+}
+
+#header {
+    overflow: hidden;
+}
+
+.big-video {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.big-video video {
+    height: 100%;
+}
+
+.navbar {
+    margin-top: 45px;
+}
+
+.navbar>li {
+    float: left;
+    position: relative;
+    width: 13.5%;
+    border-top: 1px solid #3f2a22;
+    border-right: 1px solid #3f2a22;
+    border-bottom: 1px solid #3f2a22;
+}
+
+.navbar>li.logo {
+    width: 19%;
+}
+
+.navbar li a {
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    color: #f8b700;
+    background-color: #31211a;
+    text-align: center;
+}
+
+.navbar>li:first-child {
+    border-left: 1px solid #3f2a22;
+}
+
+.navbar .sub-nav li {
+    border-left: 1px solid #3f2a22;
+    border-right: 1px solid #3f2a22;
+    border-bottom: 1px solid #3f2a22;
+}
+
+.navbar .sub-nav li:first-child {
+    border-top: 1px solid #3f2a22;
+}
+
+.navbar li a:hover {
+    color: #fff;
+}
+
+.navbar .sub-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+.navbar>li:hover .sub-nav {
+    display: block;
+}
+
+.navbar .logo a {
+    display: block;
+    background: url(../imgs/logo.png) center center no-repeat;
+}

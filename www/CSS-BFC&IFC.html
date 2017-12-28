@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS-BFC&amp;IFC--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/jirengu.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-left">
+			<section data-tag="h1"><h1>BFC</h1>
+<p>&#x8BB2;&#x89E3;&#x4E86; BFC&#x3001;IFC &#x76F8;&#x5173;&#x6982;&#x5FF5;&#x548C;&#x4F5C;&#x7528;</p>
+</section><section data-tag="h2"><h2>&#x89C6;&#x89C9;&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x578B;(visual formatting model)</h2>
+<p>&#x89C4;&#x5B9A;&#x4E86;&#x6D4F;&#x89C8;&#x5668;&#x5982;&#x4F55;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7ED8;&#x5236;&#x5143;&#x7D20;&#x3002;&#x5728;&#x89C6;&#x89C9;&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x578B;&#x4E2D;,&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x6839;&#x636E;&#x76D2;&#x6A21;&#x578B;&#x521B;&#x5EFA;&#x96F6;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x76D2;&#x5B50;&#xFF0C;&#x76D2;&#x5B50;&#x7684;&#x5E03;&#x5C40;&#x7531;&#x4EE5;&#x4E0B;&#x56E0;&#x7D20;&#x51B3;&#x5B9A;&#xFF1A;</p>
+<ol>
+<li>&#x76D2;&#x5B50;&#x7684;&#x5C3A;&#x5BF8;&#x548C;<strong>&#x7C7B;&#x578B;</strong></li>
+<li>&#x5B9A;&#x4F4D;&#x673A;&#x5236;(normal flow, float, ansolute positionging)</li>
+<li>&#x5143;&#x7D20;&#x5728;&#x6587;&#x6863;&#x6811;&#x4E2D;&#x7684;&#x5173;&#x7CFB;</li>
+<li>&#x5176;&#x5B83;&#x56E0;&#x7D20;(viewport size, &#x56FE;&#x7247;&#x7684;&#x672C;&#x8EAB;&#x7684;&#x5C3A;&#x5BF8;&#x7B49;)</li>
+</ol>
+</section><section data-tag="h2"><h2>&#x5305;&#x542B;&#x5757;(Containing blocks)</h2>
+<p>&#x5305;&#x542B;&#x5757;&#x662F;&#x76F8;&#x5BF9;&#x6982;&#x5FF5;(&#x76F8;&#x5BF9;&#x4E8E;&#x5B83;&#x7684;&#x540E;&#x4EE3;)&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8BF4;&#x201D;&#x4E00;&#x4E2A;&#x76D2;&#x5B50;&#x7684;&#x5305;&#x542B;&#x5757;&#x201C;&#x662F;&#x6307;&#x8FD9;&#x4E2A;&#x76D2;&#x5B50;&#x6240;&#x5728;&#x7684;&#x5757;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8FD9;&#x4E2A;&#x76D2;&#x5B50;&#x672C;&#x8EAB;&#x521B;&#x5EFA;&#x7684;&#x5757;</p>
+<p>&#x6BCF;&#x4E2A;&#x76D2;&#x5B50;&#x90FD;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x4E8E;&#x5B83;&#x5305;&#x542B;&#x5757;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x53D7;&#x9650;&#x4E8E;&#x5B83;&#x7684;&#x5305;&#x542B;&#x5757;&#xFF0C;&#x6BD4;&#x5982;&#x5B83;&#x53EF;&#x80FD;&#x4F1A;&#x6EA2;&#x51FA;</p>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x5757;&#x7EA7;&#x5143;&#x7D20;(Block-level elements)&#x548C;&#x5757;&#x76D2;(Block boxes)</h2>
+<p>&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x662F;&#x90A3;&#x4E9B;&#x88AB;&#x89C6;&#x89C9;&#x4E0A;&#x5C55;&#x73B0;&#x4E3A;&#x5757;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x6BD4;&#x5982; display &#x9ED8;&#x8BA4;&#x4E3A; <code>block</code>&#x3001;<code>list-item</code>&#x3001;<code>table</code>&#x7684;&#x5143;&#x7D20;</p>
+<p>&#x6BCF;&#x4E00;&#x4E2A;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4E3B;<strong>&#x5757;&#x7EA7;&#x76D2;</strong>(principal block-level box),&#x5B83;&#x5305;&#x542B;&#x540E;&#x4EE3;&#x76D2;&#x4EE5;&#x53CA;&#x4EA7;&#x751F;&#x7684;&#x5185;&#x5BB9;</p>
+<p>&#x9664;&#x4E86; table &#x76D2;&#x4EE5;&#x53CA;&#x53EF;&#x66FF;&#x6362;&#x5143;&#x7D20;(replaced elements, &#x5982;img, object, video, canvas&#x7B49;)&#xFF0C;&#x4E00;&#x4E2A;<strong>&#x5757;&#x7EA7;&#x76D2;</strong>&#x4E5F;&#x662F;&#x4E00;&#x4E2A;<strong>&#x5757;&#x5BB9;&#x5668;&#x76D2;</strong>(block container box)&#x3002;&#x5757;&#x5BB9;&#x5668;&#x76D2;&#x8981;&#x4E48;&#x53EA;&#x5305;&#x542B;&#x5757;&#x7EA7;&#x76D2;&#x5B50;&#xFF0C;&#x8981;&#x4E48;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x53EA;&#x5305;&#x542B;&#x5185;&#x8054;&#x76D2;&#x5B50;&#x7684;<strong>&#x5185;&#x8054;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;</strong>(inline formatting content)</p>
+<p>&#x4E0D;&#x4E00;&#x5B9A;&#x6240;&#x6709;&#x7684;&#x5757;&#x5BB9;&#x5668;&#x76D2;&#x90FD;&#x662F;&#x5757;&#x7EA7;&#x76D2;&#xFF0C;&#x6BD4;&#x5982;&#x975E;&#x53EF;&#x66FF;&#x6362;&#x5185;&#x8054;&#x5757;(no-replaced inline blocks&#xFF0C;&#x5982;a)&#x4E5F;&#x662F;&#x5757;&#x5BB9;&#x5668;&#x76D2;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x5757;&#x7EA7;&#x76D2;&#x5B50;</p>
+<p>&#x5373;&#x662F;&#x5757;&#x7EA7;&#x76D2;&#x5B50;&#xFF0C;&#x53C8;&#x662F;&#x5757;&#x5BB9;&#x5668;&#x76D2;&#x7684;&#x53EB;&#x505A;<em>&#x5757;&#x76D2;</em>(block boxes)</p>
+</section><section data-tag="h3"><h3>&#x533F;&#x540D;&#x5757;&#x76D2;</h3>
+<pre><code>&lt;div&gt;
+   hello
+   &lt;p&gt;wolrd&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>hello</p>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x884C;&#x7EA7;&#x5143;&#x7D20;(inline-level elements)&#x548C;&#x884C;&#x76D2;(inline boxes)</h2>
+<p>&#x884C;&#x7EA7;&#x5143;&#x7D20;&#x662F;&#x6307;&#x90A3;&#x4E9B;&#x5185;&#x5BB9;&#x5206;&#x5E03;&#x5728;&#x4E00;&#x884C;&#x7684;&#x5143;&#x7D20;&#x3002;&#x6BD4;&#x5982; display &#x9ED8;&#x8BA4;&#x4E3A;: <code>inline</code>&#x3001;<code>inline-table</code>&#x3001;<code>inline-block</code>&#x3002;&#x884C;&#x7EA7;&#x5143;&#x7D20;&#x521B;&#x5EFA;&#x884C;&#x7EA7;&#x76D2;&#x5B50;&#xFF0C;&#x53C2;&#x4E0E;&#x5185;&#x8054;&#x683C;&#x5F0F;&#x4E0A;&#x4E0B;&#x6587;&#xFF08;inline formatting content, IFC&#xFF09;</p>
+<p>&#x884C;&#x76D2;&#x662F;&#x6307;&#x90A3;&#x4E9B;&#x65E2;&#x662F;&#x884C;&#x7EA7;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x7684;&#x5185;&#x5BB9;&#x53C2;&#x4E0E;&#x5305;&#x542B;&#x5B83;&#x7684;&#x5185;&#x8054;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x5143;&#x7D20;&#x3002;display: inline &#x7684;&#x975E;&#x66FF;&#x6362;&#x5143;&#x7D20;(&#x5982;a, span)&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x884C;&#x76D2;.</p>
+<p>&#x4E00;&#x4E9B;&#x884C;&#x7EA7;&#x76D2;&#x5B50;&#x4E0D;&#x662F;&#x884C;&#x76D2;&#xFF08;&#x4F8B;&#x5982;&#x66FF;&#x6362;&#x7684;&#x884C;&#x7EA7;&#x5143;&#x7D20;&#xFF0C;inline-block&#x5143;&#x7D20;&#x548C; inline-table&#x5143;&#x7D20;&#xFF09;&#x79F0;&#x4E3A;&#x539F;&#x5B50;&#x884C;&#x7EA7;&#x76D2;&#x5B50;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x4F5C;&#x4E3A;&#x5355;&#x4E2A;&#x4E0D;&#x900F;&#x660E;&#x7684;&#x6846;&#x53C2;&#x4E0E;&#x5176;&#x5185;&#x8054;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#x3002;</p>
+</section><section data-tag="h3"><h3>&#x533F;&#x540D;&#x884C;&#x76D2;</h3>
+<p>&#x76F4;&#x63A5;&#x5305;&#x542B;&#x5728;&#x5757;&#x5BB9;&#x5668;&#x5143;&#x7D20;&#xFF08;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x5728;&#x5185;&#x8054;&#x5143;&#x7D20;&#x91CC;&#xFF09;&#x91CC;&#x7684;&#x6587;&#x672C;&#x88AB;&#x5F53;&#x6210;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x5185;&#x8054;&#x5143;&#x7D20;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x884C;&#x76D2;</p>
+</section></section><section data-tag="h2"><h2>&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;( Formatting contexts)</h2>
+<p>&#x6BCF;&#x4E2A;&#x6E32;&#x67D3;&#x533A;&#x57DF;&#x7528;formatting context&#x8868;&#x793A;&#xFF0C;&#x5B83;&#x51B3;&#x5B9A;&#x4E86;&#x5176;&#x5B50;&#x5143;&#x7D20;&#x5C06;&#x5982;&#x4F55;&#x5B9A;&#x4F4D;&#xFF0C;&#x4EE5;&#x53CA;&#x548C;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x7684;&#x5173;&#x7CFB;&#x548C;&#x76F8;&#x4E92;&#x4F5C;&#x7528;</p>
+<p>&#x5728;&#x6B63;&#x5E38;&#x6D41;&#x4E2D;&#x7684;&#x76D2;&#x5B50;&#x8981;&#x4E48;&#x5C5E;&#x4E8E;&#x5757;&#x7EA7;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x8981;&#x4E48;&#x5C5E;&#x4E8E;&#x5185;&#x8054;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;</p>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x5757;&#x7EA7;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;(Block formatting contexts)</h2>
+<p>&#x54EA;&#x4E9B;&#x5143;&#x7D20;&#x751F;&#x6210; BFC</p>
+<ol>
+<li>&#x6839;&#x5143;&#x7D20;&#xFF1B;</li>
+<li>float&#x5C5E;&#x6027;&#x4E0D;&#x4E3A;none&#xFF1B;</li>
+<li>position&#x4E3A;absolute&#x6216;fixed&#xFF1B;</li>
+<li>display&#x4E3A;inline-block, flex, &#x6216;&#x8005;inline-flex&#xFF1B;</li>
+<li>overflow&#x4E0D;&#x4E3A;visible&#xFF1B;</li>
+</ol>
+</section><section data-tag="h3"><h3>&#x7279;&#x6027;</h3>
+<ul>
+<li>&#x5185;&#x90E8;&#x7684;Box&#x4F1A;&#x5728;&#x5782;&#x76F4;&#x65B9;&#x5411;&#xFF0C;&#x4E00;&#x4E2A;&#x63A5;&#x4E00;&#x4E2A;&#x5730;&#x653E;&#x7F6E;&#x3002;</li>
+<li>Box&#x5782;&#x76F4;&#x65B9;&#x5411;&#x7684;&#x8DDD;&#x79BB;&#x7531;margin&#x51B3;&#x5B9A;&#x3002;&#x5C5E;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;BFC&#x7684;&#x4E24;&#x4E2A;&#x76F8;&#x90BB;Box&#x7684;margin&#x4F1A;&#x53D1;&#x751F;&#x91CD;&#x53E0;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7684;margin box&#x7684;&#x5DE6;&#x8FB9;&#xFF0C;&#x4E0E;&#x5305;&#x542B;&#x5757;border box&#x7684;&#x5DE6;&#x8FB9;&#x76F8;&#x63A5;&#x89E6;(&#x5BF9;&#x4E8E;&#x4ECE;&#x5DE6;&#x5F80;&#x53F3;&#x7684;&#x683C;&#x5F0F;&#x5316;&#xFF0C;&#x5426;&#x5219;&#x76F8;&#x53CD;)&#x3002;&#x5373;&#x4F7F;&#x5B58;&#x5728;&#x6D6E;&#x52A8;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x3002;</li>
+<li>BFC&#x7684;&#x533A;&#x57DF;&#x4E0D;&#x4F1A;&#x4E0E;float box&#x91CD;&#x53E0;&#x3002;</li>
+<li>BFC&#x5C31;&#x662F;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x9694;&#x79BB;&#x7684;&#x72EC;&#x7ACB;&#x5BB9;&#x5668;&#xFF0C;&#x5BB9;&#x5668;&#x91CC;&#x9762;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x5916;&#x9762;&#x7684;&#x5143;&#x7D20;&#x3002;&#x53CD;&#x4E4B;&#x4E5F;&#x5982;&#x6B64;&#x3002;</li>
+<li>&#x8BA1;&#x7B97;BFC&#x7684;&#x9AD8;&#x5EA6;&#x65F6;&#xFF0C;&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x4E5F;&#x53C2;&#x4E0E;&#x8BA1;&#x7B97;&#x3002;</li>
+</ul>
+</section><section data-tag="h3"><h3>&#x4F5C;&#x7528;</h3>
+<ol>
+<li>margin &#x5408;&#x5E76;</li>
+<li>contain float</li>
+</ol>
+</section></section><section data-tag="h2"><h2>&#x5185;&#x8054;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;(Inline formatting contexts)</h2>
+<p>IFC&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x5E03;&#x5C40;&#x89C4;&#x5219;</p>
+<p>&#x5757;&#x5BB9;&#x5668;&#x76D2;&#x91CC;&#x9762;&#x53EA;&#x6709;&#x884C;&#x7EA7;&#x5143;&#x7D20;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x81EA;&#x52A8;&#x751F;&#x6210; IFC</p>
+</section><section data-tag="h2"><h2>&#x53C2;&#x8003;</h2>
+<ol>
+<li>https://www.w3.org/TR/CSS21/visuren.html#block-boxes</li>
+<li>http://www.cnblogs.com/Candybunny/p/6222939.html</li>
+</ol>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

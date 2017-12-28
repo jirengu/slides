@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS-CSS选择器--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/league.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>CSS&#x9009;&#x62E9;&#x5668;</h1>
+<p>by &#x82E5;&#x611A;@&#x9965;&#x4EBA;&#x8C37;</p>
+</section><section data-tag="h2"><h2>&#x9009;&#x62E9;&#x5668;&#x7C7B;&#x578B;</h2>
+<ol>
+<li>&#x57FA;&#x7840;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x7EC4;&#x5408;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x4F2A;&#x7C7B;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x4F2A;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;</li>
+</ol>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x57FA;&#x7840;&#x9009;&#x62E9;&#x5668;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9009;&#x62E9;&#x5668;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">&#x901A;&#x7528;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5339;&#x914D;&#x9875;&#x9762;&#x4EFB;&#x4F55;&#x5143;&#x7D20;&#xFF08;&#x8FD9;&#x4E5F;&#x5C31;&#x51B3;&#x5B9A;&#x4E86;&#x6211;&#x4EEC;&#x5F88;&#x5C11;&#x4F7F;&#x7528;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">#id</td>
+<td style="text-align:left">id&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5339;&#x914D;&#x7279;&#x5B9A;id&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td style="text-align:left">.class</td>
+<td style="text-align:left">&#x7C7B;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5339;&#x914D;class<strong>&#x5305;&#x542B;</strong>(&#x4E0D;&#x662F;&#x7B49;&#x4E8E;)&#x7279;&#x5B9A;&#x7C7B;&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td style="text-align:left">element</td>
+<td style="text-align:left">&#x6807;&#x7B7E;&#x9009;&#x62E9;&#x5668;</td>
+</tr>
+</tbody>
+</table>
+</section><section data-tag="h3"><h3>&#x8303;&#x4F8B;</h3>
+<pre><code>  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #id-selector{
+    color: #333;
+  }
+
+  .class-selector{
+    background: #ccc;
+  }
+
+  p {
+    font-size: 20px;
+  }
+</code></pre>
+</section></section><section data-tag="h2"><h2>&#x7EC4;&#x5408;&#x9009;&#x62E9;&#x5668;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9009;&#x62E9;&#x5668;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">E,F</td>
+<td style="text-align:left">&#x591A;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x7528;<code>,</code>&#x5206;&#x9694;&#xFF0C;&#x540C;&#x65F6;&#x5339;&#x914D;&#x5143;&#x7D20;E&#x6216;&#x5143;&#x7D20;F</td>
+</tr>
+<tr>
+<td style="text-align:left">E F</td>
+<td style="text-align:left">&#x540E;&#x4EE3;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x7528;&#x7A7A;&#x683C;&#x5206;&#x9694;&#xFF0C;&#x5339;&#x914D;E&#x5143;&#x7D20;&#x6240;&#x6709;&#x7684;<strong>&#x540E;&#x4EE3;</strong>&#xFF08;&#x4E0D;&#x53EA;&#x662F;&#x5B50;&#x5143;&#x7D20;&#x3001;&#x5B50;&#x5143;&#x7D20;&#x5411;&#x4E0B;&#x9012;&#x5F52;&#xFF09;&#x5143;&#x7D20;F</td>
+</tr>
+<tr>
+<td style="text-align:left">E&gt;F</td>
+<td style="text-align:left">&#x5B50;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x7528;<code>&gt;</code>&#x5206;&#x9694;&#xFF0C;&#x5339;&#x914D;E&#x5143;&#x7D20;&#x7684;&#x6240;&#x6709;<strong>&#x76F4;&#x63A5;&#x5B50;&#x5143;&#x7D20;</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">E+F</td>
+<td style="text-align:left">&#x76F4;&#x63A5;&#x76F8;&#x90BB;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5339;&#x914D;E&#x5143;&#x7D20;&#x4E4B;&#x540E;&#x7684;&#x76F8;&#x90BB;&#x7684;&#x540C;&#x7EA7;&#x5143;&#x7D20;F</td>
+</tr>
+<tr>
+<td style="text-align:left">E~F</td>
+<td style="text-align:left">&#x666E;&#x901A;&#x76F8;&#x90BB;&#x9009;&#x62E9;&#x5668;&#xFF08;&#x5F1F;&#x5F1F;&#x9009;&#x62E9;&#x5668;&#xFF09;&#xFF0C;&#x5339;&#x914D;E&#x5143;&#x7D20;&#x4E4B;&#x540E;&#x7684;&#x540C;&#x7EA7;&#x5143;&#x7D20;F&#xFF08;&#x65E0;&#x8BBA;&#x76F4;&#x63A5;&#x76F8;&#x90BB;&#x4E0E;&#x5426;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">.class1.class2</td>
+<td style="text-align:left">id&#x548C;class&#x9009;&#x62E9;&#x5668;&#x548C;&#x9009;&#x62E9;&#x5668;&#x8FDE;&#x5199;&#x7684;&#x65F6;&#x5019;&#x4E2D;&#x95F4;&#x6CA1;&#x6709;&#x5206;&#x9694;&#x7B26;&#xFF0C;<code>.</code> &#x548C; <code>#</code> &#x672C;&#x8EAB;&#x5145;&#x5F53;&#x5206;&#x9694;&#x7B26;&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td style="text-align:left">element#id</td>
+<td style="text-align:left">id&#x548C;class&#x9009;&#x62E9;&#x5668;&#x548C;&#x9009;&#x62E9;&#x5668;&#x8FDE;&#x5199;&#x7684;&#x65F6;&#x5019;&#x4E2D;&#x95F4;&#x6CA1;&#x6709;&#x5206;&#x9694;&#x7B26;&#xFF0C;<code>.</code> &#x548C; <code>#</code> &#x672C;&#x8EAB;&#x5145;&#x5F53;&#x5206;&#x9694;&#x7B26;&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+</tbody>
+</table>
+</section><section data-tag="h2"><h2>&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x9009;&#x62E9;&#x5668;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E[attr]</td>
+<td>&#x5339;&#x914D;&#x6240;&#x6709;&#x5177;&#x6709;&#x5C5E;&#x6027;attr&#x7684;&#x5143;&#x7D20;&#xFF0C;div[id]&#x5C31;&#x80FD;&#x53D6;&#x5230;&#x6240;&#x6709;&#x6709;id&#x5C5E;&#x6027;&#x7684;div</td>
+</tr>
+<tr>
+<td>E[attr = value]</td>
+<td>&#x5339;&#x914D;&#x5C5E;&#x6027;attr&#x503C;&#x4E3A;value&#x7684;&#x5143;&#x7D20;&#xFF0C;div[id=test],&#x5339;&#x914D;id=test&#x7684;div</td>
+</tr>
+<tr>
+<td>E[attr ~= value]</td>
+<td>&#x5339;&#x914D;&#x6240;&#x6709;&#x5C5E;&#x6027;attr&#x5177;&#x6709;&#x591A;&#x4E2A;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x3001;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x503C;&#x7B49;&#x4E8E;value&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E[attr ^= value]</td>
+<td>&#x5339;&#x914D;&#x5C5E;&#x6027;attr&#x7684;&#x503C;&#x4EE5;value<strong>&#x5F00;&#x5934;</strong>&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E[attr $= value]</td>
+<td>&#x5339;&#x914D;&#x5C5E;&#x6027;attr&#x7684;&#x503C;&#x4EE5;value<strong>&#x7ED3;&#x5C3E;</strong>&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E[attr *= value]</td>
+<td>&#x5339;&#x914D;&#x5C5E;&#x6027;attr&#x7684;&#x503C;<strong>&#x5305;&#x542B;</strong>value&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+</tbody>
+</table>
+</section><section data-tag="h2"><h2>&#x4F2A;&#x7C7B;&#x9009;&#x62E9;&#x5668;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x9009;&#x62E9;&#x5668;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E:first-child</td>
+<td>&#x5339;&#x914D;&#x4F5C;&#x4E3A;&#x957F;&#x5B50;&#xFF08;&#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x5973;&#xFF09;&#x7684;&#x5143;&#x7D20;E</td>
+</tr>
+<tr>
+<td>E:link</td>
+<td>&#x5339;&#x914D;&#x6240;&#x6709;&#x672A;&#x88AB;&#x70B9;&#x51FB;&#x7684;&#x94FE;&#x63A5;</td>
+</tr>
+<tr>
+<td>E:visited</td>
+<td>&#x5339;&#x914D;&#x6240;&#x6709;&#x5DF2;&#x88AB;&#x70B9;&#x51FB;&#x7684;&#x94FE;&#x63A5;</td>
+</tr>
+<tr>
+<td>E:active</td>
+<td>&#x5339;&#x914D;&#x9F20;&#x6807;&#x5DF2;&#x7ECF;&#x5176;&#x4E0A;&#x6309;&#x4E0B;&#x3001;&#x8FD8;&#x6CA1;&#x6709;&#x91CA;&#x653E;&#x7684;E&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E:hover</td>
+<td>&#x5339;&#x914D;&#x9F20;&#x6807;&#x60AC;&#x505C;&#x5176;&#x4E0A;&#x7684;E&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E:focus</td>
+<td>&#x5339;&#x914D;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7126;&#x70B9;&#x7684;E&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E:lang(c)</td>
+<td>&#x5339;&#x914D;lang&#x5C5E;&#x6027;&#x7B49;&#x4E8E;c&#x7684;E&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E:enabled</td>
+<td>&#x5339;&#x914D;&#x8868;&#x5355;&#x4E2D;&#x53EF;&#x7528;&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E:disabled</td>
+<td>&#x5339;&#x914D;&#x8868;&#x5355;&#x4E2D;&#x7981;&#x7528;&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E:checked</td>
+<td>&#x5339;&#x914D;&#x8868;&#x5355;&#x4E2D;&#x88AB;&#x9009;&#x4E2D;&#x7684;radio&#x6216;checkbox&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E::selection</td>
+<td>&#x5339;&#x914D;&#x7528;&#x6237;&#x5F53;&#x524D;&#x9009;&#x4E2D;&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6240;&#x6709;&#x9009;&#x62E9;&#x5668;&#x5217;&#x8868;&#x5728; <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference#%E9%80%89%E6%8B%A9%E5%99%A8">MDN</a></p>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x4F2A;&#x7C7B;&#x9009;&#x62E9;&#x5668;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x9009;&#x62E9;&#x5668;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E:root</td>
+<td>&#x5339;&#x914D;&#x6587;&#x6863;&#x7684;&#x6839;&#x5143;&#x7D20;&#xFF0C;&#x5BF9;&#x4E8E;HTML&#x6587;&#x6863;&#xFF0C;&#x5C31;&#x662F;HTML&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E:nth-child(n)</td>
+<td>&#x5339;&#x914D;&#x5176;&#x7236;&#x5143;&#x7D20;&#x7684;&#x7B2C;n&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x7F16;&#x53F7;&#x4E3A;1</td>
+</tr>
+<tr>
+<td>E:nth-last-child(n)</td>
+<td>&#x5339;&#x914D;&#x5176;&#x7236;&#x5143;&#x7D20;&#x7684;&#x5012;&#x6570;&#x7B2C;n&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x7F16;&#x53F7;&#x4E3A;1</td>
+</tr>
+<tr>
+<td>E:nth-of-type(n)</td>
+<td>&#x4E0E;:nth-child()&#x4F5C;&#x7528;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x4EC5;&#x5339;&#x914D;&#x4F7F;&#x7528;&#x540C;&#x79CD;&#x6807;&#x7B7E;&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E:nth-last-of-type(n)</td>
+<td>&#x4E0E;:nth-last-child() &#x4F5C;&#x7528;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x4EC5;&#x5339;&#x914D;&#x4F7F;&#x7528;&#x540C;&#x79CD;&#x6807;&#x7B7E;&#x7684;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E:last-child</td>
+<td>&#x5339;&#x914D;&#x7236;&#x5143;&#x7D20;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;:nth-last-child(1)</td>
+</tr>
+<tr>
+<td>E:first-of-type</td>
+<td>&#x5339;&#x914D;&#x7236;&#x5143;&#x7D20;&#x4E0B;&#x4F7F;&#x7528;&#x540C;&#x79CD;&#x6807;&#x7B7E;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;:nth-of-type(1)</td>
+</tr>
+<tr>
+<td>E:last-of-type</td>
+<td>&#x5339;&#x914D;&#x7236;&#x5143;&#x7D20;&#x4E0B;&#x4F7F;&#x7528;&#x540C;&#x79CD;&#x6807;&#x7B7E;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;:nth-last-of-type(1)</td>
+</tr>
+<tr>
+<td>E:only-child</td>
+<td>&#x5339;&#x914D;&#x7236;&#x5143;&#x7D20;&#x4E0B;&#x4EC5;&#x6709;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;:first-child:last-child&#x6216; :nth-child(1):nth-last-child(1)</td>
+</tr>
+<tr>
+<td>E:only-of-type</td>
+<td>&#x5339;&#x914D;&#x7236;&#x5143;&#x7D20;&#x4E0B;&#x4F7F;&#x7528;&#x540C;&#x79CD;&#x6807;&#x7B7E;&#x7684;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;:first-of-type:last-of-type&#x6216; :nth-of-type(1):nth-last-of-type(1)</td>
+</tr>
+<tr>
+<td>E:empty</td>
+<td>&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x6587;&#x672C;&#x8282;&#x70B9;&#x4E5F;&#x88AB;&#x770B;&#x4F5C;&#x5B50;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>E:not(selector)</td>
+<td>&#x5339;&#x914D;&#x4E0D;&#x7B26;&#x5408;&#x5F53;&#x524D;&#x9009;&#x62E9;&#x5668;&#x7684;&#x4EFB;&#x4F55;&#x5143;&#x7D20;</td>
+</tr>
+</tbody>
+</table>
+</section><section data-tag="h3"><h3>n&#x7684;&#x53D6;&#x503C;</h3>
+<ul>
+<li>1&#xFF0C;2&#xFF0C;3&#xFF0C;4&#xFF0C;5</li>
+<li>2n+1, 2n, 4n-1</li>
+<li>odd, even</li>
+</ul>
+</section></section><section data-tag="h2"><h2>&#x4F2A;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x9009;&#x62E9;&#x5668;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E::first-line</td>
+<td>&#x5339;&#x914D;E&#x5143;&#x7D20;&#x5185;&#x5BB9;&#x7684;&#x7B2C;&#x4E00;&#x884C;</td>
+</tr>
+<tr>
+<td>E::first-letter</td>
+<td>&#x5339;&#x914D;E&#x5143;&#x7D20;&#x5185;&#x5BB9;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;</td>
+</tr>
+<tr>
+<td>E::before</td>
+<td>&#x5728;E&#x5143;&#x7D20;&#x4E4B;&#x524D;&#x63D2;&#x5165;&#x751F;&#x6210;&#x7684;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td>E::after</td>
+<td>&#x5728;E&#x5143;&#x7D20;&#x4E4B;&#x540E;&#x63D2;&#x5165;&#x751F;&#x6210;&#x7684;&#x5185;&#x5BB9;</td>
+</tr>
+</tbody>
+</table>
+</section><section data-tag="h2"><h2>&#x9009;&#x62E9;&#x5668;&#x4F18;&#x5148;&#x7EA7;</h2>
+<p>&#x5982;&#x679C;&#x591A;&#x6761;&#x89C4;&#x5219;&#x4F5C;&#x7528;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E0A;&#xFF0C;&#x4E14;&#x5B9A;&#x4E49;&#x7684;&#x76F8;&#x540C;&#x5C5E;&#x6027;&#x7684;&#x4E0D;&#x540C;&#x503C;&#xFF0C;&#x6BD4;&#x5982;</p>
+<pre><code>  &lt;style&gt;
+    #test {color: #666;}
+    p {color: #333;}
+  &lt;/style&gt;
+
+  &lt;p id=&quot;text&quot;&gt;Text&lt;/p&gt;
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x4E0B;&#xFF0C;<code>p</code>&#x5143;&#x7D20;&#x6587;&#x672C;&#x989C;&#x8272;&#x5E94;&#x8BE5;&#x662F;&#x54EA;&#x4E2A;&#x5462;&#xFF1F;</p>
+</section><section data-tag="down"><section data-tag="h2"><h2>CSS&#x4F18;&#x5148;&#x7EA7;</h2>
+<p><strong>&#x4ECE;&#x9AD8;&#x5230;&#x4F4E;&#x5206;&#x522B;&#x662F;</strong></p>
+<ol>
+<li>&#x5728;&#x5C5E;&#x6027;&#x540E;&#x9762;&#x4F7F;&#x7528; <code>!important</code> &#x4F1A;&#x8986;&#x76D6;&#x9875;&#x9762;&#x5185;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x5B9A;&#x4E49;&#x7684;&#x5143;&#x7D20;&#x6837;&#x5F0F;</li>
+<li>&#x4F5C;&#x4E3A;style&#x5C5E;&#x6027;&#x5199;&#x5728;&#x5143;&#x7D20;&#x6807;&#x7B7E;&#x4E0A;&#x7684;&#x5185;&#x8054;&#x6837;&#x5F0F;</li>
+<li>id&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x7C7B;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x4F2A;&#x7C7B;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x6807;&#x7B7E;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x901A;&#x914D;&#x7B26;&#x9009;&#x62E9;&#x5668;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x81EA;&#x5B9A;&#x4E49;</li>
+</ol>
+</section><section data-tag="h3"><h3>&#x590D;&#x6742;&#x573A;&#x666F;</h3>
+<pre><code>  #test p.class1 {...}
+  #test .class1.class2 {...}
+</code></pre>
+<ul>
+<li>&#x884C;&#x5185;&#x6837;&#x5F0F; <code>&lt;div style=&quot;xxx&quot;&gt;&lt;/div&gt;</code> ==&gt; a</li>
+<li>ID &#x9009;&#x62E9;&#x5668;  ==&gt; b</li>
+<li>&#x7C7B;&#xFF0C;&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;&#x548C;&#x4F2A;&#x7C7B;&#x9009;&#x62E9;&#x5668; ==&gt; c</li>
+<li>&#x6807;&#x7B7E;&#x9009;&#x62E9;&#x5668;&#x3001;&#x4F2A;&#x5143;&#x7D20; ==&gt; d</li>
+</ul>
+</section><section data-tag="h3"><h3>&#x5C0F;&#x6D4B;&#x8BD5;</h3>
+<pre><code>*             {}  /* a=0 b=0 c=0 d=0 -&gt; 0,0,0,0 */
+p             {}  /* a=0 b=0 c=0 d=1 -&gt; 0,0,0,1 */
+a:hover       {}  /* a=0 b=0 c=0 d=2 -&gt; 0,0,0,2 */
+ul li         {}  /* a=0 b=0 c=0 d=2 -&gt; 0,0,0,2 */
+ul ol+li      {}  /* a=0 b=0 c=0 d=3 -&gt; 0,0,0,3 */
+h1+input[type=hidden]{}  /* a=0 b=0 c=1 d=2 -&gt; 0,0,1,1 */
+ul ol li.active   {}  /* a=0 b=0 c=1 d=3 -&gt; 0,0,1,3 */
+#ct .box p        {}  /* a=0 b=1 c=1 d=1 -&gt; 0,1,1,1 */
+div#header:after  {}  /* a=0 b=1 c=0 d=2 -&gt; 0,1,0,2 */
+style=&quot;&quot;          /* a=1 b=0 c=0 d=0 -&gt; 1,0,0,0 */
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x6837;&#x5F0F;&#x8986;&#x76D6;</h3>
+<pre><code>  div {color: #333;}
+  ....
+  div {color: #666;}
+</code></pre>
+<p>&#x8FD9;&#x6837;<code>div</code>&#x6587;&#x6848;&#x7684;&#x989C;&#x8272;&#x660E;&#x663E;&#x4F1A;&#x662F;<code>#666</code></p>
+</section></section><section data-tag="h2"><h2>&#x9009;&#x62E9;&#x5668;&#x4F7F;&#x7528;&#x7ECF;&#x9A8C;</h2>
+<ul>
+<li>&#x9075;&#x5B88; CSS &#x4E66;&#x5199;&#x89C4;&#x8303;</li>
+<li>&#x4F7F;&#x7528;&#x5408;&#x9002;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;</li>
+<li>&#x5408;&#x7406;&#x7684;&#x590D;&#x7528;class</li>
+</ul>
+<style>
+  table{
+    font-size: .8em!important;
+  }
+</style>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

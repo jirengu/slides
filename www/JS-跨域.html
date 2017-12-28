@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>JS-跨域--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/jirengu.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-left">
+			<section data-tag="h1"><h1>&#x8DE8;&#x57DF;</h1>
+<p>by &#x82E5;&#x611A;@&#x9965;&#x4EBA;&#x8C37;</p>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x540C;&#x6E90;&#x7B56;&#x7565;(Same origin Policy)</h2>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x65B9;&#x9762;&#x7684;&#x8003;&#x8651;&#xFF0C;&#x53EA;&#x5141;&#x8BB8;&#x4E0E;&#x672C;&#x57DF;&#x4E0B;&#x7684;&#x63A5;&#x53E3;&#x4EA4;&#x4E92;&#x3002;&#x4E0D;&#x540C;&#x6E90;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x811A;&#x672C;&#x5728;&#x6CA1;&#x6709;&#x660E;&#x786E;&#x6388;&#x6743;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x80FD;&#x8BFB;&#x5199;&#x5BF9;&#x65B9;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x672C;&#x57DF;&#x6307;&#x7684;&#x662F;&#xFF1F;</p>
+<ul>
+<li>&#x540C;&#x534F;&#x8BAE;&#xFF1A;&#x5982;&#x90FD;&#x662F;http&#x6216;&#x8005;https</li>
+<li>&#x540C;&#x57DF;&#x540D;&#xFF1A;&#x5982;&#x90FD;&#x662F;http://jirengu.com/a &#x548C;http://jirengu.com/b</li>
+<li>&#x540C;&#x7AEF;&#x53E3;&#xFF1A;&#x5982;&#x90FD;&#x662F;80&#x7AEF;&#x53E3;</li>
+</ul>
+</section><section data-tag="h3"><h3></h3>
+<p>&#x5982;&#xFF1A;</p>
+<ul>
+<li>http://jirengu.com/a/b.js &#x548C; http://jirengu.com/index.php (&#x540C;&#x6E90;)</li>
+</ul>
+<p>&#x4E0D;&#x540C;&#x6E90;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<ul>
+<li>http://jirengu.com/main.js &#x548C; https://jirengu.com/a.php (&#x534F;&#x8BAE;&#x4E0D;&#x540C;)</li>
+<li>http://jirengu.com/main.js &#x548C; http://bbs.jirengu.com/a.php  (&#x57DF;&#x540D;&#x4E0D;&#x540C;&#xFF0C;&#x57DF;&#x540D;&#x5FC5;&#x987B;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x624D;&#x53EF;&#x4EE5;)</li>
+<li>http://jiengu.com/main.js &#x548C; http://jirengu.com:8080/a.php (&#x7AEF;&#x53E3;&#x4E0D;&#x540C;,&#x7B2C;&#x4E00;&#x4E2A;&#x662F;80)</li>
+</ul>
+<p>**&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;: &#x5BF9;&#x4E8E;&#x5F53;&#x524D;&#x9875;&#x9762;&#x6765;&#x8BF4;&#x9875;&#x9762;&#x5B58;&#x653E;&#x7684; JS &#x6587;&#x4EF6;&#x7684;&#x57DF;&#x4E0D;&#x91CD;&#x8981;&#xFF0C;&#x91CD;&#x8981;&#x7684;&#x662F;&#x52A0;&#x8F7D;&#x8BE5; JS &#x9875;&#x9762;&#x6240;&#x5728;&#x4EC0;&#x4E48;&#x57DF; **</p>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x8DE8;&#x57DF;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;</h2>
+</section><section data-tag="h3"><h3>JSONP</h3>
+<p>html&#x4E2D;script&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x5F15;&#x5165;&#x5176;&#x4ED6;&#x57DF;&#x4E0B;&#x7684;js&#xFF0C;&#x6BD4;&#x5982;&#x5F15;&#x5165;&#x7EBF;&#x4E0A;&#x7684;jquery&#x5E93;&#x3002;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#xFF0C;&#x53EF;&#x5B9E;&#x73B0;&#x8DE8;&#x57DF;&#x8BBF;&#x95EE;&#x63A5;&#x53E3;&#x3002;&#x9700;&#x8981;&#x540E;&#x7AEF;&#x652F;&#x6301;</p>
+<pre><code>echo $cb . &apos;&amp;&amp;&apos; . $cb . &apos;(&apos; . json_encode($ret) . &apos;)&apos;;
+</code></pre>
+<ol>
+<li>&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x5904;&#x7406;&#x51FD;&#x6570;_fun</li>
+<li>&#x521B;&#x5EFA;script&#x6807;&#x7B7E;&#xFF0C;src&#x7684;&#x5730;&#x5740;&#x6267;&#x884C;&#x540E;&#x7AEF;&#x63A5;&#x53E3;&#xFF0C;&#x6700;&#x540E;&#x52A0;&#x4E2A;&#x53C2;&#x6570;callback=_fun</li>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x5728;&#x6536;&#x5230;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x89E3;&#x6790;&#x53C2;&#x6570;&#xFF0C;&#x8BA1;&#x7B97;&#x8FD4;&#x8FD8;&#x6570;&#x636E;&#xFF0C;&#x8F93;&#x51FA; fun(data) &#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>fun(data)&#x4F1A;&#x653E;&#x5230;script&#x6807;&#x7B7E;&#x505A;&#x4E3A;js&#x6267;&#x884C;&#x3002;&#x6B64;&#x65F6;&#x4F1A;&#x8C03;&#x7528;fun&#x51FD;&#x6570;&#xFF0C;&#x5C06;data&#x505A;&#x4E3A;&#x53C2;&#x6570;&#x3002;</li>
+</ol>
+</section><section data-tag="h3"><h3>CORS</h3>
+<p>CORS &#x5168;&#x79F0;&#x662F;&#x8DE8;&#x57DF;&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#xFF08;Cross-Origin Resource Sharing&#xFF09;&#xFF0C;&#x662F;&#x4E00;&#x79CD; ajax &#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x652F;&#x6301;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;IE&#x652F;&#x6301;10&#x4EE5;&#x4E0A;&#x3002;
+&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5F53;&#x4F60;&#x4F7F;&#x7528; XMLHttpRequest &#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x73B0;&#x8BE5;&#x8BF7;&#x6C42;&#x4E0D;&#x7B26;&#x5408;&#x540C;&#x6E90;&#x7B56;&#x7565;&#xFF0C;&#x4F1A;&#x7ED9;&#x8BE5;&#x8BF7;&#x6C42;&#x52A0;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x5934;&#xFF1A;Origin&#xFF0C;&#x540E;&#x53F0;&#x8FDB;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x786E;&#x5B9A;&#x63A5;&#x53D7;&#x8BF7;&#x6C42;&#x5219;&#x5728;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4E2D;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5934;&#xFF1A;Access-Control-Allow-Origin; &#x6D4F;&#x89C8;&#x5668;&#x5224;&#x65AD;&#x8BE5;&#x76F8;&#x5E94;&#x5934;&#x4E2D;&#x662F;&#x5426;&#x5305;&#x542B; Origin &#x7684;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5219;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5904;&#x7406;&#x54CD;&#x5E94;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x54CD;&#x5E94;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5305;&#x542B;&#x6D4F;&#x89C8;&#x5668;&#x76F4;&#x63A5;&#x9A73;&#x56DE;&#xFF0C;&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x62FF;&#x5230;&#x54CD;&#x5E94;&#x6570;&#x636E;&#x3002;&#x6240;&#x4EE5; CORS &#x7684;&#x8868;&#x8C61;&#x662F;&#x8BA9;&#x4F60;&#x89C9;&#x5F97;&#x5B83;&#x4E0E;&#x540C;&#x6E90;&#x7684; ajax &#x8BF7;&#x6C42;&#x6CA1;&#x5565;&#x533A;&#x522B;&#xFF0C;&#x4EE3;&#x7801;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x3002;</p>
+</section><section data-tag="h3"><h3>&#x964D;&#x57DF;</h3>
+<p>&#x8303;&#x4F8B;:</p>
+<ul>
+<li><a href="../../code/%E8%B7%A8%E5%9F%9F/%E9%99%8D%E5%9F%9F/a.html">a.html</a></li>
+<li><a href="../../code/%E8%B7%A8%E5%9F%9F/%E9%99%8D%E5%9F%9F/b.html">b.html</a></li>
+</ul>
+</section><section data-tag="h3"><h3>postMessage</h3>
+<p>&#x8303;&#x4F8B;:</p>
+<ul>
+<li><a href="../../code/%E8%B7%A8%E5%9F%9F/postMessage/a.html">a.html</a></li>
+<li><a href="../../code/%E8%B7%A8%E5%9F%9F/postMessage/b.html">b.html</a></li>
+</ul>
+</section></section><section data-tag="h2"><h2>&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/JSONP">wikipedia-JSONP</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E4%BE%86%E6%BA%90%E8%B3%87%E6%BA%90%E5%85%B1%E4%BA%AB">wikipedia-CORS</a></li>
+</ul>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

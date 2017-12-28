@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>前端入门-从 URL输入到页面展现--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/jirengu.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>&#x4ECE;URL&#x8F93;&#x5165;&#x5230;&#x9875;&#x9762;&#x5C55;&#x73B0;</h1>
+<p>by &#x82E5;&#x611A;@<a href="http://jirengu.com">&#x9965;&#x4EBA;&#x8C37;</a></p>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x7B2C;&#x4E00;&#x6B65;. &#x5728;&#x6D4F;&#x89C8;&#x5668;&#x8F93;&#x5165;URL</h2>
+</section><section data-tag="h3"><h3>URL&#x662F;&#x4EC0;&#x4E48;</h3>
+<blockquote>
+<ul>
+<li>URL: &#x7EDF;&#x4E00;&#x8D44;&#x6E90;&#x5B9A;&#x4F4D;&#x7B26;&#xFF0C;&#x7528;&#x4E8E;&#x5B9A;&#x4F4D;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x7684;&#x8D44;&#x6E90;</li>
+<li>http&#x3001;https&#x3001;ftp&#x3001;file &#x534F;&#x8BAE;</li>
+</ul>
+</blockquote>
+<pre><code>http://jirengu.com/blog
+file:///Users/hunger/workspace/a.html
+https://10.245.23.456:3000/users
+//jirengu.com/static/imgs/a.png
+</code></pre>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x7B2C;&#x4E8C;&#x6B65;. &#x57DF;&#x540D;&#x89E3;&#x6790;</h2>
+<p>&#x5BF9;&#x4E8E; <code>http://jirengu.com</code>&#x7684;URL&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5B9E;&#x9645;&#x4E0A;&#x4E0D;&#x77E5;&#x9053; <code>jirengu.com</code>&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#xFF0C;&#x9700;&#x8981;&#x67E5;&#x627E;<code>jirengu.com</code>&#x7F51;&#x7AD9;&#x6240;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7684;IP&#x5730;&#x5740;&#xFF0C;&#x624D;&#x80FD;&#x627E;&#x5230;&#x76EE;&#x6807;</p>
+<blockquote>
+<ol>
+<li>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x53D1;&#x660E;&#x57DF;&#x540D;&#xFF0C;&#x4E0D;&#x76F4;&#x63A5;&#x7528;IP?</li>
+</ol>
+</blockquote>
+</section><section data-tag="h3"><h3>&#x57DF;&#x540D;&#x662F;&#x4EC0;&#x4E48;</h3>
+<p>&#x5BF9;&#x4E8E;<code>http://jirengu.com:8080/blog</code> , <code>jirengu.com</code>&#x5C31;&#x662F;&#x57DF;&#x540D;</p>
+</section><section data-tag="h3"><h3>IP&#x5730;&#x5740;&#x662F;&#x4EC0;&#x4E48;</h3>
+<ul>
+<li>&#x6BCF;&#x4E2A;&#x5904;&#x4E8E;&#x4E92;&#x8054;&#x7F51;&#x4E2D;&#x7684;&#x8BBE;&#x5907;&#x90FD;&#x6709;IP &#x5730;&#x5740;&#xFF0C;&#x5F62;&#x5982; <code>192.168.0.1</code></li>
+<li>&#x5C40;&#x57DF;&#x7F51; IP &#x548C;&#x516C;&#x7F51; IP &#x662F;&#x6709;&#x5DEE;&#x522B;&#x7684;</li>
+<li><code>127.0.0.1</code>&#x4EE3;&#x8868;&#x672C;&#x673A;&#x7684; IP</li>
+</ul>
+</section><section data-tag="h3"><h3>&#x57DF;&#x540D;&#x89E3;&#x6790;&#x7684;&#x6D41;&#x7A0B;</h3>
+<ol>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58; &#x2013; &#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x7F13;&#x5B58;DNS&#x8BB0;&#x5F55;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;</li>
+<li>&#x7CFB;&#x7EDF;&#x7F13;&#x5B58; - &#x4ECE; Hosts &#x6587;&#x4EF6;&#x67E5;&#x627E;&#x662F;&#x5426;&#x6709;&#x8BE5;&#x57DF;&#x540D;&#x548C;&#x5BF9;&#x5E94; IP&#x3002;</li>
+<li>&#x8DEF;&#x7531;&#x5668;&#x7F13;&#x5B58; &#x2013; &#x4E00;&#x822C;&#x8DEF;&#x7531;&#x5668;&#x4E5F;&#x4F1A;&#x7F13;&#x5B58;&#x57DF;&#x540D;&#x4FE1;&#x606F;&#x3002;</li>
+<li>ISP DNS &#x7F13;&#x5B58; &#x2013; &#x6BD4;&#x5982;&#x5230;&#x7535;&#x4FE1;&#x7684; DNS &#x4E0A;&#x67E5;&#x627E;&#x7F13;&#x5B58;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x90FD;&#x6CA1;&#x6709;&#x627E;&#x5230;&#xFF0C;&#x5219;&#x5411;&#x6839;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x67E5;&#x627E;&#x57DF;&#x540D;&#x5BF9;&#x5E94; IP&#xFF0C;&#x6839;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x628A;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x5230;&#x4E0B;&#x4E00;&#x7EA7;&#xFF0C;&#x77E5;&#x9053;&#x627E;&#x5230; IP</li>
+</ol>
+<blockquote>
+<ol>
+<li>&#x7535;&#x8111;&#x4E0A;&#x4E0D;&#x4E86;&#x7F51;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x4FEE;&#x6539;dns&#x4E3A;8.8.8.8 &#x6216;&#x8005;114.114.114.114?</li>
+<li>dns &#x52AB;&#x6301;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</li>
+</ol>
+</blockquote>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x7B2C;&#x4E09;&#x6B65;. &#x670D;&#x52A1;&#x5668;&#x5904;&#x7406;</h2>
+<p>&#x670D;&#x52A1;&#x5668;&#x662F;&#x4E00;&#x53F0;&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;&#x7684;&#x673A;&#x5668;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x7CFB;&#x7EDF;&#x5982;Linux&#x3001;windows server 2012</p>
+<p>&#x7CFB;&#x7EDF;&#x91CC;&#x5B89;&#x88C5;&#x7684;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x7684;&#x5E94;&#x7528;&#x53EB; Web server</p>
+</section><section data-tag="h3"><h3>Web&#x670D;&#x52A1;&#x5668;</h3>
+<ul>
+<li>&#x5E38;&#x89C1;&#x7684; web&#x670D;&#x52A1;&#x5668;&#x6709; Apache&#x3001;Nginx&#x3001;IIS&#x3001;Lighttpd</li>
+<li>web&#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;&#x7528;&#x6237;&#x7684;Request &#x4EA4;&#x7ED9;&#x7F51;&#x7AD9;&#x4EE3;&#x7801;&#xFF0C;&#x6216;&#x8005;&#x63A5;&#x53D7;&#x8BF7;&#x6C42;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x5230;&#x5176;&#x4ED6; web&#x670D;&#x52A1;&#x5668;</li>
+</ul>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/ddc261f1-3495-4225-98e8-6282f6eee422.png" alt="web&#x670D;&#x52A1;&#x5668;.png"></p>
+</section></section><section data-tag="h2"><h2>&#x7B2C;&#x56DB;&#x6B65;. &#x7F51;&#x7AD9;&#x5904;&#x7406;&#x6D41;&#x7A0B;</h2>
+<blockquote>
+<p>MVC &#x6A21;&#x578B;(model)-&#x89C6;&#x56FE;(view)-&#x63A7;&#x5236;&#x5668;(controller)</p>
+</blockquote>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/26373b7e-83c5-41f3-bb33-c614fb8a37fd.png" alt="rails_mvc"></p>
+<ol>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x5411; /users &#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF1B;</li>
+<li>Rails &#x7684;&#x8DEF;&#x7531;&#x628A; /users &#x4EA4;&#x7ED9; Users &#x63A7;&#x5236;&#x5668;&#x7684; index &#x52A8;&#x4F5C;&#x5904;&#x7406;&#xFF1B;</li>
+<li>index &#x52A8;&#x4F5C;&#x8981;&#x6C42; User &#x6A21;&#x578B;&#x8BFB;&#x53D6;&#x6240;&#x6709;&#x7528;&#x6237;&#xFF08;User.all&#xFF09;&#xFF1B;</li>
+<li>User &#x6A21;&#x578B;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x8BFB;&#x53D6;&#x6240;&#x6709;&#x7528;&#x6237;&#xFF1B;</li>
+<li>User &#x6A21;&#x578B;&#x628A;&#x6240;&#x6709;&#x7528;&#x6237;&#x7EC4;&#x6210;&#x7684;&#x5217;&#x8868;&#x8FD4;&#x56DE;&#x7ED9;&#x63A7;&#x5236;&#x5668;&#xFF1B;</li>
+<li>&#x63A7;&#x5236;&#x5668;&#x628A;&#x6240;&#x6709;&#x7528;&#x6237;&#x8D4B;&#x503C;&#x7ED9; @users &#x53D8;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x4F20;&#x5165; index &#x89C6;&#x56FE;&#xFF1B;</li>
+<li>&#x89C6;&#x56FE;&#x4F7F;&#x7528;&#x5D4C;&#x5165;&#x5F0F; Ruby &#x628A;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x6210; HTML&#xFF1B;</li>
+<li>&#x63A7;&#x5236;&#x5668;&#x628A; HTML &#x9001;&#x56DE;&#x6D4F;&#x89C8;&#x5668;</li>
+</ol>
+</section><section data-tag="h2"><h2>&#x6D4F;&#x89C8;&#x5668;&#x5904;&#x7406;</h2>
+<p>HTML&#x5B57;&#x7B26;&#x4E32;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x63A5;&#x53D7;&#x540E;&#x88AB;&#x4E00;&#x53E5;&#x53E5;&#x8BFB;&#x53D6;&#x89E3;&#x6790;</p>
+<p>&#x89E3;&#x6790;&#x5230;link &#x6807;&#x7B7E;&#x540E;&#x91CD;&#x65B0;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x83B7;&#x53D6;css</p>
+<p>&#x89E3;&#x6790;&#x5230; script&#x6807;&#x7B7E;&#x540E;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x83B7;&#x53D6; js&#xFF0C;&#x5E76;&#x6267;&#x884C;&#x4EE3;&#x7801;</p>
+<p>&#x89E3;&#x6790;&#x5230;img &#x6807;&#x7B7E;&#x540E;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x83B7;&#x53D6;&#x56FE;&#x7247;&#x8D44;&#x6E90;</p>
+</section><section data-tag="h2"><h2>&#x7ED8;&#x5236;&#x7F51;&#x9875;</h2>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x6839;&#x636E; HTML &#x548C; CSS &#x8BA1;&#x7B97;&#x5F97;&#x5230;&#x6E32;&#x67D3;&#x6811;&#xFF0C;&#x7ED8;&#x5236;&#x5230;&#x5C4F;&#x5E55;&#x4E0A;</p>
+<p>js &#x4F1A;&#x88AB;&#x6267;&#x884C;</p>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

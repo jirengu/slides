@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>JS-服务器搭建--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/jirengu.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-left">
+			<section data-tag="h1"><h1>server-mock &#x7684;&#x4F7F;&#x7528;</h1>
+<p>by &#x82E5;&#x611A;@&#x9965;&#x4EBA;&#x8C37;</p>
+</section><section data-tag="h2"><h2>server-mock&#x662F;&#x4EC0;&#x4E48;</h2>
+<p>&#x4E00;&#x6B3E; nodejs &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x7528;&#x4E8E;&#x642D;&#x5EFA; web&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6A21;&#x62DF;&#x7F51;&#x7AD9;&#x540E;&#x7AEF;&#x3002;&#x65B9;&#x4FBF;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x8005; Mock &#x6570;&#x636E;&#x3002;&#x57FA;&#x4E8E;express&#x3002;</p>
+<p><a href="https://www.npmjs.com/package/server-mock">npm&#x5730;&#x5740;</a>
+<a href="https://github.com/jirengu/server-mock">GitHub&#x5730;&#x5740;</a></p>
+</section><section data-tag="h2"><h2>&#x5B89;&#x88C5;</h2>
+<ol>
+<li><a href="https://nodejs.org/zh-cn/">&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;</a>nodejs&#xFF08;&#x5982;&#x679C;&#x5DF2;&#x5B89;&#x88C5;&#x53EF;&#x5FFD;&#x7565;&#xFF09;</li>
+<li>&#x6253;&#x5F00;&#x7EC8;&#x7AEF;(windows&#x7528;&#x6237;&#x6253;&#x5F00;GitBash)&#xFF0C;&#x6267;&#x884C;</li>
+</ol>
+<pre><code>npm install -g server-mock
+</code></pre>
+<p>&#x5982;&#x679C;&#x5B89;&#x88C5;&#x592A;&#x6162;&#xFF0C;&#x4E5F;&#x53EF;&#x6267;&#x884C; <code>npm install -g server-mock --registry=https://registry.npm.taobao.org</code></p>
+</section><section data-tag="h2"><h2>&#x4F7F;&#x7528;</h2>
+</section><section data-tag="h2"><h2>&#x573A;&#x666F;1&#xFF1A;&#x642D;&#x5EFA; web &#x670D;&#x52A1;&#x5668;</h2>
+<ol>
+<li>&#x5728;&#x7EC8;&#x7AEF; <code>cd</code>&#x5230;&#x4F60;&#x7684;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x6587;&#x4EF6;&#x5939;</li>
+<li>&#x6267;&#x884C;<code>mock start</code>&#x53EF;&#x5C06;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;&#x4F5C;&#x4E3A;&#x6839;&#x76EE;&#x5F55;&#x542F;&#x52A8;&#x4E00;&#x4E2A; web&#x670D;&#x52A1;&#x5668;</li>
+<li>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x8F93;&#x5165; http://localhost:8080/xxx.html</li>
+</ol>
+</section><section data-tag="h2"><h2>&#x573A;&#x666F;2&#xFF1A;&#x4E3A; ajax &#x8BF7;&#x6C42; mock &#x6570;&#x636E;</h2>
+<ol>
+<li>&#x5728;&#x7EC8;&#x7AEF; <code>cd</code>&#x5230;&#x4F60;&#x7684;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x6587;&#x4EF6;&#x5939;</li>
+<li>&#x5728;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5939;&#x521B;&#x5EFA; <code>router.js</code>&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x662F;&#x63A5;&#x6536;&#x5E76;&#x5904;&#x7406;&#x540E;&#x7AEF;&#x8BF7;&#x6C42;&#x7684;&#x6587;&#x4EF6;(&#x53EF;&#x8BA4;&#x4E3A;&#x662F;&#x7F51;&#x7AD9;&#x7684;&#x540E;&#x7AEF;)</li>
+<li><code>mock init &#x53EF;&#x521B;&#x5EFA;&#x8303;&#x4F8B;&#x6587;&#x4EF6;</code></li>
+</ol>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

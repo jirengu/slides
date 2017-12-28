@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS-伪类伪元素--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/jirengu.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>&#x4F2A;&#x7C7B;&#x4E0E;&#x4F2A;&#x5143;&#x7D20;</h1>
+<p>by &#x82E5;&#x611A;@&#x9965;&#x4EBA;&#x8C37;</p>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x4F2A;&#x7C7B;</h2>
+<blockquote>
+<p>&#x4F2A;&#x7C7B;&#x7528;&#x4E8E;&#x5F53;&#x5DF2;&#x6709;&#x5143;&#x7D20;&#x5904;&#x4E8E;&#x7684;&#x67D0;&#x4E2A;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x4E3A;&#x5176;&#x6DFB;&#x52A0;&#x5BF9;&#x5E94;&#x7684;&#x6837;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x662F;&#x6839;&#x636E;&#x7528;&#x6237;&#x884C;&#x4E3A;&#x800C;&#x52A8;&#x6001;&#x53D8;&#x5316;</p>
+</blockquote>
+</section><section data-tag="h3"><h3>&#x4F2A;&#x7C7B;&#x5217;&#x4E3E;</h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/0a50717d-df50-47d2-bed8-c7f9b61e1235" alt="&#x4F2A;&#x7C7B;"></p>
+</section><section data-tag="h3"><h3>link visited hover active &#x987A;&#x5E8F;</h3>
+<pre><code>a:link{
+  color: blue;
+}
+a:visited{
+  color: yellow;
+}
+a:hover{
+  color: red;
+}
+a:active{
+  color: pink;
+}
+
+</code></pre>
+<p>Why? <a href="http://js.jirengu.com/kuco/1/edit?css,output">&#x4EE3;&#x7801;: link visited hover active &#x987A;&#x5E8F;</a></p>
+</section><section data-tag="h3"><h3>first-child vs first-of-type</h3>
+<ul>
+<li><code>h1:first-child</code>: &#x9009;&#x62E9;&#x662F;h1&#x5E76;&#x4E14;&#x5B83;&#x662F;&#x957F;&#x5B50;&#x7684;&#x5143;&#x7D20;</li>
+<li><code>h1:first-of-type</code>: &#x9009;&#x62E9;&#x662F;h1&#x5E76;&#x4E14;&#x5B83;&#x662F;&#x5B83;&#x7236;&#x4EB2;&#x91CC;h1&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x957F;&#x5B50;&#x7684;&#x5143;&#x7D20;</li>
+</ul>
+<pre><code>&lt;div class=&quot;wrap&quot;&gt;
+  &lt;h1&gt;&#x6211;&#x662F;&#x5927;&#x6807;&#x9898;1&lt;/h1&gt;
+  &lt;p&gt;&#x6211;&#x662F;&#x6BB5;&#x843D;2&lt;/p&gt;
+  &lt;h1&gt;&#x6211;&#x662F;&#x5927;&#x6807;&#x9898;3&lt;/h1&gt;
+&lt;/div&gt;
+&lt;style&gt;
+.wrap h1:first-of-type{
+  background: yellow;
+}
+.wrap p:first-of-type{
+  background: pink;
+}
+.wrap h1:first-child{
+  color: red;
+}
+.wrap p:first-child{
+  color: blue;
+}  
+&lt;/style&gt;
+</code></pre>
+<p><a href="http://js.jirengu.com/baqo/1/edit?html,css,output">&#x4EE3;&#x7801;: first-child &#x548C; first-of-type &#x533A;&#x522B;</a></p>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x4F2A;&#x5143;&#x7D20;</h2>
+<blockquote>
+<p>&#x4F2A;&#x5143;&#x7D20;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x4E00;&#x4E9B;&#x4E0D;&#x5728;&#x6587;&#x6863;&#x6811;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x4E3A;&#x5176;&#x6DFB;&#x52A0;&#x6837;&#x5F0F;&#x3002;</p>
+</blockquote>
+</section><section data-tag="h3"><h3>&#x4F2A;&#x5143;&#x7D20;&#x5217;&#x4E3E;</h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/5bd6121f-bff0-423d-983e-2779e83ee226" alt="&#x4F2A;&#x5143;&#x7D20;"></p>
+<p><a href="http://js.jirengu.com/xato/1/embed?html,css,output">&#x67E5;&#x770B;&#x4EE3;&#x7801;</a></p>
+</section><section data-tag="h3"><h3>:before :after</h3>
+<pre><code>  &lt;div class=&quot;box&quot;&gt;
+    &lt;p&gt;&#x8FD9;&#x662F;&#x7B2C;&#x4E00;&#x6BB5;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;style&gt;
+  .box:before{
+    content: &apos;start&apos;
+  }
+  .box:after{
+    content: &apos;end&apos;
+  }
+  &lt;/style&gt;
+</code></pre>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/100407c1-0d72-4f36-99c7-12258aa4428d" alt=""></p>
+<p><a href="http://js.jirengu.com/xato/1/embed?html,css,output">&#x4EE3;&#x7801;</a></p>
+</section><section data-tag="h3"><h3>:before :after</h3>
+<ul>
+<li>element:before &#x5728;element&#x5185;&#x90E8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x884C;&#x5185;&#x5143;&#x7D20;&#xFF0C;&#x4F5C;&#x4E3A;element&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B69;&#x5B50;</li>
+<li>element:after &#x5728;element&#x5185;&#x90E8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x884C;&#x5185;&#x5143;&#x7D20;&#xFF0C;&#x4F5C;&#x4E3A;element&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4E2A;&#x5B69;&#x5B50;</li>
+<li>&#x7528;:before :after &#x7684;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x7701;&#x6807;&#x7B7E;</li>
+<li>&#x5176;&#x4E2D;content &#x662F;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;</li>
+</ul>
+</section><section data-tag="h3"><h3>&#x5E94;&#x7528;-&#x6E05;&#x9664;&#x6D6E;&#x52A8;</h3>
+<pre><code>.clearfix:after {
+    content:&quot;&quot;;
+    display:block;
+    clear:both;
+}
+</code></pre>
+<p><a href="http://js.jirengu.com/kiwo/1/edit?html,css,output">&#x4EE3;&#x7801;</a></p>
+</section><section data-tag="h3"><h3>&#x5E94;&#x7528;-&#x66FF;&#x4EE3;&#x6807;&#x7B7E;</h3>
+<div class="tooltip">
+  <span class="caret"></span>
+  hi, &#x8FD9;&#x91CC;&#x662F;&#x9965;&#x4EBA;&#x8C37;
+</div>
+<div class="bubble">hi, &#x8FD9;&#x91CC;&#x662F;&#x9965;&#x4EBA;&#x8C37;</div>
+<p><a href="http://js.jirengu.com/buqo/1/edit?html,output">&#x4EE3;&#x7801;</a></p>
+<style>
+  .tooltip, 
+  .bubble{
+    position: relative;
+    padding: 10px!important;
+    font-size: 14px!important;
+    color: #333;
+    border-radius: 3px;
+    background: #fff;
+    border: 1px solid #000;
+    display: inline-block;
+  }
+  .tooltip .caret,
+  .bubble:before{
+      width: 10px;
+      height: 10px;
+      border-left: 1px solid #000;
+      border-top: 1px solid #000;
+      background: #fff;
+      display: inline-block;
+      transform: rotateZ(45deg);
+      position: absolute;
+      top: -6px;
+  }
+  .bubble:before{
+    content:''
+  }
+</style>
+<pre><code>  &lt;div class=&quot;tooltip&quot;&gt;
+    &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+    hi, &#x8FD9;&#x91CC;&#x662F;&#x9965;&#x4EBA;&#x8C37;
+  &lt;/div&gt;
+  &lt;div class=&quot;bubble&quot;&gt;hi, &#x8FD9;&#x91CC;&#x662F;&#x9965;&#x4EBA;&#x8C37;&lt;/div&gt;
+  
+  &lt;style&gt;
+    .tooltip, 
+    .bubble{
+      position: relative;
+      padding: 10px;
+      border-radius: 3px;
+      background: #fff;
+      border: 1px solid #000;
+      display: inline-block;
+    }
+    .tooltip .caret,
+    .bubble:before{
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid #000;
+        border-top: 1px solid #000;
+        background: #fff;
+        display: inline-block;
+        transform: rotateZ(45deg);
+        position: absolute;
+        top: -6px;
+    }
+    .bubble:before{
+      content:&apos;&apos;
+    }
+  &lt;/style&gt;
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5E94;&#x7528;-&#x81EA;&#x5B9A;&#x4E49;checkbox</h3>
+<p>&#x70B9;&#x51FB;&#x7B11;&#x8138;&#x5207;&#x6362;: <input type="checkbox"> <a href="http://js.jirengu.com/bazi/1/edit?html,output">&#x4EE3;&#x7801;</a></p>
+<style>
+input[type=checkbox]{
+  -webkit-appearance: none;
+  appearance: none;
+  background: url(http://7xpvnv.com2.z0.glb.qiniucdn.com/b6dcd011-23cc-4d95-9e51-9f10100103bd.png) 0 0 no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  vertical-align: middle;
+  outline: none;
+}
+input[type=checkbox]:checked{
+  -webkit-appearance: none;
+  appearance: none;
+  background: url(http://7xpvnv.com2.z0.glb.qiniucdn.com/538f26f0-6f3e-48d5-91e6-5b5bb730dd19.png) 0 0 no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  vertical-align: middle;     
+}
+
+</style>
+<pre><code>&#x4ECA;&#x5929;&#x7684;&#x5FC3;&#x60C5;: &lt;input type=&quot;checkbox&quot;&gt;
+&lt;style&gt;
+input[type=checkbox]{
+  -webkit-appearance: none;
+  appearance: none;
+  background: url(http://7xpvnv.com2.z0.glb.qiniucdn.com/b6dcd011-23cc-4d95-9e51-9f10100103bd.png) 0 0 no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  vertical-align: middle;
+  outline: none;
+}
+input[type=checkbox]:checked{
+  -webkit-appearance: none;
+  appearance: none;
+  background: url(http://7xpvnv.com2.z0.glb.qiniucdn.com/538f26f0-6f3e-48d5-91e6-5b5bb730dd19.png) 0 0 no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  vertical-align: middle;     
+}
+
+&lt;/style&gt;
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5B57;&#x4F53;&#x56FE;&#x6807;</h3>
+<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_nyta5x5h650cnmi.css">
+<span class="iconfont icon-jirengulogojichu2"></span>
+<style type="text/css">
+.icon-jirengulogojichu2{
+  font-size: 50px;
+  color: white;
+}
+</style>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http//at.alicdn.com/t/font_nyta5x5h650cnmi.css&quot;&gt;
+&lt;span class=&quot;iconfont icon-jirengulogojichu2&quot;&gt;&lt;/span&gt; [&#x4EE3;&#x7801;](http://js.jirengu.com/bazi/1/edit?html,output)
+</code></pre>
+<p><a href="http://js.jirengu.com/qani/1/edit?html,output">&#x4EE3;&#x7801;</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/22724856?refer=study-fe">&#x53C2;&#x8003;&#x6587;&#x7AE0;-&#x524D;&#x7AEF;&#x5B66;&#x4E60;&#x6307;&#x5357;-&#x5B57;&#x4F53;&#x56FE;&#x6807;</a></p>
+</section></section><section data-tag="h2"><h2>&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="http://www.alloyteam.com/2016/05/summary-of-pseudo-classes-and-pseudo-elements/">Alloy Team - &#x603B;&#x7ED3;&#x4F2A;&#x7C7B;&#x4E0E;&#x4F2A;&#x5143;&#x7D20;</a></li>
+<li><a href="https://www.w3.org/TR/CSS2/selector.html#pseudo-elements">W3C - Pseudo-elements and pseudo-classes</a></li>
+<li><a href="http://www.ayqy.net/doc/css2-1/selector.html#pseudo-elements">W3C - Pseudo-elements and pseudo-classes &#x7FFB;&#x8BD1;&#x7248;</a></li>
+</ul>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

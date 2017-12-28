@@ -1,0 +1,44 @@
+<script>
+  console.log(Math.PI)
+
+// 得到 [a, b)随机数
+
+function random(a, b) {
+  return a + Math.floor(Math.random()*(b-a))
+}
+
+var arr = []
+for(var i=0; i< 50;i++){
+  arr.push(random(0,10))
+}
+console.log(arr)
+
+//得到一个随机字符串
+
+function randomStr(len) {
+  var dict = '0123456789abcedefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var str = ''
+  for(var i = 0; i < len; i++){
+    str += dict[random(0,62)]
+  }
+  return str
+}
+
+// 得到一个随机 IP 0.0.0.0 ~ 255.255.255.255
+function randomIP(len) {
+  var arr = []
+  for(var i = 0; i < 4; i++){
+    arr.push(random(0, 256)) 
+  }
+  return arr.join('.')
+}
+
+//#0022fff
+
+if(Math.random() > 0.5){
+  console.log('haha')
+} else{
+  console.log('heihei')
+}
+
+</script>

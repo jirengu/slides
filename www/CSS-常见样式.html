@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS-常见样式--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/league.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>CSS&#x5E38;&#x89C1;&#x6837;&#x5F0F;</h1>
+<p>by &#x82E5;&#x611A;@&#x9965;&#x4EBA;&#x8C37;</p>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x884C;&#x5185;&#x5143;&#x7D20;</h2>
+<blockquote>
+<ul>
+<li>&#x5757;&#x7EA7;(block-level); &#x884C;&#x5185;(&#x5185;&#x8054;&#x3001;inline-level)</li>
+<li>&#x5757;&#x7EA7;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5757;&#x7EA7;&#x548C;&#x884C;&#x5185;&#xFF0C;&#x884C;&#x5185;&#x53EA;&#x80FD;&#x5305;&#x542B;&#x6587;&#x672C;&#x548C;&#x884C;&#x5185;</li>
+<li>&#x5757;&#x7EA7;&#x5360;&#x636E;&#x4E00;&#x6574;&#x884C;&#x7A7A;&#x95F4;&#xFF0C;&#x884C;&#x5185;&#x5360;&#x636E;&#x81EA;&#x8EAB;&#x5BBD;&#x5EA6;&#x7A7A;&#x95F4;</li>
+<li>&#x5BBD;&#x9AD8;&#x8BBE;&#x7F6E;&#x3001;&#x5185;&#x5916;&#x8FB9;&#x8DDD;&#x7684;&#x5DEE;&#x5F02;</li>
+</ul>
+</blockquote>
+</section><section data-tag="h3"><h3>block-level</h3>
+<pre><code>div h1 h2 h3 h4 h5 h6 p hr
+form ul dl ol pre table
+li dd dt tr td th
+</code></pre>
+</section><section data-tag="h3"><h3>inline-level</h3>
+<pre><code>em strong span a br img 
+button iput label select textarea
+code script 
+</code></pre>
+</section></section><section data-tag="h2"><h2>&#x5BBD;&#x9AD8;</h2>
+<blockquote>
+<p>&#x53EA;&#x5BF9;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x751F;&#x6548;,&#x5BF9;&#x884C;&#x5185;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x65E0;&#x6548;</p>
+</blockquote>
+<pre><code>&lt;style&gt;
+  .box {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+  }
+&lt;/style&gt;
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre>
+<style>
+  .box {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+  }
+</style>
+<div class="box"></div>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x8FB9;&#x6846;</h2>
+<blockquote>
+<p>border-width, border-color, border-style</p>
+</blockquote>
+<pre><code>.box {
+  border-width: 1px;
+  border-color: red;
+  border-style: solid; /* dotted  dash*/
+}
+/* &#x7B80;&#x5199; */
+.box2 {
+  border: 1px dotted #ccc;
+}
+</code></pre>
+<div style="border: 1px dotted #ccc; height: 20px"></div>
+</section><section data-tag="h3"><h3>&#x4F7F;&#x7528;&#x8FB9;&#x6846;&#x505A;&#x4E09;&#x89D2;&#x5F62;</h3>
+<div style="height:20px; width:20px; border-top:solid 20px red; border-left:solid 20px green; border-right:solid 20px orange; border-bottom:solid 20px blue;"></div>
+<pre><code>.t0{
+  height:20px;
+  width:20px;
+  border-top:solid 20px red;
+  border-left:solid 20px green;
+  border-right:solid 20px orange;
+  border-bottom:solid 20px blue;
+}
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x4F7F;&#x7528;&#x8FB9;&#x6846;&#x505A;&#x4E09;&#x89D2;&#x5F62;</h3>
+<div style="height:0; width:0px; border-top:solid 20px red; border-left:solid 20px transparent; border-right:solid 20px transparent; border-bottom:solid 20px blue;"></div>
+<pre><code>.t1{
+  height:0;
+  width:0px;
+  border-top:solid 20px red;
+  border-left:solid 20px transparent;
+  border-right:solid 20px transparent;
+  border-bottom:solid 20px blue;
+}
+</code></pre>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x8FB9;&#x8DDD;</h2>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/3ee72bf4-b745-4244-bd35-cc207491c36f" alt=""></p>
+</section><section data-tag="h3"><h3>padding</h3>
+<blockquote>
+<ul>
+<li>padding&#x4EE3;&#x8868;&#x5185;&#x8FB9;&#x8DDD;&#xFF0C;&#x6709;&#x56DB;&#x4E2A;&#x65B9;&#x5411;&#x7684;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x5408;&#x5199;&#xFF0C;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x6570;&#x503C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x767E;&#x5206;&#x6BD4;&#xFF08;&#x76F8;&#x5BF9;&#x4E8E;&#x7236;&#x5BB9;&#x5668;&#x3001;&#x4E0D;&#x662F;&#x81EA;&#x8EAB;&#xFF09;</li>
+</ul>
+</blockquote>
+<ul>
+<li>padding-top</li>
+<li>padding-right</li>
+<li>padding-bottom</li>
+<li>padding-left</li>
+</ul>
+<pre><code>padding: 20px; /* padding: 20px 20px 20px 20px; */
+padding: 10px 20px; /* padding: 10px 20px 10px 20px; */
+padding: 10px 20px 30px; /* padding: 10px 20px 30px 20px; */
+</code></pre>
+</section><section data-tag="h3"><h3>margin</h3>
+<blockquote>
+<ul>
+<li>margin &#x4EE3;&#x8868;&#x5916;&#x8FB9;&#x8DDD;&#xFF0C;&#x6709;&#x56DB;&#x4E2A;&#x65B9;&#x5411;&#x7684;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x5408;&#x5199;&#xFF0C;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x6570;&#x503C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x767E;&#x5206;&#x6BD4;&#xFF08;&#x76F8;&#x5BF9;&#x4E8E;&#x7236;&#x5BB9;&#x5668;&#x3001;&#x4E0D;&#x662F;&#x81EA;&#x8EAB;&#xFF09;&#x3002;&#x8FD8;&#x53EF;&#x4EE5;&#x662F;&#x8D1F;&#x503C;</li>
+<li>&#x5916;&#x8FB9;&#x8DDD;&#x5408;&#x5E76;&#x95EE;&#x9898;</li>
+</ul>
+</blockquote>
+<ul>
+<li>margin-top</li>
+<li>margin-right</li>
+<li>margin-bottom</li>
+<li>margin-left</li>
+</ul>
+<pre><code>margin: 20px; /* margin: 20px 20px 20px 20px; */
+margin: 10px 20px; /* margin: 10px 20px 10px 20px; */
+margin: 10px 20px 30px; /* margin: 10px 20px 30px 20px; */
+</code></pre>
+</section><section data-tag="h3"><h3>margin: 0 auto</h3>
+<blockquote>
+<p>&#x5BF9;&#x4E8E;<strong>&#x5757;&#x7EA7;&#x5143;&#x7D20;</strong> &#x8BBE;&#x7F6E; <code>margin: 0 auto</code> &#x53EF;&#x8FBE;&#x5230;&#x5C45;&#x4E2D;&#x76EE;&#x7684;</p>
+</blockquote>
+<pre><code>.box {
+  /* margin: 0 auto; &#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x8D77;&#x4F5C;&#x7528; */
+  margin-left: auto;
+  margin-right: auto;
+}
+</code></pre>
+<div style="height: 20px; border: 1px solid red; margin: 0 auto;"></div>
+</section><section 0="" data-tag="h3" margin:="" 0;="" padding:=""><h3 0="" margin:="" 0;="" padding:="">*</h3>
+<p>&#x53BB;&#x9664;&#x5143;&#x7D20;&#x9ED8;&#x8BA4; margin padding</p>
+</section></section><section data-tag="h2"><h2>display</h2>
+<blockquote>
+<ul>
+<li>&#x5757;&#x7EA7;&#xFF1A;block, list-item, table</li>
+<li>&#x884C;&#x5185;: inline, inline-table, inline-block</li>
+</ul>
+</blockquote>
+<pre><code>display&apos;
+Value:    inline | block | list-item | inline-block | table | inline-table | table-row | table-cell | none | inherit
+Initial:    inline
+Applies to:   all elements
+Inherited:    no
+</code></pre>
+</section><section data-tag="down"><section data-tag="h2"><h2>font</h2>
+<ul>
+<li>font-size&#xFF1A;&#x5B57;&#x4F53;&#x5927;&#x5C0F;</li>
+<li>font-family&#xFF1A;&#x5B57;&#x4F53;&#xFF0C;&#x5B8B;&#x4F53;&#x3001;&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;&#x3001;Arial&#x7B49;</li>
+<li>font-weight&#xFF1A;&#x6587;&#x5B57;&#x7C97;&#x5EA6;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x5C31;&#x662F;&#x9ED8;&#x8BA4;&#x503C;regular&#x548C;&#x7C97;&#x4F53;bold</li>
+<li>line-height&#xFF1A;&#x884C;&#x9AD8;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x767E;&#x5206;&#x6BD4;&#x3001;&#x500D;&#x6570;&#x6216;&#x8005;&#x56FA;&#x5B9A;&#x5C3A;&#x5BF8;</li>
+<li>&#x4EE5;&#x4E0A;&#x5C5E;&#x6027;&#x90FD;&#x53EF;&#x7EE7;&#x627F;&#x7ED9;&#x5B50;&#x5143;&#x7D20;</li>
+</ul>
+</section><section data-tag="h3"><h3>&#x7528;&#x6CD5;</h3>
+<pre><code>body{
+  font: 12px/1.5 tahoma,arial,&apos;Hiragino Sans GB&apos;,&apos;\5b8b\4f53&apos;,sans-serif;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 14px;
+  font-family: &apos;Helvetica Neue&apos;,Helvetica,Arial,sans-serif;
+  font-weight: bold;
+}
+</code></pre>
+</section><section data-tag="h3"><h3>font-family</h3>
+<blockquote>
+<p>&#x4F7F;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5F00;&#x9875;&#x9762;&#x65F6;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x8BFB;&#x53D6; HTML &#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x6E32;&#x67D3;&#x3002;&#x5F53;&#x8BFB;&#x5230;&#x6587;&#x5B57;&#x65F6;&#x4F1A;&#x8F6C;&#x6362;&#x6210;&#x5BF9;&#x5E94;&#x7684; unicode&#x7801;&#xFF08;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x4E16;&#x754C;&#x4E0A;&#x4EFB;&#x610F;&#x4E00;&#x79CD;&#x6587;&#x5B57;&#x7684;&#x7279;&#x5B9A;&#x7F16;&#x53F7;&#xFF09;&#x3002;&#x518D;&#x6839;&#x636E;HTML &#x91CC;&#x8BBE;&#x7F6E;&#x7684; font-family &#xFF08;&#x5982;&#x679C;&#x6CA1;&#x8BBE;&#x7F6E;&#x5219;&#x4F7F;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#xFF09;&#x53BB;&#x67E5;&#x627E;&#x7535;&#x8111;&#x91CC;&#xFF08;&#x5982;&#x679C;&#x6709;&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;@font-face &#xFF0C;&#x5219;&#x52A0;&#x8F7D;&#x5BF9;&#x5E94;&#x5B57;&#x4F53;&#x6587;&#x4EF6;&#xFF09;&#x5BF9;&#x5E94;&#x5B57;&#x4F53;&#x7684;&#x5B57;&#x4F53;&#x6587;&#x4EF6;&#x3002;&#x627E;&#x5230;&#x6587;&#x4EF6;&#x540E;&#x6839;&#x636E; unicode &#x7801;&#x53BB;&#x67E5;&#x627E;&#x7ED8;&#x5236;&#x5916;&#x5F62;&#xFF0C;&#x627E;&#x5230;&#x540E;&#x7ED8;&#x5236;&#x5230;&#x9875;&#x9762;&#x4E0A;</p>
+</blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/22724856">&#x5B57;&#x4F53;&#x7684;&#x539F;&#x7406;</a></p>
+</section><section data-tag="h3"><h3>font-family&#x7684;&#x5199;&#x6CD5;</h3>
+<blockquote>
+<p>&#x5728; CSS &#x4E2D;&#x8BBE;&#x7F6E;&#x5B57;&#x4F53;&#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x5B57;&#x4F53;&#x4E2D;&#x6587;&#x6216;&#x82F1;&#x6587;&#x540D;&#x79F0;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x80FD;&#x8BC6;&#x522B;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x4E2D;&#x6587;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x7F16;&#x7801;&#xFF08;GB2312&#x3001;UTF-8 &#x7B49;&#xFF09;&#x4E0D;&#x5339;&#x914D;&#x65F6;&#x4F1A;&#x4EA7;&#x751F;&#x4E71;&#x7801;&#x3002;&#x4FDD;&#x9669;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x5C06;&#x5B57;&#x4F53;&#x540D;&#x79F0;&#x7528;Unicode&#x6765;&#x8868;&#x793A;</p>
+</blockquote>
+<p>&#x5B8B;&#x4F53; | SimSun | \5B8B\4F53
+&#x9ED1;&#x4F53; | SimHei | \9ED1\4F53
+&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1; | Microsoft YaHei | \5FAE\8F6F\96C5\9ED1</p>
+<p>&#x6253;&#x5F00;&#x63A7;&#x5236;&#x53F0; <code>escape(&apos;&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;&apos;)</code>&#xFF0C;&#x628A; <code>%u</code>&#x66FF;&#x6362;&#x6210; <code>\</code></p>
+</section><section data-tag="h3"><h3>Chrome&#x6700;&#x5C0F;&#x5B57;&#x4F53;</h3>
+<p>chrome &#x9ED8;&#x8BA4;&#x5B57;&#x4F53;&#x5927;&#x5C0F;16px, &#x6700;&#x5C0F;&#x5B57;&#x4F53; 12px <a href="https://github.com/islittle/Web-Developer/blob/master/css-notes/compatible-with-less-than-12px-fontsize.md">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></p>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x6587;&#x672C;</h2>
+<ul>
+<li>text-align&#xFF1A;&#x6587;&#x672C;&#x5BF9;&#x5176;&#x65B9;&#x5F0F; left&#x3001;center&#x3001;right&#x3001;justify</li>
+<li>text-indent&#xFF1A;&#x6587;&#x6848;&#x7B2C;&#x4E00;&#x884C;&#x7F29;&#x8FDB;&#x8DDD;&#x79BB;</li>
+<li>text-decoration&#xFF1A; none&#x3001;underline&#x3001;line-through&#x3001;overline</li>
+<li>color&#xFF1A;&#x6587;&#x5B57;&#x989C;&#x8272;</li>
+<li>text-transform&#xFF1A;&#x6539;&#x53D8;&#x6587;&#x5B57;&#x5927;&#x5C0F;&#x5199;none&#x3001;uppercase&#x3001;lowercase&#x3001;capitalize</li>
+<li>word-spacing&#xFF1A;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x5B57;&#xFF08;&#x5355;&#x8BCD;&#xFF09;&#x4E4B;&#x95F4;&#x7684;&#x6807;&#x51C6;&#x95F4;&#x9694;</li>
+<li>letter-spacing&#xFF1A;&#x5B57;&#x6BCD;&#x95F4;&#x9694;&#x4FEE;&#x6539;&#x7684;&#x662F;&#x5B57;&#x7B26;&#x6216;&#x5B57;&#x6BCD;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x9694;</li>
+</ul>
+<p><a href="http://js.jirengu.com/riyu/1/edit">&#x8303;&#x4F8B;</a></p>
+</section><section data-tag="h3"><h3>&#x884C;&#x5185;&#x5143;&#x7D20;&#x5C45;&#x4E2D;</h3>
+<pre><code>&lt;style&gt;
+  .box{
+    text-align: center;
+  }
+&lt;/style&gt;
+&lt;div class=&quot;box&quot;&gt;
+  &lt;img src=&quot;http://7xpvnv.com2.z0.glb.qiniucdn.com/6673909a-098c-4202-8b80-f4aad64e0262.png&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<div style="text-align: center;">
+  <img style="margin: 0" src="http://7xpvnv.com2.z0.glb.qiniucdn.com/6673909a-098c-4202-8b80-f4aad64e0262.png">
+</div>
+</section><section data-tag="h3"><h3>&#x5355;&#x884C;&#x6587;&#x672C;&#x6EA2;&#x51FA;&#x52A0;...</h3>
+<pre><code>.card &gt; h3{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</code></pre>
+<p><a href="http://js.jirengu.com/dode/1/edit">demo</a></p>
+</section></section><section data-tag="h2"><h2>&#x989C;&#x8272;</h2>
+<ul>
+<li>&#x5355;&#x8BCD;: <code>red</code>, <code>blue</code>, <code>pink</code>, <code>yellow</code>, <code>white</code>, <code>black</code></li>
+<li>&#x5341;&#x516D;&#x8FDB;&#x5236;: <code>#000000</code>, <code>#fff</code>, <code>#eee</code>, <code>#ccc</code>, <code>#666</code>, <code>#333</code>, <code>#f00</code>, <code>#0f0</code>, <code>#00f</code></li>
+<li>rgb: <code>rgb(255, 255, 255)</code>, <code>rgb(0, 255, 0)</code></li>
+<li>rgba: <code>rgba(0,0,0,0.5)</code></li>
+<li><a href="http://www.w3schools.com/colors/default.asp">&#x66F4;&#x591A;</a></li>
+</ul>
+</section><section data-tag="h2"><h2>&#x5355;&#x4F4D;</h2>
+<ul>
+<li>px&#xFF1A; &#x56FA;&#x5B9A;&#x5355;&#x4F4D;</li>
+<li>&#x767E;&#x5206;&#x6BD4;(&#x5BBD;&#x9AD8;&#xFF1F;&#x6587;&#x5B57;&#x5927;&#x5C0F;&#xFF1F;line-height? position?)</li>
+<li>em: &#x76F8;&#x5BF9;&#x5355;&#x4F4D;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x7236;&#x5143;&#x7D20;&#x5B57;&#x4F53;&#x5927;&#x5C0F;</li>
+<li>rem: &#x76F8;&#x5BF9;&#x5355;&#x4F4D;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x6839;&#x5143;&#x7D20;(html)&#x5B57;&#x4F53;&#x5927;&#x5C0F;</li>
+<li>vw vh: &#x76F8;&#x5BF9;&#x5355;&#x4F4D;&#xFF0C;1vw &#x4E3A;&#x5C4F;&#x5E55;&#x5BBD;&#x5EA6;&#x7684;1% <a href="http://caniuse.com/#search=vw">&#x517C;&#x5BB9;&#x6027;</a></li>
+</ul>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x5176;&#x4ED6;</h2>
+</section><section data-tag="h3"><h3>a &#x94FE;&#x63A5;&#x8BBE;&#x7F6E;&#x989C;&#x8272;</h3>
+<p>a &#x6709;&#x9ED8;&#x8BA4;&#x989C;&#x8272;&#x548C;&#x6837;&#x5F0F;&#xFF0C;&#x4F1A;&#x8986;&#x76D6;&#x7EE7;&#x627F;&#x7684;&#x6837;&#x5F0F;</p>
+<pre><code>a {
+  color: red;
+  text-decoration: none;
+}
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5217;&#x8868;&#x53BB;&#x6389;&#x70B9;</h3>
+<pre><code>ul{
+  list-style: none;
+}
+/*&#x4E5F;&#x53EF;&#x8FD9;&#x6837;*/
+li{
+  list-style: none;
+}
+</code></pre>
+</section><section data-tag="h3"><h3>&#x9690;&#x85CF;or&#x900F;&#x660E;</h3>
+<ul>
+<li><code>opacity: 0</code> ; &#x900F;&#x660E;&#x5EA6;&#x4E3A;0&#xFF0C;&#x6574;&#x4F53;</li>
+<li><code>visibility: hidden</code> ;  &#x548C;opacity:0 &#x7C7B;&#x4F3C;</li>
+<li><code>display:none</code>; &#x6D88;&#x5931;&#xFF0C;&#x4E0D;&#x5360;&#x7528;&#x4F4D;&#x7F6E;</li>
+<li><code>background-color: rgba(0&#xFF0C;0&#xFF0C;0&#xFF0C;0.2)</code> &#x53EA;&#x662F;&#x80CC;&#x666F;&#x8272;&#x900F;&#x660E;</li>
+</ul>
+</section><section data-tag="h3"><h3>inline-block</h3>
+<blockquote>
+<ul>
+<li>&#x65E2;&#x5448;&#x73B0; inline &#x7279;&#x6027;(&#x4E0D;&#x5360;&#x636E;&#x4E00;&#x6574;&#x884C;&#xFF0C;&#x5BBD;&#x5EA6;&#x7531;&#x5185;&#x5BB9;&#x5BBD;&#x5EA6;&#x51B3;&#x5B9A;)</li>
+<li>&#x53C8;&#x5448;&#x73B0; block &#x7279;&#x6027; (&#x53EF;&#x8BBE;&#x7F6E;&#x5BBD;&#x9AD8;&#xFF0C;&#x5185;&#x5916;&#x8FB9;&#x8DDD;)</li>
+<li>&#x7F1D;&#x9699;&#x95EE;&#x9898;</li>
+</ul>
+</blockquote>
+</section><section data-tag="h3"><h3>line-height</h3>
+<blockquote>
+<ul>
+<li>line-height: 2</li>
+<li>line-height: 100%</li>
+<li>height = line-heihgt &#x6765;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x5355;&#x884C;&#x6587;&#x672C;</li>
+</ul>
+</blockquote>
+</section></section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

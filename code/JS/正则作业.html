@@ -1,0 +1,60 @@
+<script>
+/*
+
+题目1： \d，\w,\s,[a-zA-Z0-9],\b,.,*,+,?,x{3},^$分别是什么?
+题目2： 写一个函数trim(str)，去除字符串两边的空白字符
+题目3： 写一个函数isEmail(str)，判断用户输入的是不是邮箱
+题目4： 写一个函数isPhoneNum(str)，判断用户输入的是不是手机号
+题目5： 写一个函数isValidUsername(str)，判断用户输入的是不是合法的用户名（长度6-20个字符，只能包括字母、数字、下划线）
+题目6： 写一个函数isValidPassword(str), 判断用户输入的是不是合法密码（长度6-20个字符，只包括大写字母、小写字母、数字、下划线，且至少至少包括两种）
+题目7： 写一个正则表达式，得到如下字符串里所有的颜色
+
+var re = 
+var subj = "color: #121212; background-color: #AA00ef; width: 12px; bad-colors: f#fddee "
+console.log( subj.match(re) )  // ['#121212', '#AA00ef']
+
+题目8：字符串 把字符串里的数字替换为它的平方，如
+'3的平方是9,6的平方是36' -> '9的平方是81,36的平方是1296'
+
+*/
+
+function trim(str){
+  return str.replace(/^\s+|\s+$/g, '')
+}
+var ret = trim('  hello ')
+
+function isEmail(str){
+  var reg = /\w+@.+/
+  return reg.test(str)
+}
+
+function isPhoneNumber(str) {
+  return /^1\d{10}$/.test(str)
+}
+
+function isValidUsername(str){
+  var reg = /^\w{6,20}$/
+  return reg.test(str)
+}
+
+function isValidPassword(str){
+  if(!/^\w{6,20}$/.test(str)) return false
+  if(/^[A-Z]{6,20}$/.test(str)) return false
+  if(/^[a-z]{6,20}$/.test(str)) return false
+  if(/^_{6,20}$/.test(str)) return false
+  
+  return true
+}
+
+var subj = "color: #121212; background-color: #AA00ef; width: 12px; bad-colors: f#fddee "
+var colorReg = /#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})(?=;)/g
+console.log(subj.match(colorReg))
+
+var str = '3的平方是9,6的平方是36'
+str = str.replace(/\d+/g, function(num){
+  return parseInt(num) * parseInt(num)
+})
+console.log(str)
+
+
+</script>

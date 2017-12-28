@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>JS-作用域链--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/league.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>&#x4F5C;&#x7528;&#x57DF;&#x94FE;</h1>
+<p>by &#x82E5;&#x611A;@&#x9965;&#x4EBA;&#x8C37;</p>
+</section><section data-tag="h2"><h2>&#x5148;&#x4E0A;&#x83DC;</h2>
+<pre><code>var x = 10
+bar()
+function foo() {
+  console.log(x)
+}
+function bar(){
+  var x = 30
+  foo() //  &#x8F93;&#x51FA;&#x4EC0;&#x4E48;
+}
+
+</code></pre>
+<pre><code>var x = 10;
+bar() //  &#x8F93;&#x51FA;&#x4EC0;&#x4E48;
+function bar(){
+  var x = 30;
+  function foo(){
+    console.log(x)
+  }
+  foo();
+}
+
+</code></pre>
+</section><section data-tag="h2"><h2>&#x76F8;&#x5173;&#x6982;&#x5FF5;</h2>
+<ul>
+<li>&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587; executionContext</li>
+<li>&#x6D3B;&#x52A8;&#x5BF9;&#x8C61; AO</li>
+<li>Scope &#x5C5E;&#x6027;</li>
+</ul>
+</section><section data-tag="h2"><h2>&#x6267;&#x884C;&#x987A;&#x5E8F;</h2>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x8303;&#x4F8B;1</h2>
+<pre><code>var x = 10
+bar()
+function foo() {
+  console.log(x)
+}
+function bar(){
+  var x = 30
+  foo() //  &#x8F93;&#x51FA;&#x4EC0;&#x4E48;
+}
+
+</code></pre>
+</section><section data-tag="h3"><h3></h3>
+<pre><code>
+globalContext = {
+  AO: {
+    x: 10
+    foo: function
+    bar: function
+  },
+  Scope: null
+}
+
+//&#x58F0;&#x660E; foo &#x65F6; &#x5F97;&#x5230;&#x4E0B;&#x9762;
+foo.[[scope]] = globalContext.AO
+//&#x58F0;&#x660E; bar &#x65F6; &#x5F97;&#x5230;&#x4E0B;&#x9762;
+bar.[[scope]] = globalContext.AO
+
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A; &#x5728;&#x5F53;&#x524D;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5185;&#x58F0;&#x660E;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;[[scope]]&#x5C31;&#x6267;&#x884C;&#x5F53;&#x524D;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684; AO</p>
+</section><section data-tag="h3"><h3></h3>
+<p>&#x5F53;&#x8C03;&#x7528; <code>bar()</code> &#x65F6;&#xFF0C; &#x8FDB;&#x5165; <code>bar</code> &#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;</p>
+<pre><code>barContext = {
+  AO: {
+    x: 30
+  },
+  Scope: bar.[[scope]] //globalContext.AO
+}
+</code></pre>
+</section><section data-tag="h3"><h3></h3>
+<p>&#x5F53;&#x8C03;&#x7528; <code>foo()</code> &#x65F6;&#xFF0C;&#x5148;&#x4ECE; bar &#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684; AO&#x91CC;&#x627E;&#xFF0C;&#x627E;&#x4E0D;&#x5230;&#x518D;&#x4ECE; bar &#x7684; [[scope]]&#x91CC;&#x627E;</p>
+<p>&#x627E;&#x5230;&#x540E;&#x5373;&#x8C03;&#x7528;</p>
+</section><section data-tag="h3"><h3></h3>
+<p>&#x5F53;&#x8C03;&#x7528; <code>foo()</code> &#x65F6;&#xFF0C;&#x8FDB;&#x5165; <code>foo</code> &#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;</p>
+<pre><code>fooContext = {
+  AO: {},
+  Scope: foo.[[scope]] // globalContext.AO
+}
+
+</code></pre>
+<p>&#x6240;&#x4EE5; <code>console.log(x)</code>&#x662F; 10</p>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x8303;&#x4F8B;2</h2>
+<pre><code>var x = 10;
+bar() //  &#x8F93;&#x51FA;&#x4EC0;&#x4E48;
+function bar(){
+  var x = 30;
+  function foo(){
+    console.log(x)
+  }
+  foo();
+}
+
+</code></pre>
+</section><section data-tag="h3"><h3></h3>
+<pre><code>
+globalContext = {
+  AO: {
+    x: 10
+    bar: function
+  },
+  Scope: null
+}
+
+//&#x58F0;&#x660E; bar &#x65F6; &#x5F97;&#x5230;&#x4E0B;&#x9762;
+bar.[[scope]] = globalContext.AO
+
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A; &#x5728;&#x5F53;&#x524D;&#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5185;&#x58F0;&#x660E;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;[[scope]]&#x5C31;&#x6267;&#x884C;&#x5F53;&#x524D;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x7684; AO</p>
+</section><section data-tag="h3"><h3></h3>
+<p>&#x5F53;&#x8C03;&#x7528; <code>bar()</code> &#x65F6;&#xFF0C; &#x8FDB;&#x5165; <code>bar</code> &#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;</p>
+<pre><code>barContext = {
+  AO: {
+    x: 30,
+    foo: function
+  },
+  Scope: bar.[[scope]] //globalContext.AO
+}
+//&#x5728; bar &#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x91CC;&#x58F0;&#x660E; foo &#x65F6; &#x5F97;&#x5230;&#x4E0B;&#x9762;
+foo.[[scope]] = barContext.AO
+</code></pre>
+</section><section data-tag="h3"><h3></h3>
+<p>&#x5F53;&#x8C03;&#x7528; <code>foo()</code> &#x65F6;&#xFF0C;&#x5148;&#x4ECE; bar &#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684; AO&#x91CC;&#x627E;&#xFF0C;&#x627E;&#x5230;&#x540E;&#x5373;&#x8C03;&#x7528;</p>
+</section><section data-tag="h3"><h3></h3>
+<p>&#x5F53;&#x8C03;&#x7528; <code>foo()</code> &#x65F6;&#xFF0C;&#x8FDB;&#x5165; <code>foo</code> &#x7684;&#x6267;&#x884C;&#x4E0A;&#x4E0B;&#x6587;</p>
+<pre><code>fooContext = {
+  AO: {},
+  Scope: foo.[[scope]] // barContext.AO
+}
+
+</code></pre>
+<p>&#x6240;&#x4EE5; <code>console.log(x)</code>&#x662F; 30</p>
+</section></section><section data-tag="h2"><h2>&#x7B14;&#x8BD5;&#x9898;</h2>
+<pre><code>var a = 1;
+
+function fn(){
+  console.log(a); 
+  var a = 5;
+  console.log(a);  
+  a++;
+  var a;
+  fn3();
+  fn2();
+  console.log(a);
+
+  function fn2(){
+    console.log(a); 
+    a = 20;
+  }
+}
+
+function fn3(){
+  console.log(a)
+  a = 200;
+}
+
+fn();
+console.log(a); 
+
+</code></pre>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

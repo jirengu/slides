@@ -1,0 +1,235 @@
+<script type="text/javascript">
+    // var x = 10
+
+
+// bar()
+
+
+// function foo() {
+  
+//   console.log(x)
+// }
+// function bar(){
+//   var x = 30
+//   foo() //  输出什么
+// }
+
+
+/*
+
+1. 
+globalContext = {
+  AO: {
+    x: 10
+    foo: function
+    bar: function
+  },
+  Scope: null
+}
+
+//声明 foo 时 得到下面
+foo.[[scope]] = globalContext.AO
+//声明 bar 时 得到下面
+bar.[[scope]] = globalContext.AO
+
+2. 
+barContext = {
+  AO: {
+    x: 30
+  },
+  Scope: bar.[[scope]] //globalContext.AO
+}
+
+3. 
+fooContext = {
+  AO: {},
+  Scope: foo.[[scope]] // globalContext.AO
+}
+
+
+*/
+
+
+
+
+// var x = 10;
+
+// bar() //  输出什么
+// function bar(){
+//   var x = 30;
+//   function foo(x){
+//     console.log(x)
+//     x = 80
+//   }
+//   foo(40);
+// }
+
+
+/*
+1.
+globalContext = {
+  AO: {
+    x: 10
+    bar: function(){}
+  }
+}
+
+bar.[[scope]] = globalContext.AO
+
+2. 
+barContext = {
+  AO: {
+    x: 30
+    foo: function(){}
+  },
+  Scope: bar.[[scope]] = globalContext.AO
+}
+
+
+foo.[[scope]] = barContext.AO
+
+3. 
+fooContext = {
+    AO: {
+      x: 80
+    },
+    Scope: foo.[[scope]] = barContext.AO
+}
+
+
+*/
+
+
+
+
+// var a = 1;
+
+// function fn(){
+//   console.log(a); 
+//   var a = 5;
+//   console.log(a);  
+//   a++;
+//   var a;
+//   fn3();
+//   fn2();
+//   console.log(a);
+
+//   function fn2(){
+//     console.log(a); 
+//     a = 20;
+//   }
+// }
+
+// function fn3(){
+//   console.log(a)
+//   a = 200;
+// }
+
+// fn();
+// console.log(a); 
+
+
+// var x = 10;
+// bar() //  输出什么
+// function bar(){
+//   var x = 30;
+//   (function (){
+//     console.log(x)
+//   })()
+// }
+
+
+function fn(){
+  var x = 1;
+  function fn2(){
+    x++;
+    console.log(x) ;
+  }
+  return fn2
+}
+var foo = fn()
+var bar = fn()
+foo()
+bar()
+
+
+/*
+1. 初始化
+globalContext = {
+  AO: {
+    foo: undefined,
+    fn: function
+  }
+}
+
+fn.scope = globalContext.AO
+
+2. fn()
+fnContext = {
+  AO: {
+    x: 1,
+    fn2: function
+  },
+  scope: globalContext.AO
+}
+
+fn2.scope = fnContext.AO
+
+3. foo = fn()
+globalContext = {
+  AO: {
+    foo: fn2,
+    fn: function
+  }
+}
+
+4. foo()
+
+fn2Context = {
+  AO: {},
+  scope: fnContext.AO
+}
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+function friendlyDate(time){
+      var t = Date.now();
+      var c = (t - time)/1000;
+      var str
+      switch(true){
+        case c < 60:
+          str =  '刚刚';
+          break;
+        case c < 60*60:
+          str =  Math.floor(c/60) + '分钟前';
+          break;
+        case c < 60*60*24:
+          str = Math.floor(c/60/60) + '小时前';
+          break;
+        case c < 60*60*24*30:
+          str = Math.floor(c/60/60/24) + '天前';
+          break;
+        case  c < 60*60*24*30*12:
+          restr =turn Math.floor(c/60/60/24/30) + '月前';
+          break;
+        default:
+          str =  Math.floor(c/60/60/24/30/12) + '年前';
+      }
+
+      return str;
+        
+    }
+</script>

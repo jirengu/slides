@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>JS-函数--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/league.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>&#x51FD;&#x6570;</h1>
+<p>by &#x82E5;&#x611A;@&#x9965;&#x4EBA;&#x8C37;</p>
+</section><section data-tag="h2"><h2></h2>
+<p>&#x6D89;&#x53CA;&#x77E5;&#x8BC6;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x51FD;&#x6570;&#x7684;&#x58F0;&#x660E;&#x65B9;&#x5F0F;</li>
+<li>&#x53C2;&#x6570;&#x3001;&#x8FD4;&#x56DE;&#x503C;</li>
+<li>&#x58F0;&#x660E;&#x524D;&#x7F6E;</li>
+<li>&#x4F5C;&#x7528;&#x57DF;</li>
+<li>&#x7ACB;&#x5373;&#x6267;&#x884C;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;</li>
+<li>&#x9012;&#x5F52;</li>
+</ol>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x51FD;&#x6570;&#x662F;&#x4EC0;&#x4E48;</h2>
+<p>JavaScript&#x51FD;&#x6570;&#x662F;&#x6307;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x591A;&#x6761;&#x8BED;&#x53E5;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x540D;&#x5B57;&#x6765;&#x4F9B;&#x5176;&#x5B83;&#x8BED;&#x53E5;&#x8C03;&#x7528;&#x4EE5;&#x6267;&#x884C;&#x51FD;&#x6570;&#x5305;&#x542B;&#x7684;&#x4EE3;&#x7801;&#x8BED;&#x53E5;&#x3002;</p>
+</section><section data-tag="h3"><h3></h3>
+<p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x529F;&#x80FD;&#x9700;&#x8981;&#x4E09;&#x6761;&#x8BED;&#x53E5;&#x5B9E;&#x73B0;</p>
+<pre><code>  statement1;
+  statement2;
+  statement3;
+</code></pre>
+<p>&#x90A3;&#x4E48;&#x6BCF;&#x6B21;&#x60F3;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x5199;&#x8FD9;&#x4E09;&#x53E5;&#x8BDD;&#xFF0C;&#x5F88;&#x9EBB;&#x70E6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x4E09;&#x6761;&#x8BED;&#x53E5;&#x6253;&#x5305;&#x4E3A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;</p>
+<pre><code>  function doSomething(){
+    statement1;
+    statement2;
+    statement3;
+  }
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x6BCF;&#x6B21;&#x60F3;&#x5B9E;&#x73B0;&#x529F;&#x80FD;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;<strong>&#x8C03;&#x7528;</strong>&#x4E00;&#x4E0B;&#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x901A;&#x8FC7;<code>&#x51FD;&#x6570;&#x540D;&#x79F0;()</code>&#x7684;&#x5F62;&#x5F0F;&#x8C03;&#x7528;</p>
+<pre><code>  doSomething();
+</code></pre>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x58F0;&#x660E;&#x51FD;&#x6570;</h2>
+<p>ECMAScript&#x89C4;&#x5B9A;&#x4E86;&#x4E09;&#x79CD;&#x58F0;&#x660E;&#x51FD;&#x6570;&#x65B9;&#x5F0F;</p>
+</section><section data-tag="h3"><h3>&#x6784;&#x9020;&#x51FD;&#x6570;</h3>
+<p>&#x9996;&#x5148;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x79CD;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5176;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;<code>new</code>&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5BF9;&#x8C61;</p>
+<pre><code>  var sayHello = new Function(&quot;console.log(&apos;hello world&apos;);&quot;);
+</code></pre>
+<p>&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;</p>
+</section><section data-tag="h3"><h3>&#x51FD;&#x6570;&#x58F0;&#x660E;</h3>
+<p>&#x4F7F;&#x7528;<code>function</code>&#x5173;&#x952E;&#x5B57;&#x53EF;&#x4EE5;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;</p>
+<pre><code>  //&#x51FD;&#x6570;&#x58F0;&#x660E;
+  function sayHello(){
+    console.log(&apos;hello&apos;)
+  }
+
+  //&#x51FD;&#x6570;&#x8C03;&#x7528;
+  sayHello()
+</code></pre>
+<p>&#x58F0;&#x660E;<strong>&#x4E0D;&#x5FC5;</strong>&#x653E;&#x5230;&#x8C03;&#x7528;&#x7684;&#x524D;&#x9762;</p>
+</section><section data-tag="h3"><h3>&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;</h3>
+<pre><code>  var sayHello = function(){
+    console.log(&apos;hello&apos;);
+  }
+
+  sayHello()
+</code></pre>
+<p>&#x58F0;&#x660E;<strong>&#x5FC5;&#x987B;</strong>&#x653E;&#x5230;&#x8C03;&#x7528;&#x7684;&#x524D;&#x9762;</p>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x53C2;&#x6570;</h2>
+<pre><code>  function sayHello(name){
+    console.log(&apos;hello &apos; +  name)
+  }
+
+  sayHello(&apos;&#x82E5;&#x611A;&apos;)
+  sayHello(&apos;&#x9965;&#x4EBA;&#x8C37;)
+</code></pre>
+</section><section data-tag="h3"><h3>&#x591A;&#x4E2A;&#x53C2;&#x6570;</h3>
+<p>&#x51FD;&#x6570;&#x5728;&#x5B9A;&#x4E49;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x5199;&#x591A;&#x4E2A;&#x53C2;&#x6570;</p>
+<pre><code>  function printInfo(name, age, sex){
+    console.log(name);
+    console.log(age);
+    console.log(sex);
+  }
+  printInfo(&apos;&#x9965;&#x4EBA;&#x8C37;&apos;, 2, &apos;boy&apos;)
+</code></pre>
+</section><section data-tag="h3"><h3>arguments</h3>
+<p>&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;,&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>arguments</code>&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x5230;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x6240;&#x6709;&#x4F20;&#x5165;&#x53C2;&#x6570;</p>
+<pre><code>  function printPersonInfo(name, age, sex){
+    console.log(name);
+    console.log(age);
+    console.log(sex);
+    console.log(arguments);
+  }
+</code></pre>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x91CD;&#x8F7D;</h2>
+</section><section data-tag="h3"><h3>&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x91CD;&#x8F7D;&#x8303;&#x4F8B;</h3>
+<pre><code>int sum(int num1, int num2){
+  return num1 + num2;
+}
+
+float sum(float num1, float num2){
+  return num1 + num2;
+}
+
+sum(1, 2);
+sum(1.5, 2.4);
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5728; JS &#x4E2D;</h3>
+<p>&#x6CA1;&#x6709;&#x91CD;&#x8F7D;! &#x540C;&#x540D;&#x51FD;&#x6570;&#x4F1A;&#x8986;&#x76D6;&#x3002; &#x4F46;&#x53EF;&#x4EE5;&#x5728;&#x51FD;&#x6570;&#x4F53;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x8C03;&#x7528;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x903B;&#x8F91;</p>
+<pre><code>
+  function printPeopleInfo(name, age, sex){
+    if(name){
+      console.log(name);
+    }
+
+    if(age){
+      console.log(age);
+    }
+
+    if(sex){
+      console.log(sex);
+    }
+  }
+
+
+  printPeopleInfo(&apos;Byron&apos;, 26);
+  printPeopleInfo(&apos;Byron&apos;, 26, &apos;male&apos;);
+</code></pre>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x8FD4;&#x56DE;&#x503C;</h2>
+<p>&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x5728;&#x51FD;&#x6570;&#x6267;&#x884C;&#x540E;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x4F9B;&#x522B;&#x4EBA;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>return</code>&#x6765;&#x5B9E;&#x73B0;</p>
+<pre><code>  function sum(a, b){
+    a++;
+    b++;
+    return a + b;
+  }
+
+  var result = sum(2, 3);
+  conslole.log(result);
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x6CE8;&#x610F;&#x70B9;</h3>
+<p>&#x5982;&#x679C;&#x4E0D;&#x5199;return&#x8BED;&#x53E5;&#xFF0C;&#x51FD;&#x6570;&#x4E5F;&#x4F1A;&#x9ED8;&#x8BA4;&#x7ED9;&#x6211;&#x4EEC;&#x8FD4;&#x56DE;<code>undefined</code></p>
+</section><section data-tag="h3"><h3>&#x6CE8;&#x610F;&#x70B9;2</h3>
+<p>&#x51FD;&#x6570;&#x5728;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x53EA;&#x8981;&#x9047;&#x5230;<code>return</code>&#x5C31;&#x4F1A;&#x7ACB;&#x5373;&#x7ED3;&#x675F;&#x9000;&#x51FA;&#x51FD;&#x6570;&#x4F53;</p>
+<pre><code>function fn(a){
+  if(a &lt; 0){
+    return;  
+  }
+  //&#x4E0B;&#x9762;&#x6CA1;&#x7528; else &#xFF0C;&#x4F46;&#x6548;&#x679C;&#x4E00;&#x6837;
+  a++;
+  return a + a;
+}
+</code></pre>
+</section><section data-tag="h3"><h3>&#x6CE8;&#x610F;&#x70B9;3</h3>
+<p>&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x548C; <code>console.log()</code>&#x662F;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x5343;&#x4E07;&#x4E0D;&#x8981;&#x8FD9;&#x6837;</p>
+<pre><code>function getAge(age){
+  return console.log(age);
+}
+
+</code></pre>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x58F0;&#x660E;&#x524D;&#x7F6E;</h2>
+</section><section data-tag="h3"><h3><code>var</code> &#x548C; <code>function</code> &#x7684;&#x58F0;&#x660E;&#x524D;&#x7F6E;</h3>
+<p>&#x5728;&#x4E00;&#x4E2A;&#x4F5C;&#x7528;&#x57DF;&#x4E0B;&#xFF0C;<code>var</code> &#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x548C;<code>function</code> &#x58F0;&#x660E;&#x7684;&#x51FD;&#x6570;&#x4F1A;&#x524D;&#x7F6E;</p>
+<pre><code>console.log(a); //undefined
+var a = 3;
+console.log(a); //3
+
+sayHello();
+
+function sayHello(){
+  console.log(&apos;hello&apos;);
+}
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;</h3>
+<pre><code>  console.log(fn); //undefined
+  fn(); //&#x62A5;&#x9519;
+
+  var fn = function(){}
+</code></pre>
+<p>&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#x548C; var &#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x6CA1;&#x4EC0;&#x4E48;&#x533A;&#x522B;</p>
+<p>&#x5148;<code>&#x6709;</code>&#xFF0C;&#x518D; <code>&#x7528;</code></p>
+</section><section data-tag="h3"><h3>&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x58F0;&#x660E;&#x524D;&#x7F6E;</h3>
+<pre><code>function fn(){
+  console.log(a)  //undefined
+  var a = 3
+  console.log(a)
+}
+fn()
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5F53;&#x547D;&#x540D;&#x51B2;&#x7A81;&#x65F6;</h3>
+<p>&#x5148; &#x524D;&#x7F6E;&#xFF0C;&#x518D; &#x8986;&#x76D6;</p>
+<pre><code>
+  var fn = 3;
+  function fn(){}
+
+  console.log(fn); // 3
+</code></pre>
+<pre><code>  
+  function fn(){}
+  var fn = 3;
+
+  console.log(fn); // 3
+</code></pre>
+</section><section data-tag="h3"><h3>&#x53C2;&#x6570;&#x91CD;&#x540D;</h3>
+<pre><code>  function fn(fn){
+    console.log(fn);
+
+    var fn = 3;
+    console.log(fn);
+  }
+
+  fn(10); //10 3
+</code></pre>
+</section></section><section data-tag="h2"><h2>&#x4F5C;&#x7528;&#x57DF;</h2>
+<p>&#x5728; JS &#x4E2D;&#x53EA;&#x6709;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x6CA1;&#x6709;&#x5757;&#x4F5C;&#x7528;&#x57DF;</p>
+<pre><code>  function fn(){
+    var a =1;
+
+    if(a &gt; 2){
+      var b = 3;
+    }
+    console.log(b);
+  }
+
+  fn(); // undefined
+
+  console.log(a); // &quot;ReferenceError: a is not defined
+</code></pre>
+</section><section data-tag="down"><section data-tag="h2"><h2>var</h2>
+</section><section data-tag="h3"><h3>&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x53D8;&#x91CF;</h3>
+<pre><code>function fn(){}
+var fn
+console.log(fn)
+
+var a = 1
+var a
+var a 
+console.log(a)
+
+</code></pre>
+<p><code>var</code>&#x91CD;&#x590D;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x539F;&#x53D8;&#x91CF;&#x503C;&#x4E0D;&#x53D8;</p>
+</section><section data-tag="h3"><h3>&#x4E0D;&#x52A0;<code>var</code>&#x4F5C;&#x7528;</h3>
+<pre><code>  function fn(){
+    a = 1;
+  }
+
+  fn();
+
+  console.log(a); // 1
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E0D;&#x5199;var&#x4F1A;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x7F16;&#x7A0B;&#x4E2D;&#x5E94;&#x8BE5;&#x8981;&#x907F;&#x514D;&#x7684;&#xFF0C;&#x5373;&#x4F7F;&#x771F;&#x7684;&#x9700;&#x8981;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x4E5F;&#x5E94;&#x8BE5;&#x5728;&#x6700;&#x5916;&#x5C42;&#x4F5C;&#x7528;&#x57DF;&#x4F7F;&#x7528;var&#x58F0;&#x660E;</p>
+<p>&#x66F4;&#x6DF1;&#x5165;&#x4E86;&#x89E3;&#xFF0C;&#x53C2;&#x8003;&#x4E0B;&#x4E00;&#x8282; &#x4F5C;&#x7528;&#x57DF;&#x94FE;</p>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x9012;&#x5F52;</h2>
+<ol>
+<li>&#x81EA;&#x5DF1;&#x8C03;&#x7528;&#x81EA;&#x5DF1;</li>
+<li>&#x8BBE;&#x5B9A;&#x7EC8;&#x6B62;&#x6761;&#x4EF6;</li>
+<li>&#x4F18;&#x70B9;: &#x7B97;&#x6CD5;&#x7B80;&#x5355;</li>
+<li>&#x7F3A;&#x70B9;: &#x6548;&#x7387;&#x4F4E;</li>
+</ol>
+</section><section data-tag="h3"><h3>&#x6C42; n &#x7684;&#x9636;&#x4E58; n!</h3>
+<pre><code>function factor(n){
+  if(n === 1) {
+    return 1
+  }
+  return n * factor(n-1)
+}
+
+factor(5)
+</code></pre>
+</section><section data-tag="h3"><h3>&#x6C42; 1+2+...+n &#x7684;&#x503C;</h3>
+<pre><code>function sum(n){
+  if(n === 1) {
+    return 1
+  }
+  return n + sum(n-1)
+}
+sum(10)
+</code></pre>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x7ACB;&#x5373;&#x6267;&#x884C;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;</h2>
+<pre><code>(function(){
+  var a  = 1;
+})()
+console.log(a); //undefined
+</code></pre>
+<p>&#x4F5C;&#x7528;&#xFF1A; &#x9694;&#x79BB;&#x4F5C;&#x7528;&#x57DF;</p>
+</section><section data-tag="h3"><h3>&#x5176;&#x4ED6;&#x5199;&#x6CD5;</h3>
+<pre><code>(function fn1() {});
+ 
+// &#x5728;&#x6570;&#x7EC4;&#x521D;&#x59CB;&#x5316;&#x5668;&#x5185;&#x53EA;&#x80FD;&#x662F;&#x8868;&#x8FBE;&#x5F0F;
+[function fn2() {}];
+ 
+// &#x9017;&#x53F7;&#x4E5F;&#x53EA;&#x80FD;&#x64CD;&#x4F5C;&#x8868;&#x8FBE;&#x5F0F;
+1, function fn3() {};
+</code></pre>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x7EC3;&#x4E60;&#x9898;</h2>
+</section><section data-tag="h3"><h3></h3>
+<pre><code>    console.log(j);
+    console.log(i);
+    for(var i=0; i&lt;10; i++){
+        var j = 100;
+    }
+    console.log(i);
+    console.log(j);
+</code></pre>
+</section><section data-tag="h3"><h3></h3>
+<pre><code>  fn();
+    var i = 10;
+    var fn = 20;
+    console.log(i);
+    function fn(){
+        console.log(i);
+        var i = 99;
+        fn2();
+        console.log(i);
+        function fn2(){
+            i = 100;
+        }
+    }
+</code></pre>
+</section></section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

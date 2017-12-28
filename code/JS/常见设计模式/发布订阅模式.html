@@ -1,0 +1,96 @@
+<script type="text/javascript">
+var EventCenter = (function(){
+
+  var events = {};
+  /*
+    {
+      my_event: [function(data){xxx}, function(data){yyy}]
+    }
+
+    {
+      event1: [fn1, fn2],
+      event2: [fn3]
+    }
+
+
+
+  */
+
+  function on(evt, handler){
+    events[evt] = events[evt] || [];
+    events[evt].push(handler);
+  }
+
+  function fire(evt, args){
+    if(!events[evt]){
+      return;
+    }
+    for(var i=0; i<events[evt].length; i++){
+      var args = Array.prototype.slice.call(arguments, 1)
+      events[evt][i].apply(null, args)
+    }
+
+  }
+
+  return {
+    on: on,
+    fire: fire
+  }
+})();
+
+
+
+//组件 A
+
+EventCenter.on('event1', function fn1(data1, data2){
+  console.log('event1 触发了，给我传递的数据是', data1, data2)
+})
+EventCenter.on('event1', function fn2(data){
+  console.log('event1 又触发了，给我传递的数据是', data)
+})
+EventCenter.on('event2', function fn3(data){
+  console.log('event2 触发了，给我传递的数据是', data)
+})
+
+//组件 B
+
+EventCenter.fire('event1', 'hello', 'worlddddd')
+EventCenter.fire('event2', 'world', '3ddd')
+
+
+// EventCenter.on('my_event', function(data){
+//   console.log('my_event received...');
+// });
+// EventCenter.on('my_event', function(data){
+//   console.log('my_event2 received...');
+// });
+
+// EventCenter.fire('my_event');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

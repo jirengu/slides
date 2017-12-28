@@ -1,0 +1,16 @@
+{
+  "name": "gulp-demo",
+  "version": "1.0.0",
+  "description": "gulp demos",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp "
+  },
+  "author": "hunger@jirengu.com",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.0",
+    "gulp-scp2": "^0.2.0"
+  }
+}

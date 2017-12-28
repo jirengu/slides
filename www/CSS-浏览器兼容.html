@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS-浏览器兼容--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/jirengu.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>&#x6D4F;&#x89C8;&#x5668;&#x517C;&#x5BB9;</h1>
+<p>by &#x82E5;&#x611A;@&#x9965;&#x4EBA;&#x8C37;</p>
+</section><section data-tag="h2"><h2>&#x4EC0;&#x4E48;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x517C;&#x5BB9;&#x95EE;&#x9898;</h2>
+<p>&#x540C;&#x4E00;&#x4EFD;&#x4EE3;&#x7801;&#xFF0C;&#x6709;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x6548;&#x679C;&#x6B63;&#x5E38;&#xFF0C;&#x6709;&#x7684;&#x4E0D;&#x6B63;&#x5E38;</p>
+<ul>
+<li>&#x4E0D;&#x6B63;&#x5E38;&#x7684;&#x539F;&#x56E0;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;(&#x4E0D;&#x652F;&#x6301;? bug&#xFF1F;)</li>
+<li>&#x5982;&#x4F55;&#x8BA9;&#x5B83;&#x5C55;&#x793A;&#x6B63;&#x5E38;?(&#x6761;&#x4EF6;&#x6CE8;&#x91CA;&#xFF1F; &#x5355;&#x72EC;Hack&#xFF1F;)</li>
+</ul>
+</section><section data-tag="h2"><h2>&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x6709;&#x6D4F;&#x89C8;&#x5668;&#x517C;&#x5BB9;&#x95EE;&#x9898;</h2>
+<ul>
+<li>&#x540C;&#x4E00;&#x4EA7;&#x54C1;&#xFF0C;&#x7248;&#x672C;&#x8D8A;&#x8001; bug &#x8D8A;&#x591A;</li>
+<li>&#x540C;&#x4E00;&#x4EA7;&#x54C1;&#xFF0C;&#x7248;&#x672C;&#x8D8A;&#x65B0;&#xFF0C;&#x529F;&#x80FD;&#x8D8A;&#x591A;</li>
+<li>&#x4E0D;&#x540C;&#x4EA7;&#x54C1;&#xFF0C;&#x4E0D;&#x540C;&#x6807;&#x51C6;&#xFF0C;&#x4E0D;&#x540C;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</li>
+</ul>
+</section><section data-tag="h2"><h2>&#x7528;&#x5230;&#x7684;&#x7F51;&#x7AD9;</h2>
+<ul>
+<li><a href="http://tongji.baidu.com/data/browser">&#x6D4F;&#x89C8;&#x5668;&#x5E02;&#x573A;&#x4EFD;&#x989D;</a></li>
+<li><a href="http://caniuse.com">caniuse.com</a> &#x67E5;CSS&#x5C5E;&#x6027;&#x517C;&#x5BB9;</li>
+<li><a href="http://browserhacks.com/">browserhacks</a> &#x67E5; Hack &#x7684;&#x5199;&#x6CD5;</li>
+</ul>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x5904;&#x7406;&#x517C;&#x5BB9;&#x95EE;&#x9898;&#x7684;&#x601D;&#x8DEF;</h2>
+<ul>
+<li>&#x8981;&#x4E0D;&#x8981;&#x505A;
+<ul>
+<li>&#x4EA7;&#x54C1;&#x7684;&#x89D2;&#x5EA6;&#xFF08;&#x4EA7;&#x54C1;&#x7684;&#x53D7;&#x4F17;&#x3001;&#x53D7;&#x4F17;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x6BD4;&#x4F8B;&#x3001;&#x6548;&#x679C;&#x4F18;&#x5148;&#x8FD8;&#x662F;&#x57FA;&#x672C;&#x529F;&#x80FD;&#x4F18;&#x5148;&#xFF09;</li>
+<li>&#x6210;&#x672C;&#x7684;&#x89D2;&#x5EA6; (&#x6709;&#x65E0;&#x5FC5;&#x8981;&#x505A;&#x67D0;&#x4EF6;&#x4E8B;)</li>
+</ul>
+</li>
+<li>&#x505A;&#x5230;&#x4EC0;&#x4E48;&#x7A0B;&#x5EA6;
+<ul>
+<li>&#x8BA9;&#x54EA;&#x4E9B;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x54EA;&#x4E9B;&#x6548;&#x679C;</li>
+</ul>
+</li>
+<li>&#x5982;&#x4F55;&#x505A;
+<ul>
+<li>&#x6839;&#x636E;&#x517C;&#x5BB9;&#x9700;&#x6C42;&#x9009;&#x62E9;&#x6280;&#x672F;&#x6846;&#x67B6;/&#x5E93;(jquery)</li>
+<li>&#x6839;&#x636E;&#x517C;&#x5BB9;&#x9700;&#x6C42;&#x9009;&#x62E9;&#x517C;&#x5BB9;&#x5DE5;&#x5177;(<a href="https://github.com/aFarkas/html5shiv">html5shiv.js</a>&#x3001;<a href="https://github.com/scottjehl/Respond">respond.js</a>&#x3001;<a href="https://segmentfault.com/a/1190000003021766">css reset</a>&#x3001;<a href="https://github.com/necolas/normalize.css">normalize.css</a>&#x3001;<a href="https://github.com/Modernizr/Modernizr">Modernizr</a>)</li>
+<li><a href="https://github.com/postcss/postcss">postCSS</a></li>
+<li>&#x6761;&#x4EF6;&#x6CE8;&#x91CA;&#x3001;CSS Hack&#x3001;js &#x80FD;&#x529B;&#x68C0;&#x6D4B;&#x505A;&#x4E00;&#x4E9B;&#x4FEE;&#x8865;</li>
+</ul>
+</li>
+</ul>
+</section><section data-tag="h3"><h3>&#x6E10;&#x8FDB;&#x589E;&#x5F3A;&#x548C;&#x4F18;&#x96C5;&#x964D;&#x7EA7;</h3>
+<ul>
+<li><code>&#x6E10;&#x8FDB;&#x589E;&#x5F3A;</code>(progressive enhancement): &#x9488;&#x5BF9;&#x4F4E;&#x7248;&#x672C;&#x6D4F;&#x89C8;&#x5668;&#x8FDB;&#x884C;&#x6784;&#x5EFA;&#x9875;&#x9762;&#xFF0C;&#x4FDD;&#x8BC1;&#x6700;&#x57FA;&#x672C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x9488;&#x5BF9;&#x9AD8;&#x7EA7;&#x6D4F;&#x89C8;&#x5668;&#x8FDB;&#x884C;&#x6548;&#x679C;&#x3001;&#x4EA4;&#x4E92;&#x7B49;&#x6539;&#x8FDB;&#x548C;&#x8FFD;&#x52A0;&#x529F;&#x80FD;&#x8FBE;&#x5230;&#x66F4;&#x597D;&#x7684;&#x7528;&#x6237;&#x4F53;&#x9A8C;</li>
+<li><code>&#x4F18;&#x96C5;&#x964D;&#x7EA7;</code> (graceful degradation): &#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x6784;&#x5EFA;&#x5B8C;&#x6574;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x9488;&#x5BF9;&#x4F4E;&#x7248;&#x672C;&#x6D4F;&#x89C8;&#x5668;&#x8FDB;&#x884C;&#x517C;&#x5BB9;&#x3002;</li>
+</ul>
+<p><a href="http://stackoverflow.com/questions/2550431/what-is-the-difference-between-progressive-enhancement-and-graceful-degradation">stackoverflow-&#x6E10;&#x8FDB;&#x589E;&#x5F3A;&#x548C;&#x4F18;&#x96C5;&#x964D;&#x7EA7;&#x7684;&#x533A;&#x522B;</a></p>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x5904;&#x7406;&#x517C;&#x5BB9;&#x95EE;&#x9898;&#x7684;&#x624B;&#x6BB5;</h2>
+</section><section data-tag="h3"><h3>&#x5408;&#x9002;&#x7684;&#x6846;&#x67B6;</h3>
+<ol>
+<li>Bootstrap (&gt;=ie8)</li>
+<li>jQuery 1.~ (&gt;=ie6), jQuery 2.~ (&gt;=ie9)</li>
+<li>Vue (&gt;= ie9)</li>
+<li>...</li>
+</ol>
+</section><section data-tag="h3"><h3>&#x6761;&#x4EF6;&#x6CE8;&#x91CA;</h3>
+<p>&#x6761;&#x4EF6;&#x6CE8;&#x91CA; (conditional comment) &#x662F;&#x4E8E;HTML&#x6E90;&#x7801;&#x4E2D;&#x88AB;IE&#x6709;&#x6761;&#x4EF6;&#x89E3;&#x91CA;&#x7684;&#x8BED;&#x53E5;&#x3002;&#x6761;&#x4EF6;&#x6CE8;&#x91CA;&#x53EF;&#x88AB;&#x7528;&#x6765;&#x5411;IE&#x63D0;&#x4F9B;&#x53CA;&#x9690;&#x85CF;&#x4EE3;&#x7801;&#x3002;</p>
+<pre><code>    &lt;!--[if IE 6]&gt;
+    &lt;p&gt;You are using Internet Explorer 6.&lt;/p&gt;
+    &lt;![endif]--&gt;
+    &lt;!--[if !IE]&gt;&lt;!--&gt;
+    &lt;script&gt;alert(1);&lt;/script&gt;
+    &lt;!--&lt;![endif]--&gt;
+    &lt;!--[if IE 8]&gt;
+    &lt;link href=&quot;ie8only.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;![endif]--&gt;
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x4E86;&#x6761;&#x4EF6;&#x6CE8;&#x91CA;&#x7684;&#x9875;&#x9762;&#x5728; Windows Internet Explorer 9 &#x4E2D;&#x53EF;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x5728; Internet Explorer 10 &#x4E2D;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002; <a href="https://msdn.microsoft.com/zh-cn/library/ie/hh801214(v=vs.85).aspx">IE10&#x4E0D;&#x518D;&#x652F;&#x6301;&#x6761;&#x4EF6;&#x6CE8;&#x91CA;</a></p>
+</section><section data-tag="h3"><h3>&#x6761;&#x4EF6;&#x6CE8;&#x91CA;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x9879;&#x76EE;</th>
+<th>&#x8303;&#x4F8B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#xFF01;</td>
+<td>[if !IE]</td>
+<td>&#x975E;IE</td>
+</tr>
+<tr>
+<td>lt</td>
+<td>[if lt IE 5.5]</td>
+<td>&#x5C0F;&#x4E8E;IE 5.5</td>
+</tr>
+<tr>
+<td>lte</td>
+<td>[if lte IE 6]</td>
+<td>&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;IE6</td>
+</tr>
+<tr>
+<td>gt</td>
+<td>[if gt IE 5]</td>
+<td>&#x5927;&#x4E8E; IE5</td>
+</tr>
+<tr>
+<td>gte</td>
+<td>[if gte IE 7]</td>
+<td>&#x5927;&#x4E8E;&#x7B49;&#x4E8E;IE7</td>
+</tr>
+<tr>
+<td>|</td>
+<td>[if (IE 6)|(IE 7)]</td>
+<td>IE6&#x6216;&#x8005;IE7</td>
+</tr>
+</tbody>
+</table>
+</section><section data-tag="h3"><h3>CSS hack</h3>
+<p>&#x7531;&#x4E8E;&#x4E0D;&#x540C;&#x5382;&#x5546;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x6BD4;&#x5982;Internet Explorer,Safari,Mozilla Firefox,Chrome&#x7B49;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x540C;&#x4E00;&#x5382;&#x5546;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x4E0D;&#x540C;&#x7248;&#x672C;&#xFF0C;&#x5982;IE6&#x548C;IE7&#xFF0C;&#x5BF9;CSS&#x7684;&#x89E3;&#x6790;&#x8BA4;&#x8BC6;&#x4E0D;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#xFF0C;&#x56E0;&#x6B64;&#x4F1A;&#x5BFC;&#x81F4;&#x751F;&#x6210;&#x7684;&#x9875;&#x9762;&#x6548;&#x679C;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x5F97;&#x4E0D;&#x5230;&#x6211;&#x4EEC;&#x6240;&#x9700;&#x8981;&#x7684;&#x9875;&#x9762;&#x6548;&#x679C;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x53BB;&#x5199;&#x4E0D;&#x540C;&#x7684;CSS&#xFF0C;&#x8BA9;&#x5B83;&#x80FD;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4E5F;&#x80FD;&#x5F97;&#x5230;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x9875;&#x9762;&#x6548;&#x679C;&#x3002;</p>
+</section><section data-tag="h3"><h3>CSS hack</h3>
+<p>CSS Hack&#x5927;&#x81F4;&#x6709;3&#x79CD;&#x8868;&#x73B0;&#x5F62;&#x5F0F;&#xFF0C;<code>CSS&#x5C5E;&#x6027;&#x524D;&#x7F00;&#x6CD5;</code>&#x3001;<code>&#x9009;&#x62E9;&#x5668;&#x524D;&#x7F00;&#x6CD5;</code>&#x4EE5;&#x53CA;<code>IE&#x6761;&#x4EF6;&#x6CE8;&#x91CA;&#x6CD5;</code>&#xFF08;&#x5373;HTML&#x5934;&#x90E8;&#x5F15;&#x7528;if IE&#xFF09;Hack&#xFF0C;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x4E2D;CSS Hack&#x5927;&#x90E8;&#x5206;&#x662F;&#x9488;&#x5BF9;IE&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x8868;&#x73B0;&#x5DEE;&#x5F02;&#x800C;&#x5F15;&#x5165;&#x7684;&#x3002;</p>
+<ol>
+<li>&#x5C5E;&#x6027;&#x524D;&#x7F00;&#x6CD5;(&#x5373;&#x7C7B;&#x5185;&#x90E8;Hack)&#xFF1A;&#x4F8B;&#x5982; IE6&#x80FD;&#x8BC6;&#x522B;&#x4E0B;&#x5212;&#x7EBF;&quot;<em>&quot;&#x548C;&#x661F;&#x53F7;&quot; * &quot;&#xFF0C;IE7&#x80FD;&#x8BC6;&#x522B;&#x661F;&#x53F7;&quot; * &quot;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x8BC6;&#x522B;&#x4E0B;&#x5212;&#x7EBF;&quot;</em>&quot;&#xFF0C;IE6~IE10&#x90FD;&#x8BA4;&#x8BC6;&quot;\9&quot;&#xFF0C;&#x4F46;firefox&#x524D;&#x8FF0;&#x4E09;&#x4E2A;&#x90FD;&#x4E0D;&#x80FD;&#x8BA4;&#x8BC6;</li>
+<li>&#x9009;&#x62E9;&#x5668;&#x524D;&#x7F00;&#x6CD5;(&#x5373;&#x9009;&#x62E9;&#x5668;Hack)</li>
+<li>IE&#x6761;&#x4EF6;&#x6CE8;&#x91CA;&#x6CD5;(&#x5373;HTML&#x6761;&#x4EF6;&#x6CE8;&#x91CA;Hack)&#xFF1A;&#x9488;&#x5BF9;&#x6240;&#x6709;IE(&#x6CE8;&#xFF1A;IE10+&#x5DF2;&#x7ECF;&#x4E0D;&#x518D;&#x652F;&#x6301;&#x6761;&#x4EF6;&#x6CE8;&#x91CA;)&#xFF1A; <code>&lt;!--[if IE]&gt;IE&#x6D4F;&#x89C8;&#x5668;&#x663E;&#x793A;&#x7684;&#x5185;&#x5BB9; &lt;![endif]--&gt;</code>&#xFF0C;&#x9488;&#x5BF9;IE6&#x53CA;&#x4EE5;&#x4E0B;&#x7248;&#x672C;&#xFF1A;<code>&lt;!--[if lt IE 6]&gt;&#x53EA;&#x5728;IE6-&#x663E;&#x793A;&#x7684;&#x5185;&#x5BB9; &lt;![endif]--&gt;</code>&#x3002;&#x8FD9;&#x7C7B;Hack&#x4E0D;&#x4EC5;&#x5BF9;CSS&#x751F;&#x6548;&#xFF0C;&#x5BF9;&#x5199;&#x5728;&#x5224;&#x65AD;&#x8BED;&#x53E5;&#x91CC;&#x9762;&#x7684;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x90FD;&#x4F1A;&#x751F;&#x6548;</li>
+</ol>
+</section><section data-tag="h3"><h3>&#x5E38;&#x89C1;hack&#x5199;&#x6CD5;</h3>
+<pre><code>.box{
+  color: red;
+  _color: blue; /*ie6*/
+  *color: pink; /*ie67*/
+  color: yellow\9;  /*ie/edge 6-8*/
+}
+</code></pre>
+<pre><code>&lt;!&#x2013;-[if IE 7]&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;ie7.css&quot; type=&quot;text/css&quot; /&gt;
+&lt;![endif]&#x2013;-&gt;
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5E38;&#x89C1;&#x5C5E;&#x6027;&#x7684;&#x517C;&#x5BB9;&#x60C5;&#x51B5;</h3>
+<ul>
+<li><code>inline-block</code>: &gt;=ie8</li>
+<li><code>min-width/min-height</code>: &gt;=ie8</li>
+<li><code>:before,:after</code>: &gt;=ie8</li>
+<li><code>div:hover</code>: &gt;=ie7</li>
+<li><code>inline-block</code>: &gt;=ie8</li>
+<li><code>background-size</code>: &gt;=ie9</li>
+<li>&#x5706;&#x89D2;: &gt;= ie9</li>
+<li>&#x9634;&#x5F71;: &gt;= ie9</li>
+<li>&#x52A8;&#x753B;/&#x6E10;&#x53D8;: &gt;= ie10</li>
+</ul>
+</section><section data-tag="h3"><h3>&#x5E38;&#x89C1;&#x517C;&#x5BB9;&#x5904;&#x7406;&#x8303;&#x4F8B;</h3>
+<pre><code>.clearfix:after{
+  content: &apos;&apos;;
+  display: block;
+  clear: both;
+}
+.clearfix{
+  *zoom: 1; /* &#x4EC5;&#x5BF9;ie67&#x6709;&#x6548; */
+}
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5E38;&#x89C1;&#x517C;&#x5BB9;&#x5904;&#x7406;&#x8303;&#x4F8B;</h3>
+<pre><code>.target{
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5E38;&#x89C1;&#x517C;&#x5BB9;&#x5904;&#x7406;&#x8303;&#x4F8B;</h3>
+<pre><code> &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://oss.maxcdn.com/respond/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
+</code></pre>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;!--[if IEMobile 7 ]&gt; &lt;html dir=&quot;ltr&quot; lang=&quot;en-US&quot;class=&quot;no-js iem7&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if lt IE 7 ]&gt; &lt;html dir=&quot;ltr&quot; lang=&quot;en-US&quot; class=&quot;no-js ie6 oldie&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;html dir=&quot;ltr&quot; lang=&quot;en-US&quot; class=&quot;no-js ie7 oldie&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;html dir=&quot;ltr&quot; lang=&quot;en-US&quot; class=&quot;no-js ie8 oldie&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]&gt;&lt;!--&gt;&lt;html dir=&quot;ltr&quot; lang=&quot;en-US&quot; class=&quot;no-js&quot;&gt;&lt;!--&lt;![endif]--&gt;
+</code></pre>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x4E00;&#x4E9B;&#x548C;&#x517C;&#x5BB9;&#x76F8;&#x5173;&#x7684;&#x5F00;&#x53D1;&#x5229;&#x5668;</h2>
+</section><section data-tag="h3"><h3><a href="https://github.com/aFarkas/html5shiv">html5shiv.js</a></h3>
+</section><section data-tag="h3"><h3><a href="https://github.com/scottjehl/Respond">respond.js</a></h3>
+</section><section data-tag="h3"><h3><a href="https://segmentfault.com/a/1190000003021766">css reset</a></h3>
+</section><section data-tag="h3"><h3><a href="https://github.com/necolas/normalize.css">normalize.css</a></h3>
+</section><section data-tag="h3"><h3><a href="https://github.com/Modernizr/Modernizr">Modernizr</a></h3>
+<p><a href="https://segmentfault.com/a/1190000003820989">&#x53C2;&#x8003;&#x6587;&#x7AE0;</a></p>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x5176;&#x4ED6;</h2>
+</section><section data-tag="h3"><h3>&#x5982;&#x4F55;&#x8C03;&#x8BD5;&#x8001;&#x6389;&#x7259;&#x7684; IE</h3>
+<ol>
+<li>&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;</li>
+<li>&#x7ED9;&#x5143;&#x7D20;&#x6DFB;&#x52A0;border</li>
+</ol>
+</section></section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

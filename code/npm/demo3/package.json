@@ -1,0 +1,15 @@
+{
+  "name": "hunger-demo22",
+  "version": "1.0.3",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "hungerdemo": "./index.js",
+    "hungerdemo2": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

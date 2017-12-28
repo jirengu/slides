@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>HTML-Form表单--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/jirengu.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>Form &#x8868;&#x5355;</h1>
+<p>by &#x82E5;&#x611A;@&#x9965;&#x4EBA;&#x8C37;</p>
+</section><section data-tag="h2"><h2>&#x6807;&#x7B7E;&#x6982;&#x89C8;</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;login&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;sex&quot;&gt;
+  &lt;form action=&quot;/getInfo&quot; method=&quot;get&quot;&gt;
+      &lt;div class=&quot;submit&quot;&gt;
+      &lt;button&gt;&#x63D0;&#x4EA4;&#x1F601;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;username&quot;&gt;
+      &lt;label for=&quot;username&quot;&gt;&#x59D3;&#x540D;&lt;/label&gt;
+      &lt;input id=&quot;username&quot; type=&quot;text&quot; name=&quot;username&quot; value=&quot;ruo&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;password&quot;&gt;
+      &lt;label for=&quot;password&quot;&gt;&#x5BC6;&#x7801;&lt;/label&gt;
+      &lt;input id=&quot;password&quot; type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;&#x8F93;&#x5165;&#x5BC6;&#x7801;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;hobby&quot;&gt;
+      &lt;label&gt;&#x7231;&#x597D;&lt;/label&gt;
+      &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;read&quot;&gt; &#x8BFB;&#x4E66;
+      &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;music&quot;&gt; &#x542C;&#x6B4C;
+      &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;study&quot;&gt; &#x5B66;&#x4E60;
+    &lt;/div&gt;
+    &lt;div class=&quot;sex&quot;&gt;
+      &lt;label&gt;&#x6027;&#x522B;&lt;/label&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;&#x7537;&quot;&gt; &#x7537;
+      &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;&#x5973;&quot;&gt; &#x5973;
+    &lt;/div&gt;
+    &lt;div class=&quot;file&quot;&gt;
+      &lt;input type=&quot;file&quot; name=&quot;myfile&quot; accept=&quot;image/png&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;select&quot;&gt;
+      &lt;select name=&quot;city&quot;&gt;
+        &lt;option value=&quot;beijing&quot;&gt;&#x5317;&#x4EAC;&lt;/option&gt;
+        &lt;option value=&quot;shanghai&quot; selected&gt;&#x4E0A;&#x6D77;&lt;/option&gt;
+        &lt;option value=&quot;hangzhou&quot;&gt;&#x676D;&#x5DDE;&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;textarea&quot;&gt;
+      &lt;textarea name=&quot;article&quot;&gt;
+         &#x591A;&#x884C;&#x6587;&#x672C;&#xFF0C;&#x6CE8;&#x610F;&#x548C; type=text&#x7684;&#x533A;&#x522B;
+      &lt;/textarea&gt;
+      &lt;input type=&quot;hidden&quot; name=&quot;csrf&quot; value=&quot;12345623fafdffdd&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;Buttom&quot; /&gt; &#x4E0D;&#x4F1A;&#x63D0;&#x4EA4;
+        &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt; &#x4F1A;&#x63D0;&#x4EA4;
+        &lt;input type=&quot;reset&quot; value=&quot;Reset&quot; /&gt; &#x91CD;&#x7F6E;&#x8F93;&#x5165;
+    &lt;/div&gt;
+  &lt;/form&gt;
+
+
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

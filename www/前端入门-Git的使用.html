@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>前端入门-Git的使用--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/jirengu.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>Git &#x7684;&#x4F7F;&#x7528;</h1>
+<p>by &#x82E5;&#x611A;@<a href="http://jirengu.com">&#x9965;&#x4EBA;&#x8C37;</a></p>
+</section><section data-tag="down"><section data-tag="h2"><h2>Git &#x4F7F;&#x7528;&#x521D;&#x5C1D;&#x8BD5;</h2>
+<blockquote>
+<ol>
+<li>&#x65B0;&#x5EFA;&#x9879;&#x76EE;&#x6765;&#x64CD;&#x4F5C;</li>
+<li>&#x514B;&#x9686;&#x5DF2;&#x6709;&#x9879;&#x76EE;&#x6765;&#x64CD;&#x4F5C;</li>
+</ol>
+</blockquote>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/a078c308-e97d-4082-a19f-b6ea4a62d129.png" alt="0_1480066967091_1.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/d47a5ea5-d007-4861-a9b4-7966c22a6cc1.png" alt="1_1480066967091_2.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/b66ceb4d-2de5-4937-b061-c0773cd65caa.png" alt="2_1480066967092_3.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/fc7d3e4b-b467-443a-8082-97dc0f021d9e.png" alt="3_1480066967092_4.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/79ad3f24-bd82-420f-b2a7-93d833273154.png" alt="4_1480066967093_5.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/fe536751-db3b-4d1e-a172-21e2f613893f.png" alt="0_1480066992762_6.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/abdf2497-207f-4195-807d-0ef5ae3c5cfc.png" alt="1_1480066992762_7.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/b7f4a956-0d67-4d71-ae7a-fdd46a23927b.png" alt="2_1480066992763_8.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/c60fc3ab-60bd-4ebe-826e-234072f4c3c6.png" alt="3_1480066992763_9.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/805ce8c0-c80f-4df5-90a3-816500015f84.png" alt="4_1480066992763_10.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/7c4b39bd-81ad-4b7e-9051-ea52caeb8e32.png" alt="0_1480067013919_11.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/29732f4b-1fa8-4d06-9d54-9c0e393d186c.png" alt="1_1480067013919_12.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/5cf851bb-c266-4fe9-ad1b-f89fe3c0304f.png" alt="2_1480067013920_13.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/483cf4e8-50d6-418f-8ea6-a6772636ee15.png" alt="3_1480067013920_14.png"></p>
+</section><section data-tag="h3"><h3></h3>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/e02ea917-770d-4f8f-9cf2-4e6d378590f5.png" alt="4_1480067013920_15.png"></p>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>Why Git</h2>
+</section><section data-tag="h3"><h3>&#x5173;&#x4E8E;&#x7248;&#x672C;&#x63A7;&#x5236;</h3>
+<blockquote>
+<p>&#x7248;&#x672C;&#x63A7;&#x5236;&#x662F;&#x4E00;&#x79CD;&#x8BB0;&#x5F55;&#x4E00;&#x4E2A;&#x6216;&#x82E5;&#x5E72;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x53D8;&#x5316;&#xFF0C;&#x4EE5;&#x4FBF;&#x5C06;&#x6765;&#x67E5;&#x9605;&#x7279;&#x5B9A;&#x7248;&#x672C;&#x4FEE;&#x8BA2;&#x60C5;&#x51B5;&#x7684;&#x7CFB;&#x7EDF;&#x3002;</p>
+</blockquote>
+<ul>
+<li>&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;</li>
+<li>&#x96C6;&#x4E2D;&#x5F0F;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;(SVN)</li>
+<li>&#x5206;&#x5E03;&#x5F0F;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7EDF;(Git)</li>
+</ul>
+</section><section data-tag="h3"><h3>Git &#x4F18;&#x52BF;</h3>
+<blockquote>
+<p>&#x8BDE;&#x751F;&#x81EA;2005&#xFF0C;Linux &#x5F00;&#x6E90;&#x793E;&#x533A;</p>
+</blockquote>
+<ul>
+<li>&#x901F;&#x5EA6;</li>
+<li>&#x7B80;&#x5355;&#x7684;&#x8BBE;&#x8BA1;</li>
+<li>&#x5141;&#x8BB8;&#x4E0A;&#x5343;&#x4E2A;&#x5E76;&#x884C;&#x5206;&#x652F;</li>
+<li>&#x5206;&#x5E03;&#x5F0F;</li>
+</ul>
+</section></section><section data-tag="h2"><h2>&#x5B89;&#x88C5;</h2>
+<p><a href="https://git-for-windows.github.io/">window&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a>
+<a href="https://git-scm.com/">mac&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a></p>
+</section><section data-tag="down"><section data-tag="h2"><h2>&#x7B80;&#x5355;&#x4F7F;&#x7528;</h2>
+</section><section data-tag="h3"><h3>&#x91CD;&#x8981;&#x6982;&#x5FF5;</h3>
+<blockquote>
+<ul>
+<li>&#x5DF2;&#x63D0;&#x4EA4;(mommitted) &#x8BE5;&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x88AB;&#x5B89;&#x5168;&#x5730;&#x4FDD;&#x5B58;&#x5728;&#x672C;&#x5730;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E86;</li>
+<li>&#x5DF2;&#x4FEE;&#x6539;(modified) &#x4FEE;&#x6539;&#x4E86;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x8FD8;&#x6CA1;&#x6709;&#x63D0;&#x4EA4;&#x4FDD;&#x5B58;</li>
+<li>&#x5DF2;&#x6682;&#x5B58;(staged) &#x628A;&#x5DF2;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;&#x653E;&#x5728;&#x4E0B;&#x6B21;&#x63D0;&#x4EA4;&#x65F6;&#x8981;&#x4FDD;&#x5B58;&#x7684;&#x6E05;&#x5355;&#x4E2D;</li>
+</ul>
+</blockquote>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/ac44ff1a-438f-4d40-ad32-acd56e30a462.png" alt=""></p>
+</section><section data-tag="h3"><h3>&#x8D77;&#x6B65;</h3>
+<p>&#x521D;&#x6B21;&#x4F7F;&#x7528;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x59D3;&#x540D;&#x548C;&#x90AE;&#x7BB1;</p>
+<pre><code>git config --global user.name &quot;&#x4F60;&#x7684;&#x59D3;&#x540D;&quot;
+git config --global user.email johndoe@example.com
+</code></pre>
+</section><section data-tag="h3"><h3>clone &#x9879;&#x76EE;</h3>
+<p>&#x7528;&#x4E8E;&#x628A;&#x4E00;&#x4E2A;GitHub&#x662F;&#x7684;&#x9879;&#x76EE;clone(&#x4E0B;&#x8F7D;)&#x5230;&#x672C;&#x5730;&#x53D8;&#x4E3A;&#x672C;&#x5730;&#x4ED3;&#x5E93;</p>
+<pre><code>git clone git@github.com:jirengu/blog.git
+
+cd blog
+</code></pre>
+</section><section data-tag="h3"><h3>&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5E76;&#x63D0;&#x4EA4;</h3>
+<pre><code># &#x521B;&#x5EFA;&#x6587;&#x4EF6;
+touch a.md
+# &#x5728;&#x6587;&#x4EF6;&#x91CC;&#x5199;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;  
+echo &quot;hello&quot; &gt; a.md
+git status
+</code></pre>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/86e69325-3c28-46be-9b65-7c7cb0fb7996.png" alt="17.png"></p>
+</section><section data-tag="h3"><h3>&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5E76;&#x63D0;&#x4EA4;</h3>
+<pre><code># &#x628A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x65B0;&#x589E;&#x548C;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x6682;&#x5B58;&#x533A;
+git add .
+git status
+</code></pre>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/cfc60fc9-5b90-4314-9936-71cacd94abda.png" alt="18.png"></p>
+</section><section data-tag="h3"><h3>&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5E76;&#x63D0;&#x4EA4;</h3>
+<pre><code># &#x628A;&#x6682;&#x5B58;&#x533A;&#x7684;&#x66F4;&#x65B0;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x5E93;
+git commit -am &quot;add file&quot;
+git status
+</code></pre>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/08e742d1-1bec-4fe5-a378-2e91523417f2.png" alt="19.png"></p>
+</section><section data-tag="h3"><h3>&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5E76;&#x63D0;&#x4EA4;</h3>
+<pre><code># &#x628A;&#x5F53;&#x524D;&#x672C;&#x5730;&#x5E93;&#x91CC;&#x7684;&#x6539;&#x52A8;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x5E93;(origin)&#x7684;master &#x5206;&#x652F;
+git push origin master
+</code></pre>
+<p><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/a015dbc4-642b-4d9c-995a-1b7c54fc642b.png" alt="20.png"></p>
+</section><section data-tag="h3"><h3>&#x4FEE;&#x6539;&#x5220;&#x9664;&#x6587;&#x4EF6;</h3>
+<pre><code># &#x628A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x53D8;&#x52A8;&#x66F4;&#x65B0;&#x5408;&#x5E76;&#x5230;&#x672C;&#x5730;&#x4ED3;&#x5E93;
+git pull
+
+# &#x4FEE;&#x6539;&#x6587;&#x4EF6;
+vim a.md
+git add .
+
+# &#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x63D0;&#x4EA4;&#x6D88;&#x606F;&#x5305;&#x542B;&#x5927;&#x91CF;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x63D0;&#x4EA4;&#x53C2;&#x6570;&#x4E0D;&#x7528;&#x52A0; m
+# &#x6B64;&#x65F6;&#x4F1A;&#x8FDB;&#x5165; vim &#x754C;&#x9762;&#xFF0C;&#x6309;&#x4E0B;i&#x8FDB;&#x5165;&#x7F16;&#x8F91;&#x72B6;&#x6001;&#xFF0C;&#x8FDB;&#x884C;&#x7F16;&#x8F91;
+# &#x7F16;&#x8F91;&#x5B8C;&#x6210;&#x540E;&#x6309;&#x4E0B; esc &#x8FDB;&#x5165;&#x547D;&#x4EE4;&#x6001;&#xFF0C; &#x8F93;&#x5165; :wq &#x4FDD;&#x5B58;&#x9000;&#x51FA; vim
+git commit -a
+
+git push origin master
+
+rm -rf a.md
+git add .
+git commit -am &quot;&#x5220;&#x9664;a.md&quot;
+
+#&#x5982;&#x679C;&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;git push origin master &#x8FC7;&#xFF0C;&#x540E;&#x9762;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7B80;&#x5316;&#x6210; git push
+git push
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x95EE;&#x9898;</h3>
+<blockquote>
+<ul>
+<li><code>git clone url</code>&#x548C; <code>git pull</code>&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;</li>
+<li>&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x548C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x533A;&#x522B;?</li>
+<li>origin &#x4EE3;&#x8868;&#x4EC0;&#x4E48;?</li>
+</ul>
+</blockquote>
+</section></section><section data-tag="down"><section data-tag="h2"><h2>&#x590D;&#x6742;&#x4F7F;&#x7528;</h2>
+</section><section data-tag="h3"><h3>&#x672C;&#x5730;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; git &#x9879;&#x76EE;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x7A7A;&#x4ED3;&#x5E93;</h3>
+<pre><code>mkdir newProject
+cd new Project
+
+# &#x628A;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x521D;&#x59CB;&#x5316;&#x6210;&#x4E00;&#x4E2A;&#x672C;&#x5730; git &#x4ED3;&#x5E93;
+# &#x6CE8;&#x610F; &#x4ED3;&#x5E93;&#x548C;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x4ED3;&#x5E93;&#x4E0B;&#x6709;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x7684; .git&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;
+# &#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#xFF0C;&#x5220;&#x9664;.git&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5C31;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x5939;&#x4E86;
+git init
+
+touch index.html
+echo &quot;hello&quot; &gt; index.html
+
+git add .
+git commit -am &quot;init&quot;
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x672C;&#x5730;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; git &#x9879;&#x76EE;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x7A7A;&#x4ED3;&#x5E93;</h3>
+<pre><code># &#x67E5;&#x770B;&#x672C;&#x5730;&#x5E93;&#x91CC;&#x8BB0;&#x5F55;&#x7684;&#x8FDC;&#x7A0B;&#x5E93;&#x5730;&#x5740;
+git remote -v
+
+# &#x8FD9;&#x91CC;&#x628A;&#x8FDC;&#x7A0B;&#x5E93;&#x7684;&#x5730;&#x5740;&#x6DFB;&#x52A0;&#x4E2A;&#x6807;&#x7B7E;&#x53EB;origin
+git remote add origin git@github.com:jirengu/blog2.git
+# &#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x5E93;&#x5730;&#x5740;
+git push origin master
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x672C;&#x5730;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; git &#x9879;&#x76EE;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x7A7A;&#x4ED3;&#x5E93;</h3>
+<pre><code>#&#x614E;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x5F3A;&#x5236;&#x63A8;&#x9001;&#xFF0C;&#x4F1A;&#x8986;&#x76D6;&#x522B;&#x4EBA;&#x7684;&#x4EE3;&#x7801;
+git push -f origin master 
+
+# &#x5728;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x8FDC;&#x7A0B;&#x5E93;&#x7684;&#x6807;&#x7B7E;
+git remote add gitlab git@gitlab.com:abc/blog.git
+
+# &#x63A8;&#x9001;&#x5230;gitlab&#x6807;&#x7B7E;&#x7684;&#x5730;&#x5740;&#x4E0A;
+git push gitlab master
+
+# &#x5220;&#x9664;gitlab &#x6807;&#x7B7E;
+git remote remove gitlab
+
+# &#x4FEE;&#x6539;origin&#x6807;&#x7B7E;&#x5BF9;&#x5E94;&#x7684;&#x5730;&#x5740;
+git remote set-url origin git@github.com:jirengu/blog3.git
+
+# &#x628A; gitlab &#x6807;&#x7B7E;&#x6539;&#x540D;&#x4E3A;coding
+git remote rename gitlab coding
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5206;&#x652F;&#x64CD;&#x4F5C;</h3>
+<pre><code># &#x521B;&#x5EFA;&#x672C;&#x5730;&#x5E93;dev &#x5206;&#x652F;
+git branch dev
+
+# &#x5207;&#x6362;&#x5230;dev &#x5206;&#x652F;
+git checkout dev
+
+touch b.md
+git add .
+git commit -am &quot;add b.md&quot;
+
+# &#x63A8;&#x9001;&#x5230;origin&#x5730;&#x5740;&#x7684;dev&#x5206;&#x652F;&#x4E0A;
+git push origin dev
+
+</code></pre>
+</section><section data-tag="h3"><h3>&#x5206;&#x652F;&#x5408;&#x5E76;</h3>
+<pre><code>git checkout master
+
+# &#x628A; dev &#x5206;&#x652F;&#x4E0A;&#x7684;&#x5185;&#x5BB9;&#x5408;&#x5E76;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;(master) &#x4E0A;
+git merge dev
+</code></pre>
+</section><section data-tag="h3"><h3>&#x51B2;&#x7A81;</h3>
+<blockquote>
+<p>&#x5F53;&#x81EA;&#x5DF1;&#x548C;&#x522B;&#x4EBA;&#x6539;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#xFF0C;&#x5728;&#x6267;&#x884C; <code>git pull</code>&#x65F6;&#x66F4;&#x65B0;&#x672C;&#x5730;&#x5408;&#x5E76;&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x51B2;&#x7A81;</p>
+</blockquote>
+<ol>
+<li>&#x4FEE;&#x6539;&#x51B2;&#x7A81;&#x6587;&#x4EF6;</li>
+<li>&#x91CD;&#x65B0;&#x63D0;&#x4EA4;</li>
+</ol>
+</section></section><section data-tag="h2"><h2>&#x4EFB;&#x52A1;</h2>
+<ol>
+<li>&#x5728; github &#x4E0A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x65B9;&#x5F0F;&#x6267;&#x884C;&#x6DFB;&#x52A0;&#x3001;&#x5220;&#x9664;&#x3001;&#x4FEE;&#x6539;&#x6587;&#x4EF6;</li>
+<li>&#x6CE8;&#x518C; coding.net &#x8D26;&#x53F7;&#xFF0C;&#x628A;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x518D;&#x63A8;&#x9001;&#x5230; coding &#x4E0A;</li>
+</ol>
+</section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>

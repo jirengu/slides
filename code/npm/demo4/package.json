@@ -1,0 +1,19 @@
+{
+  "name": "hunger-weather2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "weather": "./index.js"
+  },
+  "scripts": {
+    "start": "echo start.... ",
+    "build": "echo build...",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.3"
+  }
+}
