@@ -156,10 +156,10 @@ E::after      | 在E元素之后插入生成的内容
 ```
 *             {}  /* a=0 b=0 c=0 d=0 -> 0,0,0,0 */
 p             {}  /* a=0 b=0 c=0 d=1 -> 0,0,0,1 */
-a:hover       {}  /* a=0 b=0 c=0 d=2 -> 0,0,0,2 */
+a:hover       {}  /* a=0 b=0 c=1 d=1 -> 0,0,1,1 */
 ul li         {}  /* a=0 b=0 c=0 d=2 -> 0,0,0,2 */
 ul ol+li      {}  /* a=0 b=0 c=0 d=3 -> 0,0,0,3 */
-h1+input[type=hidden]{}  /* a=0 b=0 c=1 d=2 -> 0,0,1,1 */
+h1+input[type=hidden]{}  /* a=0 b=0 c=1 d=2 -> 0,0,1,2 */
 ul ol li.active   {}  /* a=0 b=0 c=1 d=3 -> 0,0,1,3 */
 #ct .box p        {}  /* a=0 b=1 c=1 d=1 -> 0,1,1,1 */
 div#header:after  {}  /* a=0 b=1 c=0 d=2 -> 0,1,0,2 */
