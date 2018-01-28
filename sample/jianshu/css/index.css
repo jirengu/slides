@@ -1,0 +1,253 @@
+
+header {
+  border-bottom: 1px solid #eee;
+  height: 56px;
+  line-height: 56px;
+  box-sizing: content-box;
+  padding: 0 20px;
+}
+
+header:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+header .logo {
+  float: left;
+}
+header .logo >img {
+  height: 50px;
+}
+
+header .navbar {
+  float: left;
+}
+header .navbar a {
+  display: block;
+  line-height: 56px;
+  padding: 0 10px;
+  color: #333;
+  font-size: 17px;
+}
+header .navbar a:hover {
+  background-color: #eee;
+}
+
+header .navbar .active a {
+  color: #e86f5e;
+}
+
+header .navbar .active a:hover {
+  background-color: #fff;
+}
+
+header .navbar>li .tip {
+  position: absolute;
+  top: 10px;
+  right: -8px;
+}
+
+header .navbar > li {
+  position: relative;
+  float: left;
+  padding: 0 4px;
+}
+header .navbar > li:hover .child {
+  display: block;
+}
+
+header .navbar .child {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 1px 4px 2px rgba(0,0,0,0.1);
+  width: 120px;
+  line-height: 40px;
+  display: none;
+}
+
+header .navbar .child a {
+  line-height: 40px;
+}
+
+header .navbar .child .tip {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+/*  search area  */
+header .search {
+  float: left;
+  position: relative;
+  margin-left: 30px;
+}
+
+header .search input {
+  line-height: 36px;
+  padding: 0 20px;
+  width: 200px;
+  font-size: 15px;
+  border: none;
+  background-color: #eee;
+  border-radius: 18px;
+  outline: none;
+  transition: all .3s;
+}
+
+header .search input:focus {
+  width: 240px;
+}
+
+header .search input:focus~.search-panel {
+  display: block;
+}
+
+header .search input:focus~.icon-search {
+  background-color: #969696;
+  color: #fff;
+}
+
+
+header .search .icon-search {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #aaa;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+header .search-panel {
+  position: absolute;
+  width: 250px;
+  padding: 16px;
+  line-height: 1;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px 2px rgba(0,0,0,0.1);
+  display: none;
+}
+header .search-panel:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 30px;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  transform: rotateZ(45deg);
+  box-shadow: -2px -2px 2px -2px rgba(0,0,0,0.1);
+}
+
+header .search-panel h3 {
+  color: #888;
+  font-weight: normal;
+}
+
+header .search-panel .change {
+  float: right;
+  font-size: 13px;
+  color: #888;
+  font-weight: normal;
+}
+
+header .search-panel .labels {
+  margin-top: 10px;
+}
+
+header .search-panel .label {
+  float: left;
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  margin: 10px 10px 0 0;
+  border-radius: 4px;
+  color: #888;
+}
+
+header .search-panel .label:hover {
+  border-color: #888;
+}
+
+
+/*extra*/
+
+header .extra {
+  float: right;
+}
+
+header .extra a {
+  color: #333;
+}
+
+header .extra .icon-textsize {
+  float: left;
+  font-size: 30px;
+  color: #333;
+}
+
+header .extra .user {
+  position: relative;
+  float: left;
+  margin-left: 20px;
+  padding: 0 10px;
+}
+
+header .extra .user:hover {
+  background-color: #eee;
+}
+
+header .extra .user:hover .child {
+  display: block;
+}
+
+header .extra .child {
+  position: absolute;
+  left: 0;
+  box-shadow: 0 1px 4px 2px rgba(0,0,0,0.1);
+  width: 160px;
+  line-height: 54px;
+  display: none;
+}
+
+header .extra .child a {
+  display: block;
+  font-size: 13px;
+  padding: 0 10px;
+}
+
+header .extra .child a:hover {
+  background-color: #eee;
+}
+
+header .extra .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+header .extra .icon-down {
+  vertical-align: middle;
+} 
+
+header .extra .action-write {
+  float: left;
+  background-color: #e56e5d;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1;
+  padding: 10px 20px;
+  margin: 10px 0 0 20px;
+}
+
+
+
+
+
