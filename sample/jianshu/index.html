@@ -3,28 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>简书首页</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_556647_vx9dtk0zpw7mn29.css">
 </head>
 <body>
   <header>
     <a class="logo" href="/"><img src="images/logo.png" alt="logo"></a>
-    <ul class="navbar">
-      <li><a href="#">关注</a></li>
+    <ul class="navbar clearfix">
+      <li class="active"><a href="#">关注</a></li>
       <li><a href="#">发现</a></li>
       <li><a href="#">消息</a><span class="tip">99+</span>
         <ul class="child">
-          <li><a href="#"><span class="iconfont icon-comment"></span> 评论 <span class="tip"></span></a></li>
+          <li><a href="#"><span class="iconfont icon-comment"></span> 评论 <span class="tip">300</span></a></li>
           <li><a href="#"><span class="iconfont icon-message"></span> 简信</a></li>
           <li><a href="#"><span class="iconfont icon-follow"></span> 关注</a></li>
         </ul>
       </li>
     </ul>
     <div class="search">
-      <input type="text">
+      <input type="text" placeholder="搜索">
       <span class="iconfont icon-search"></span>
       <div class="search-panel">
-        <h3>热门搜索</h3>
-        <a class="change" href="#"><span class="iconfont icon-refresh"></span> 换一批</a>
-        <div class="labels">
+        <h3>热门搜索 <a class="change" href="#"><span class="iconfont icon-refresh"></span> 换一批</a></h3>
+        <div class="labels clearfix">
           <a href="#" class="label">区块链</a>
           <a href="#" class="label">腾讯云</a>
           <a href="#" class="label">故事</a>
@@ -34,9 +36,9 @@
       </div>
     </div>
     <div class="extra">
-      <a href="#" class="iconfont icon-changeword"></a>
+      <a href="#" class="iconfont icon-textsize"></a>
       <div class="user">
-        <img src="avatar" alt="头像">
+        <img class="avatar" src="https://upload.jianshu.io/users/upload_avatars/66928/16557cea45fd?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120" alt="头像">
         <span class="iconfont icon-down"></span>
         <div class="child">
           <a href="#"> <span class="iconfont icon-user"></span>  用户</a>
