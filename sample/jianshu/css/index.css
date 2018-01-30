@@ -125,6 +125,7 @@ header .search .icon-search {
 
 header .search-panel {
   position: absolute;
+  z-index: 1;
   width: 250px;
   padding: 16px;
   line-height: 1;
@@ -261,8 +262,6 @@ aside {
 /*main*/
 main {
   margin-right: 318px;
-  height: 400px;
-  background: yellow;
 }
 
 .carousel {
@@ -328,3 +327,123 @@ main {
 .carousel .bullets > li.active {
   background-color: #fff;
 }
+
+.label-group {
+  margin-top: 20px;
+}
+
+.label-group .label {
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  color: #333;
+  background-color: #f7f7f7;
+  display: inline-block;
+  overflow: hidden;
+  padding-right: 10px;
+  margin: 10px 20px 10px 0;
+  vertical-align: middle;
+}
+
+.label-group img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.label-group .more {
+  color: #787878;
+  vertical-align: middle;
+}
+
+/*content*/
+
+.item {
+  position: relative;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding: 20px 0;
+}
+
+.item .cover {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -58px;
+  width: 140px;
+  height: 117px;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.item .cover img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.item .detail {
+  margin-right: 160px;
+}
+
+.item .avatar {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.item .avatar img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.item .username {
+  margin-left: 10px;
+  color: #333;
+  vertical-align: middle;
+}
+
+.item .time {
+  margin-left: 10px;
+  color: #999;
+  vertical-align: middle;
+}
+
+.item .title {
+  display: block;
+  margin-top: 10px;
+  color: #333;
+}
+
+.item .title h2 {
+  font-size: 20px;
+}
+
+.item .foot {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.item .label {
+  color: #f09083;
+  border: 1px solid #f09083;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.item .foot span {
+  color: #999;
+}
+
+.item .foot .iconfont {
+  margin-left: 10px;
+}
+
+
+
+

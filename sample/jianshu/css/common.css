@@ -14,7 +14,8 @@ ul {
 }
 
 body {
-  font: 13px/1.4 -apple-system, 'SF UI Text',Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
+  font: 13px/1.8 -apple-system, 'SF UI Text',Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
+  color: #444;
 }
 
 .clearfix:after {
