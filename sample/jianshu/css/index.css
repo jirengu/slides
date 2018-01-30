@@ -267,7 +267,7 @@ main {
 
 .carousel {
   position: relative;
-/*  overflow: hidden;*/
+  overflow: hidden;
 }
 
 .carousel .panels {
