@@ -23,6 +23,12 @@ body {
   clear: both;
 }
 
+.layout {
+  width: 950px;
+  margin: 0 auto;
+}
+
+
 .tip {
   background-color: #e86f5e;
   border-radius: 8px;
