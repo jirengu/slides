@@ -212,6 +212,7 @@ header .extra .child {
   position: absolute;
   left: 0;
   box-shadow: 0 1px 4px 2px rgba(0,0,0,0.1);
+  background-color: #fff;
   width: 160px;
   line-height: 54px;
   display: none;
@@ -251,13 +252,148 @@ header .extra .action-write {
 
 /* section */
 
+section {
+  margin-top: 30px;
+}
+
+
 aside {
   float: right;
   width: 280px;
-  height: 200px;
-  background: red;
 }
 
+aside .panels img {
+  width: 280px;
+  height: 45px;
+}
+
+
+aside .download {
+  position: relative;
+  display: block;
+  padding: 10px 22px;
+  margin-top: 10px;
+  border: 1px solid #ececec;
+  border-radius: 4px;
+}
+
+aside .download img {
+  width: 56px;
+  height: 56px;
+  float: left;
+}
+
+aside .download h3 {
+  margin-left: 66px;
+  font-weight: normal;
+  color: #333;
+}
+
+aside .download p {
+  margin-left: 66px;
+  color: #999;
+}
+
+aside .download .tooltip {
+  position: absolute;
+  top: -198px;
+  left: calc(50% - 91px);
+  width: 182px;
+  height: 182px;
+  padding: 10px;
+  border: 1px solid #ececec;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px 2px rgba(0,0,0,0.3);
+  display: none;
+}
+
+aside .download .tooltip:after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  margin-left: -8px;
+  transform: rotateZ(45deg);
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-right: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+}
+
+aside .download:hover .tooltip {
+  display: block;
+}
+
+aside .download .tooltip img {
+  width: 100%;
+  height: 100%;
+}
+
+aside .recommand {
+  margin-top: 30px;
+}
+
+aside .recommand > h3 {
+  color: #999;
+  font-weight: normal;
+  font-size: 14px; 
+}
+
+aside .recommand > h3 .change {
+  float: right;
+  font-size: 14px;
+  color: #999;
+}
+
+aside .recommand .avatar {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ececec;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+aside .recommand .item {
+  margin-top: 15px;
+}
+
+aside .recommand .avatar img {
+  width: 100%;
+  height: 100%;
+}
+
+aside .recommand .item h4 {
+  margin-left: 60px;
+}
+
+aside .recommand .username {
+  color: #333;
+}
+
+aside .recommand .notice {
+  float: right;
+  color: #42c02e;
+}
+
+aside .recommand .item p {
+  margin-left: 60px;
+  color: #999;
+}
+
+aside .recommand .more {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  color: #999;
+  background-color: #f7f7f7;
+  line-height: 30px;
+  margin-top: 15px;
+}
 
 /*main*/
 main {
@@ -358,14 +494,14 @@ main {
 
 /*content*/
 
-.item {
+.content .item {
   position: relative;
   border-top: 1px solid #ccc;
   margin-top: 20px;
   padding: 20px 0;
 }
 
-.item .cover {
+.content .item .cover {
   position: absolute;
   top: 50%;
   right: 0;
@@ -377,17 +513,17 @@ main {
   overflow: hidden;
 }
 
-.item .cover img {
+.content .item .cover img {
   width: 100%;
   height: 100%;
   vertical-align: top;
 }
 
-.item .detail {
+.content .item .detail {
   margin-right: 160px;
 }
 
-.item .avatar {
+.content .item .avatar {
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -396,54 +532,125 @@ main {
   vertical-align: middle;
 }
 
-.item .avatar img {
+.content .item .avatar img {
   width: 100%;
   height: 100%;
   vertical-align: top;
 }
 
-.item .username {
+.content .item .username {
   margin-left: 10px;
   color: #333;
   vertical-align: middle;
 }
 
-.item .time {
+.content .item .time {
   margin-left: 10px;
   color: #999;
   vertical-align: middle;
 }
 
-.item .title {
+.content .item .title {
   display: block;
   margin-top: 10px;
   color: #333;
 }
 
-.item .title h2 {
+.content .item .title h2 {
   font-size: 20px;
 }
 
-.item .foot {
+.content .item .foot {
   margin-top: 10px;
   font-size: 12px;
 }
 
-.item .label {
+.content .item .label {
   color: #f09083;
   border: 1px solid #f09083;
   border-radius: 4px;
   padding: 2px 4px;
 }
 
-.item .foot span {
+.content .item .foot span {
   color: #999;
 }
 
-.item .foot .iconfont {
+.content .item .foot .iconfont {
   margin-left: 10px;
 }
 
+.to-top {
+  position: fixed;
+  right: 40px;
+  bottom: 50px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.to-top:hover {
+  background-color: #f8f8f8;
+}
+
+.to-top .iconfont {
+  font-size: 26px;
+}
+
+.to-top .tooltip {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  background-color: #000;
+  color: #fff;
+  width: 63px; 
+  text-align: center ;
+  line-height: 1.8 ;
+  border-radius: 4px;
+  display: none;
+}
+
+.to-top:hover .tooltip {
+  display: block;
+}
+
+.to-top .tooltip:after {
+  content: '';
+  position: absolute;
+  right: -12px;
+  top: 5px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 6px solid #000;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
 
 
+@media screen and (max-width: 760px) {
+  .layout {
+    width: auto;
+  }
+  body {
+    padding: 10px 20px;
+  }
+  .extra,
+  .search {
+    display: none;
+  }
+  aside {
+    float: none;
+    width: auto;
+  }
+  main {
+    margin-right: 0;
+  }
+}
 
